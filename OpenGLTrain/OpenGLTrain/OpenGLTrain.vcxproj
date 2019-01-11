@@ -116,11 +116,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="display.cpp" />
+    <ClCompile Include="glut_init.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="object.cpp" />
+    <ClCompile Include="Tool.cpp" />
     <ClCompile Include="Voxel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Declaration.h" />
+    <ClInclude Include="Tool.h" />
     <ClInclude Include="Voxel.h" />
   </ItemGroup>
   <ItemGroup>

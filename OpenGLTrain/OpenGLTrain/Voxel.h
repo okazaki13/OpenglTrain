@@ -1,6 +1,9 @@
 #pragma once
 class Voxel
 {
+	/*ボクセルを作るためのクラス
+	カラーとサイズをセットして生成
+	*/
 public:
 	Voxel();
 	~Voxel();
