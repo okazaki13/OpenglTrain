@@ -14,6 +14,11 @@ Tool::~Tool()
 }
 
 
+float Tool::get_endmill_D() {
+	return endmill_D;
+}
+
+
 void Tool::create_ballendmill(int offset[2]) {
 	// ボールエンドミルを描く
 	glPushMatrix();

@@ -9,7 +9,7 @@ void Display(void) {
 
 	Ground();
 
-	object();
+	object();//工具や切削物などを表示する関数
 
 	glutSwapBuffers(); //glutInitDisplayMode(GLUT_DOUBLE)でダブルバッファリングを利用可
 }
