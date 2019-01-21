@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SpidarAHS API for SLAB: 開発履歴</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.9 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="pages.html"><span>関連ページ</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1><a class="anchor" name="page_history">開発履歴 </a></h1><pre></pre><p>
+<pre>2011/10/20　第10回リリース
+	トルクの単位を[Nm]から[mNm]に変更．
+	位置が[mm]のためにトルクも[mNm]のほうが単位変換がなくてよいため．
+	位置が[mm]のときトルクは[mNm]
+	位置が[m]のときトルクは[Nm]
+	が望ましい．が今後の課題</pre><p>
+<pre>2010/09/10　第9回リリース
+	Virtual coupling（並進・回転）内のバグ修正</pre><p>
+<pre>2009/08/21　第8回リリース
+	ロータリエンコーダカウンタの補間機能をコントローラに追加(分解能32倍)
+		xmlファイルの定義追加
+		※注意：コントローラのファームウェアを2009_08_21以降にしないと有効になりません。
+	電流検出ADCの修正→ノイズ低減
+		コントローラのファームウェアの更新</pre><p>
+<pre>2009/08/20　第7回リリース
+	オープンループ・インピーダンス制御を追加
+		xmlファイルの定義追加
+	インストール時のPathを追加するスクリプトを追加
+	マニュアルの整備
+		FAQの追加</pre><p>
+<pre>2009/08/19　第6回リリース
+	マニュアルの整備
+	ライセンス関係の整備
+		ODE
+		Xerces
+		AquesTalk</pre><p>
+<pre>2009/08/18　第5回リリース
+	音声案内の追加
+		起動時
+		エラー時
+			設定ファイル読み込み・解析エラー
+			電源・USBケーブル接続エラー
+		終了時
+		ワンポイントアドバイス
+	<a class="el" href="_spidar_a_h_s_8h.html#3ef6b0edb5dbe81fd0fe94d44555fc95" title="Spidarのためのプログラムの起動と初期化処理．  コントローラの電源を投�...">ahsCreate_Spidar()</a>関数の追加（今後は <a class="el" href="_spidar_a_h_s_8h.html#fb1619453da9310e29f3a48be24879f7" title="【今後廃止（ahsCreate_Spidarを使ってください）】  Spidar4(並進3自由度の4本糸...">ahsCreate_Spidar4()</a>, <a class="el" href="_spidar_a_h_s_8h.html#fd8e779c04b62e0ab05731f1968f45ff" title="【今後廃止（ahsCreate_Spidarを使ってください）】  SpidarG(並進・回転6自由度�...">ahsCreate_SpidarG()</a>, <a class="el" href="_spidar_a_h_s_8h.html#398cef7b2379f7910d56a23c1999b8dd" title="【今後廃止（ahsCreate_Spidarを使ってください）】  SpidarX(ユーザが任意で糸�...">ahsCreate_SpidarX()</a>は廃止の予定）</pre><p>
+<pre>2009/08/11　第4回リリース
+	キャリブレーションの修正</pre><p>
+<pre>2009/08/06　第3回リリース
+	.xmlファイルの定義を更新
+		rotxNをorixNに、posxNを追加。</pre><p>
+<pre>2009/08/04　第2回リリース
+	SpidarAHSをライブラリに含める
+	・クラスではなく関数による制御を可能にする
+	デバイスドライバをライブラリに含める</pre><p>
+<pre>2009/07/09　初回リリース
+</pre> </div>
+<hr>
+
+Generated on 31 Jan 2012 for SpidarAHS API for SLAB 1.0AforSLAB by doxygen 1.5.9<br>
+
+Copyright &copy Katsuhito AKAHANE 2005-2012. All Rights Reserved.
+
+</BODY>
+</HTML>

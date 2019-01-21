@@ -1,0 +1,401 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SpidarAHS API for SLAB: 設定ファイル(.xml)について</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.9 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="pages.html"><span>関連ページ</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1><a class="anchor" name="page_setting">設定ファイル(.xml)について </a></h1>本システムでは、Spidarの各種設定のためにxmlファイルを用いています。<br>
+ 下記の注意をよく読み、利用する際には十分注意してください。<br>
+<p>
+ 
+<div id="xml設定ファイルのマニュアル表_27396" align=center x:publishsource="Excel">
+
+<table border>
+ <col class=xl6553527396 width=131 style='mso-width-source:userset;mso-width-alt:
+ 4192;width:98pt'>
+ <col class=xl6553527396 width=118 style='mso-width-source:userset;mso-width-alt:
+ 3776;width:89pt'>
+ <col class=xl6553527396 width=567 style='mso-width-source:userset;mso-width-alt:
+ 18144;width:425pt'>
+ <tr class=xl6327396 height=19 style='height:14.25pt'>
+  <td align=center height=19 class=xl7327396 width=131 style='height:14.25pt;width:98pt'>タ　グ　名</td>
+  <td align=center class=xl7427396 width=118 style='border-left:none;width:89pt'>属　性　名</td>
+  <td align=center class=xl7527396 width=567 style='border-left:none;width:425pt'>説　　　　　　　　　明</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl7027396 style='height:13.5pt'>spidar_type</td>
+  <td class=xl7127396 style='border-left:none'>　</td>
+  <td class=xl7227396 style='border-left:none'>SPIDARのタイプの設定</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>name</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>SPIDARタイプ</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>pos_unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>位置の単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>pos_vel_unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>並進速度の単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>ori_unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>姿勢の単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>ori_vel_unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>角速度の単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>force_unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>力の単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>torque_unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>トルクの単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>mmt_msec</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>　</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>マルチメディアタイマの設定</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>val</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>値</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>voice_navi</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>　</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>音声案内の設定</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>skill</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>ユーザレベル</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>motor_connection</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>　</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>SPIDAR系モータ番号とコントローラ系モータ番号の関連づけ</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>spidar_ch_id</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>SPIDAR系モータ番号</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>controller_ch_id</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>コントローラ系モータ番号</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>control_type</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>　</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>SPIDARモータの制御タイプ</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>id</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>SPIDAR系モータ番号（-1はすべてのチャンネルを意味する）</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>name</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>制御タイプ</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>motor_pos</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>　</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>モータ側のワイヤ出口の位置座標</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>id</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>SPIDAR系モータ番号</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>x</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>x座標</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>y</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>y座標</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>z</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>z座標</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>grip_pos</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>　</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>グリップ上のワイヤ接続の位置座標（ホームポジション基準）</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>id</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>SPIDAR系モータ番号（-1はすべてのチャンネルを意味する）</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>x</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>x座標</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>y</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>y座標</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>z</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>z座標</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>motor_force</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>　</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>モータが発生するワイヤの最大張力・最低張力の設定</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>id</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>SPIDAR系モータ番号（-1はすべてのチャンネルを意味する）</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>min</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>張力の最小値</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>max</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>張力の最大値</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>rotation_dir</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>　</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>モータの回転方向（ロータリーエンコーダの相順設定）</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>id</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>コントローラ系モータ番号（-1はすべてのチャンネルを意味する）</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>direction</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>回転方向</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>pully</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>　</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>プーリ半径の設定</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>id</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>コントローラ系モータ番号（-1はすべてのチャンネルを意味する）</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>radius</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>プーリ半径</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>encoder</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>　</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>ロータりエンコーダの設定</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>id</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>コントローラ系モータ番号（-1はすべてのチャンネルを意味する）</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>resolution</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>ロータりエンコーダの分解能</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>interpolation</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>ロータりエンコーダ値の補間機能（2009_08_21以降のファームウェアで対応）</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>dc_motor</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>　</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>DCモータの設定</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>id</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>コントローラ系モータ番号（-1はすべてのチャンネルを意味する）</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>unit</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>トルク定数の単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>torque_constant</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>DCモータのトルク定数</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>unit_r</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>端子間抵抗の単位</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>terminal_r</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>端子間抵抗値</td>
+ </tr>
+ <tr height=18 style='height:13.5pt'>
+  <td height=18 class=xl6527396 style='height:13.5pt;border-top:none'>　</td>
+  <td class=xl6427396 style='border-top:none;border-left:none'>unit_v</td>
+  <td class=xl6627396 style='border-top:none;border-left:none'>端子間電圧の単位</td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl6727396 style='height:14.25pt;border-top:none'>　</td>
+  <td class=xl6827396 style='border-top:none;border-left:none'>terminal_v</td>
+  <td class=xl6927396 style='border-top:none;border-left:none'>DCモータに実際にかけている電圧（DCモータの定格電圧ではないので注意！）</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=131 style='width:98pt'></td>
+  <td width=118 style='width:89pt'></td>
+  <td width=567 style='width:425pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+
+<font size="1">
+※本システムが定義する文書型定義に従わない設定ファイル(.xml)は、読み込み時にエラーが発生します。<br>
+Visual C++ 2008など.xmlファイルを編集でき、文書型定義チェックをリアルタイムで行うエディタでの確認が便利でしょう。
+</font>
+
+<br>
+<br>
+
+<h2><a class="anchor" name="settign_sec_1">
+SPIDARモータの制御タイプについて</a></h2>
+本システムでは、モータの制御タイプとして<br>
+ 　impedance<br>
+ 　admittance【現在サンプルプログラムはなし】<br>
+ 　hybrid【予約・未完成】<br>
+ 　open_impedance<br>
+ 　special【予約・未完成】<br>
+ を用意しています。<br>
+ impedance制御では、位置・姿勢を力覚提示装置から取得し力・トルクを力覚提示装置に出力します。 逆に、 admittance制御では、力・トルクを取得し、位置・姿勢を力覚提示装置に出力します。 <br>
+ hybrid制御では、impedance制御とadmittance制御を組み合わせることで、双方の良い部分を両立させる制御方法です。 <br>
+ open_impedance制御では、基本はimpedance制御と同じですが、制御のループにおいて、フィードバックループを切断し、オープンにした制御方法です。 （open_impedance制御ではahsActive()のisActiveが0の時に有効になり（オープン状態）、isActiveが1の時は普通のimpedance制御（クローズ状態）と同等のふるまいをします。）<p>
+<br>
+ <br>
+<h2><a class="anchor" name="settign_sec_2">
+SPIDAR系モータ番号とコントローラ系モータ番号について</a></h2>
+コントローラ系モータ番号とは実際にコントローラのチャンネル番号0〜7に接続されているモータの番号です。<br>
+ それに対して<br>
+ SPIDAR系モータ番号はSPIDARシステム上（ソフトウェア上）で規定しているモータ番号で、SPIDAR（4本糸）,SPIDAR-G（8本糸）などSPIDARに応じてモータ番号が決まっています。<br>
+<p>
+ 
+<br><br>
+
+<font size="1">
+※注意※
+
+<br>
+　本システムではSpidarの各種設定のためにxmlファイルを用いています。
+xmlファイルは、dataディレクトリ内に保存されています。
+変更しないでください。
+変更して不具合などが発生しても責任は一切とりませんので、よろしくお願いします。
+それでも、変更する必要がある場合はシステムをよく理解した上で、特に注意して行ってください。
+その場合でも、私は責任は一切とりませんので、よろしくお願いいたします。
+
+設定ファイルは必ずdataディレクトリ内に置いてください。
+そのほかのディレクトリに置いた場合、たとえ記述に間違いがなくても正常に起動しません。
+設定ファイル(.xml)は、必ずdataディレクトリ内に置いてください。
+
+また、dataディレクトリには他にも重要なファイルが格納されています。
+決して変更・削除などしないでください。
+システムが正常に起動しなくなります。
+
+設定ファイルの文書型定義としてdtdファイル
+（隠しファイルとして普段は見れないようになっています。）
+をdataディレクトリ内に持っています。
+文書型定義ファイル(.dtd)は絶対に変更してはなりません。
+プログラムが正常に動作しなくなります。
+<br>
+以上の注意を守り正しく利用してください。
+</font>
+
+ </div>
+<hr>
+
+Generated on 31 Jan 2012 for SpidarAHS API for SLAB 1.0AforSLAB by doxygen 1.5.9<br>
+
+Copyright &copy Katsuhito AKAHANE 2005-2012. All Rights Reserved.
+
+</BODY>
+</HTML>

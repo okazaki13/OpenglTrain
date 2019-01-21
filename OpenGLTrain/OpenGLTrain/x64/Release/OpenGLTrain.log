@@ -1,0 +1,8 @@
+﻿  display.cpp
+  glut_init.cpp
+  main.cpp
+  object.cpp
+c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\Tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+  SpidarInitcpp.cpp
+SpidarInitcpp.cpp(14): error C2065: 'hapticLoop_w3p4': 定義されていない識別子です。
+SpidarInitcpp.cpp(24): warning C4312: '型キャスト': 'DWORD' からより大きいサイズの 'SPIDAR_HANDLE' へ変換します。

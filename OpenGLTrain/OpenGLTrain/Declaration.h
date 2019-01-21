@@ -1,5 +1,5 @@
 #pragma once
-
+#include <windows.h>
 
 
 //----------------------------------------------------
@@ -12,3 +12,9 @@ void Ground(void);  //‘å’n‚Ì•`‰æ
 void object();
 
 int OpenSpidarVoice(void);
+
+
+//SpidarInit.cpp
+void init_spidar();
+void CALLBACK hapticLoop_w3p4(DWORD dwUser);
+void endHaptic();

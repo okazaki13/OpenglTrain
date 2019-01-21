@@ -1,5 +1,9 @@
 #include"Declaration.h"
 #include <GL/glut.h>
+#include "../../include/SpidarAHS/SpidarAHS.h"
+#pragma comment(lib,"../../Release/SpidarAHS.lib")
+#pragma comment(lib,"../../Debug/SpidarAHS.lib")
+
 
 //----------------------------------------------------
 // メイン関数
@@ -21,6 +25,7 @@ int main(int argc, char *argv[]) {
 	glutDisplayFunc(Display); //描画時に呼び出される関数を指定する（関数名：Display）
 	Initialize(); //初期設定の関数を呼び出す
 	glutMainLoop();
+	init_spidar();
 	return 0;
 }
 

@@ -1,0 +1,18 @@
+﻿  Audio.cpp
+  CuttingForce.cpp
+  display.cpp
+  glut_init.cpp
+  HapticCalculation.cpp
+  main.cpp
+  object.cpp
+c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\Tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+  SpidarInitcpp.cpp
+  Tool.cpp
+c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\Tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+Tool.cpp(29): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+Tool.cpp(43): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  Voxel.cpp
+  コード生成しています。
+  All 27 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  コード生成が終了しました。
+  OpenGLTrain.vcxproj -> C:\Users\masaya\Documents\OpenglTrain\OpenGLTrain\Release\OpenGLTrain.exe

@@ -1,3 +1,16 @@
-﻿  object.cpp
-c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
-  OpenGLTrain.vcxproj -> C:\Users\masaya\Documents\OpenglTrain\OpenGLTrain\x64\Debug\OpenGLTrain.exe
+﻿  SpidarInitcpp.cpp
+c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\spidarinitcpp.cpp(25): warning C4312: '型キャスト': 'DWORD' からより大きいサイズの 'SPIDAR_HANDLE' へ変換します。
+SpidarInitcpp.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) void __cdecl ahsStartHapticLoop(void *)" (__imp_?ahsStartHapticLoop@@YAXPEAX@Z) が関数 "void __cdecl init_spidar(void)" (?init_spidar@@YAXXZ) で参照されました。
+SpidarInitcpp.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) void __cdecl ahsActive(void *,int,int)" (__imp_?ahsActive@@YAXPEAXHH@Z) が関数 "void __cdecl init_spidar(void)" (?init_spidar@@YAXXZ) で参照されました。
+SpidarInitcpp.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) void __cdecl ahsStopHapticLoop(void *)" (__imp_?ahsStopHapticLoop@@YAXPEAX@Z) が関数 "void __cdecl endHaptic(void)" (?endHaptic@@YAXXZ) で参照されました。
+SpidarInitcpp.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) void * __cdecl ahsQuit(void *)" (__imp_?ahsQuit@@YAPEAXPEAX@Z) が関数 "void __cdecl endHaptic(void)" (?endHaptic@@YAXXZ) で参照されました。
+SpidarInitcpp.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) void __cdecl ahsGetImpPosVel(void *,float * const,int)" (__imp_?ahsGetImpPosVel@@YAXPEAXQEAMH@Z) が関数 "void __cdecl hapticLoop_w3p4(unsigned long)" (?hapticLoop_w3p4@@YAXK@Z) で参照されました。
+SpidarInitcpp.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) void __cdecl ahsGetImpPos(void *,float * const,int)" (__imp_?ahsGetImpPos@@YAXPEAXQEAMH@Z) が関数 "void __cdecl hapticLoop_w3p4(unsigned long)" (?hapticLoop_w3p4@@YAXK@Z) で参照されました。
+SpidarInitcpp.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) void __cdecl ahsGetImpOri_wxyz(void *,float * const,int)" (__imp_?ahsGetImpOri_wxyz@@YAXPEAXQEAMH@Z) が関数 "void __cdecl hapticLoop_w3p4(unsigned long)" (?hapticLoop_w3p4@@YAXK@Z) で参照されました。
+SpidarInitcpp.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) void __cdecl ahsSetImpForce(void *,float * const,int)" (__imp_?ahsSetImpForce@@YAXPEAXQEAMH@Z) が関数 "void __cdecl hapticLoop_w3p4(unsigned long)" (?hapticLoop_w3p4@@YAXK@Z) で参照されました。
+SpidarInitcpp.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) void __cdecl ahsSetImpTorque(void *,float * const,int)" (__imp_?ahsSetImpTorque@@YAXPEAXQEAMH@Z) が関数 "void __cdecl hapticLoop_w3p4(unsigned long)" (?hapticLoop_w3p4@@YAXK@Z) で参照されました。
+SpidarInitcpp.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) void __cdecl ahsSetImpScale(void *,float,float,int)" (__imp_?ahsSetImpScale@@YAXPEAXMMH@Z) が関数 "void __cdecl init_spidar(void)" (?init_spidar@@YAXXZ) で参照されました。
+SpidarInitcpp.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) void __cdecl ahsSetHapticLoopCallBackFunction(void *,void (__cdecl*)(unsigned long))" (__imp_?ahsSetHapticLoopCallBackFunction@@YAXPEAXP6AXK@Z@Z) が関数 "void __cdecl init_spidar(void)" (?init_spidar@@YAXXZ) で参照されました。
+..\..\Release\SpidarAHS.lib : warning LNK4272: ライブラリのコンピューターの種類 'x86' がターゲットのコンピューターの種類' x64' と競合しています
+..\..\Debug\SpidarAHS.lib : warning LNK4272: ライブラリのコンピューターの種類 'x86' がターゲットのコンピューターの種類' x64' と競合しています
+C:\Users\masaya\Documents\OpenglTrain\OpenGLTrain\x64\Debug\OpenGLTrain.exe : fatal error LNK1120: 11 件の未解決の外部参照

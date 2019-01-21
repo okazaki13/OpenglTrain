@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SpidarAHS API for SLAB: PATHの設定 WindowsXP/2000の場合</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.9 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="pages.html"><span>関連ページ</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1><a class="anchor" name="page_set_path_xp">PATHの設定 WindowsXP/2000の場合 </a></h1>本ソフトウェアではシステムを実行するのに環境変数PATHの設定が必要です。<br>
+ 環境変数PATHに本ソフトウェアのディレクトリであるAHS2009¥binを追加する必要があります。<h2><a class="anchor" name="path_xp_step1">
+Step 1:デスクトップ上のアイコン「マイコンピュータ」を右クリックします。ポップアップメニューの中から「プロパティ」を選択します。</a></h2>
+<div align="center">
+<img src="property_001.jpg" alt="property_001.jpg">
+</div>
+ もしくは「コントロールパネル」から「システム」を実行します。<h2><a class="anchor" name="path_xp_step2">
+Step 2:「システム」の左側にある「タスク」の中の「システムの詳細設定」をクリックします。</a></h2>
+<div align="center">
+<img src="system_property_xp.gif" alt="system_property_xp.gif">
+</div>
+<h2><a class="anchor" name="path_xp_step3">
+Step 3:「環境変数」ダイアログ上のリストの中の「システム環境変数」内に「Path」がありますのでクリックして編集ボタンを押します。</a></h2>
+※現在ログイン中のユーザーアカウントでのみ本ソフトウェアを利用する場合、 および、ユーザーアカウントが「コンピュータの管理者」でない場合には、 「ユーザー環境変数」の「新規」（Pathが存在していない場合）か 「編集」（Pathがすでに存在している場合）のボタンをクリックし、 次の3.の要領で「Path」を追加してください。 <div align="center">
+<img src="path2.gif" alt="path2.gif">
+</div>
+<h2><a class="anchor" name="path_xp_step4">
+Step 4:「システムの変数の編集」ダイアログ内の「変数値」の末尾に次の一文を追加します。</a></h2>
+例：本ソフトウェアライブラリAHS2009をCドライブのトップ(C:¥AHS2009)にインストール（コピー）した場合<br>
+<p>
+ 
+<font color="red">
+;C:¥AHS2009¥bin
+</font>
+<p>
+本ソフトウェアをインストール（コピー）した場所が上記と異なる場合はその場所に合わせて設定してください。<p>
+この際、文字はすべて半角英数です。 冒頭の「;」を忘れないように注意してください。 すでに入力されている値は絶対に消したり、書き換えたりしないでください。 システム起動エラーを起こすことがあります。 <div align="center">
+<img src="path3.gif" alt="path3.gif">
+</div>
+<h2><a class="anchor" name="path_xp_step5">
+Step 5:作業が終了したら「OKボタン」をクリックします。後は、それぞれ「システム」ダイアログと「システムのプロパティ」の「OKボタン」をクリックした後、Windowsを再起動して作業終了です。</a></h2>
+</div>
+<hr>
+
+Generated on 31 Jan 2012 for SpidarAHS API for SLAB 1.0AforSLAB by doxygen 1.5.9<br>
+
+Copyright &copy Katsuhito AKAHANE 2005-2012. All Rights Reserved.
+
+</BODY>
+</HTML>

@@ -1,0 +1,195 @@
+<!-- SPIDAR API 設定ファイルのDTD -->
+<!-- Copyright (c) 2007-2012 Katsuhito AKAHANE. All rights reserved. -->
+
+<!ELEMENT spidar_ahs (
+  controller_type,
+  spidar_type,
+  imp_pset?,imp_qset?,
+  mmt_msec,
+  sh_spi_usec?,
+  sh_spi_mode?,
+  voice_navi,
+  motor_connection+,
+  spidar_motor_definition,
+  controller_motor_definition
+  ) >
+
+<!ELEMENT controller_type EMPTY>
+<!ATTLIST controller_type version (1.0) #REQUIRED >
+<!ATTLIST controller_type type    (AHS_009_02_001A)    #REQUIRED >
+<!ATTLIST controller_type author  (Katsuhito_AKAHANE)  #REQUIRED >
+
+<!ELEMENT spidar_type EMPTY>
+<!ATTLIST spidar_type name (SPIDAR-4|SPIDAR-G|SH_SPIDAR-G|SPIDAR-X|SPIDAR-8|special) #REQUIRED >
+<!ATTLIST spidar_type pos_unit        (m)       #REQUIRED >
+<!ATTLIST spidar_type pos_vel_unit    (mPers)   #REQUIRED >
+<!ATTLIST spidar_type ori_unit        (rad)     #IMPLIED  >
+<!ATTLIST spidar_type ori_vel_unit    (radPers) #IMPLIED  >
+<!ATTLIST spidar_type force_unit      (N)       #REQUIRED >
+<!ATTLIST spidar_type torque_unit     (Nm)      #IMPLIED  >
+
+<!ELEMENT vr_vs_device_scale EMPTY>
+<!ATTLIST vr_vs_device_scale pos_x    CDATA #REQUIRED >
+<!ATTLIST vr_vs_device_scale pos_y    CDATA #REQUIRED >
+<!ATTLIST vr_vs_device_scale pos_z    CDATA #REQUIRED >
+<!ATTLIST vr_vs_device_scale ori_phi  CDATA #REQUIRED >
+<!ATTLIST vr_vs_device_scale force_x  CDATA #REQUIRED >
+<!ATTLIST vr_vs_device_scale force_y  CDATA #REQUIRED >
+<!ATTLIST vr_vs_device_scale force_z  CDATA #REQUIRED >
+<!ATTLIST vr_vs_device_scale torque_x CDATA #REQUIRED >
+<!ATTLIST vr_vs_device_scale torque_y CDATA #REQUIRED >
+<!ATTLIST vr_vs_device_scale torque_z CDATA #REQUIRED >
+
+<!ELEMENT imp_pset EMPTY>
+<!ATTLIST imp_pset repeat    CDATA #IMPLIED >
+<!ATTLIST imp_pset sigma     CDATA #IMPLIED >
+<!ATTLIST imp_pset posxN     CDATA #IMPLIED >
+<!ATTLIST imp_pset orixN     CDATA #IMPLIED >
+
+<!ELEMENT imp_qset EMPTY>
+<!ATTLIST imp_qset repeat    CDATA #IMPLIED >
+<!ATTLIST imp_qset sigma     CDATA #IMPLIED >
+<!ATTLIST imp_qset lambda_f  CDATA #IMPLIED >
+<!ATTLIST imp_qset lambda_t  CDATA #IMPLIED >
+
+<!ELEMENT control_type EMPTY>
+<!ATTLIST control_type id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST control_type name (impedance|admittance|hybrid|open_impedance|special) #REQUIRED >
+
+<!ELEMENT mmt_msec EMPTY>
+<!ATTLIST mmt_msec unit (msec|sec|kHz|Hz) #REQUIRED >
+<!ATTLIST mmt_msec val CDATA #REQUIRED >
+
+<!ELEMENT sh_spi_usec EMPTY>
+<!ATTLIST sh_spi_usec unit (usec|msec|sec|kHz|Hz) #REQUIRED >
+<!ATTLIST sh_spi_usec val CDATA #REQUIRED >
+
+<!ELEMENT sh_spi_mode EMPTY>
+<!ATTLIST sh_spi_mode mode (normal|vc|w3p4|demo) #REQUIRED >
+
+
+<!ELEMENT voice_navi EMPTY>
+<!--<!ATTLIST voice_navi mute (false|true) #REQUIRED >-->
+<!ATTLIST voice_navi skill (beginner|specialist) #REQUIRED >
+
+
+<!ELEMENT motor_connection EMPTY >
+<!ATTLIST motor_connection spidar_ch_id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST motor_connection controller_ch_id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+
+
+<!--<!ELEMENT SPIDARの種類の定義 ()>-->
+<!ELEMENT spidar_motor_definition (
+  control_type+,
+  param*,
+  motor_pos+,  
+  grip_pos+,
+  motor_force+,
+  motor_pwm+,
+  motor_pid_imp*,
+  motor_pid_adm*,
+  correction_targetForceOpen*,
+  correction_adc_to_force*
+  )>
+
+<!ELEMENT param EMPTY>
+<!ATTLIST param name  CDATA #REQUIRED >
+<!ATTLIST param value CDATA #REQUIRED >
+
+<!ELEMENT motor_pos EMPTY >
+<!ATTLIST motor_pos id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST motor_pos unit (mm) #REQUIRED >
+<!ATTLIST motor_pos x CDATA #REQUIRED >
+<!ATTLIST motor_pos y CDATA #REQUIRED >
+<!ATTLIST motor_pos z CDATA #REQUIRED >
+
+<!ELEMENT grip_pos EMPTY >
+<!ATTLIST grip_pos id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST grip_pos unit (mm) #REQUIRED >
+<!ATTLIST grip_pos x CDATA #REQUIRED >
+<!ATTLIST grip_pos y CDATA #REQUIRED >
+<!ATTLIST grip_pos z CDATA #REQUIRED >
+
+<!ELEMENT motor_force EMPTY >
+<!ATTLIST motor_force id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST motor_force unit (N) #REQUIRED >
+<!ATTLIST motor_force min CDATA #REQUIRED >
+<!ATTLIST motor_force max CDATA #REQUIRED >
+
+<!ELEMENT motor_pwm EMPTY >
+<!ATTLIST motor_pwm id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST motor_pwm unit (percent) #REQUIRED >
+<!ATTLIST motor_pwm calibDuty         CDATA #REQUIRED >
+<!ATTLIST motor_pwm afterCalibDuty    CDATA #REQUIRED >
+<!ATTLIST motor_pwm maxDuty           CDATA #REQUIRED >
+
+<!ELEMENT motor_pid_imp EMPTY >
+<!ATTLIST motor_pid_imp id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST motor_pid_imp unit (relative) #REQUIRED >
+<!ATTLIST motor_pid_imp Kp CDATA #REQUIRED >
+<!ATTLIST motor_pid_imp Ki CDATA #REQUIRED >
+<!ATTLIST motor_pid_imp Kd CDATA #REQUIRED >
+<!ATTLIST motor_pid_imp Kb CDATA #IMPLIED >
+<!ATTLIST motor_pid_imp Km CDATA #IMPLIED >
+
+<!ELEMENT motor_pid_adm EMPTY >
+<!ATTLIST motor_pid_adm id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST motor_pid_adm unit (relative) #REQUIRED >
+<!ATTLIST motor_pid_adm Kp CDATA #REQUIRED >
+<!ATTLIST motor_pid_adm Ki CDATA #REQUIRED >
+<!ATTLIST motor_pid_adm Kd CDATA #REQUIRED >
+<!ATTLIST motor_pid_adm add_count CDATA #REQUIRED >
+
+<!ELEMENT correction_targetForceOpen EMPTY >
+<!ATTLIST correction_targetForceOpen id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST correction_targetForceOpen unit (relative) #REQUIRED >
+<!ATTLIST correction_targetForceOpen isActive (true|false) #REQUIRED >
+<!ATTLIST correction_targetForceOpen a0 CDATA #REQUIRED >
+<!ATTLIST correction_targetForceOpen a1 CDATA #REQUIRED >
+<!ATTLIST correction_targetForceOpen a2 CDATA #REQUIRED >
+<!ATTLIST correction_targetForceOpen a3 CDATA #REQUIRED >
+
+<!ELEMENT correction_adc_to_force EMPTY >
+<!ATTLIST correction_adc_to_force id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST correction_adc_to_force unit (relative) #REQUIRED >
+<!ATTLIST correction_adc_to_force isActive (true|false) #REQUIRED >
+<!ATTLIST correction_adc_to_force a0 CDATA #REQUIRED >
+<!ATTLIST correction_adc_to_force a1 CDATA #REQUIRED >
+<!ATTLIST correction_adc_to_force a2 CDATA #REQUIRED >
+<!ATTLIST correction_adc_to_force a3 CDATA #REQUIRED >
+
+
+
+
+<!ELEMENT controller_motor_definition (
+  rotation_dir+,
+  pully+,
+  encoder+,
+  dc_motor+
+  )>
+
+<!ELEMENT rotation_dir EMPTY >
+<!ATTLIST rotation_dir id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST rotation_dir unit (direction) #REQUIRED >
+<!ATTLIST rotation_dir direction (a|b|A|B) #REQUIRED >
+
+<!ELEMENT pully EMPTY >
+<!ATTLIST pully id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST pully unit (mm) #REQUIRED >
+<!ATTLIST pully radius CDATA #REQUIRED >
+
+<!ELEMENT encoder EMPTY >
+<!ATTLIST encoder id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST encoder unit (pulsePerTurn) #REQUIRED >
+<!ATTLIST encoder resolution CDATA #REQUIRED >
+<!ATTLIST encoder interpolation (true|false) #REQUIRED >
+
+<!ELEMENT dc_motor EMPTY >
+<!ATTLIST dc_motor id (-1|0|1|2|3|4|5|6|7) #REQUIRED >
+<!ATTLIST dc_motor unit (mNmPerA) #REQUIRED >
+<!ATTLIST dc_motor torque_constant CDATA #REQUIRED >
+<!ATTLIST dc_motor unit_r (ohm) #REQUIRED >
+<!ATTLIST dc_motor terminal_r CDATA #REQUIRED >
+<!ATTLIST dc_motor unit_v (v) #REQUIRED >
+<!ATTLIST dc_motor terminal_v CDATA #REQUIRED >
+

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SpidarAHS API for SLAB: インストール方法について</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.9 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="pages.html"><span>関連ページ</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1><a class="anchor" name="page_install">インストール方法について </a></h1><br>
+ <br>
+ 　※　注　意　※<br>
+ 　PCの電源投入時にコントローラの電源がオンになっている場合、PCが起動しない場合があります。<br>
+ 　PCの電源投入時にはコントローラの電源がオフになっていることを確認してください。<br>
+ <br>
+ <br>
+<h2><a class="anchor" name="step0_0">
+本ソフトウェアのインストール場所について</a></h2>
+　本ソフトウェアのトップディレクトリ（AHS2009）を好きな場所（利用や開発する上で都合のよい場所）に置いてください。<br>
+ 以下の説明では Cドライブの直下にインストール（コピー）した場合を例にします。 <br>
+ インストールディレクトリを「C:¥AHS2009」とし，よってディレクトリ構成は<br>
+ <pre>
+    C:¥AHS2009
+    ├─bin                 Pathに追加するディレクトリ
+    ├─Driver              デバイスドライバのディレクトリ
+    ├─include             インクルードファイルのディレクトリ
+    └─lib                 ライブラリファイルのディレクトリ
+</pre> として説明します。 <br>
+ <br>
+<h2><a class="anchor" name="step0">
+Step 0:デバイスドライバのインストール</a></h2>
+　コントローラを初回接続した場合に必要になります。（PC側のUSBの接続ポートを変えた場合にも必要になることがあります。）<br>
+ 　・コントローラの電源が切れていることを確認する。<br>
+ 　・USBをPCに接続する。<br>
+ 　・コントローラの電源を入れる。<br>
+ 　・デバイスドライバのインストールが開始されますので、本ライブラリのDriverディレクトリを指定してください。<br>
+<p>
+<a class="el" href="page_device_inst_32bits_win7.html">32bits版 Windows7用　デバイスドライバのインストール方法について</a><br>
+<p>
+　・正常に終了すればデバイスドライバのインストールは完了です。<p>
+<br>
+ <br>
+<h2><a class="anchor" name="step1">
+Step 1:環境変数の設定</a></h2>
+　システムを実行するのに必要です。<br>
+ 　・各自の環境に合わせて、環境変数PATHに本ライブラリのbinディレクトリを追加してください。<br>
+ 　例）path=C:¥AHS2009¥bin　（※注意：これはあくまで例です。各自の環境に合わせて設定してください．）<br>
+<p>
+　また、環境変数の設定のためのスクリプトを用意しました。トップディレクトリにある <b> path_install.wsf </b> スクリプトファイルです。<br>
+ このスクリプトファイルは、このスクリプトファイルと同じディレクトリ内にあるbinディレクトリを「ユーザ環境変数」の「Path」に追加します。<br>
+ 「システム環境変数」ではなく「ユーザ環境変数」ですので、注意してください。<br>
+ すでに設定している場合で、binディレクトリの場所に変更がなければ実行する必要はありません。<br>
+ また、環境変数の重複などは考慮されませんので、再度スクリプトを実行する場合は、環境変数が正しく設定されているか各自確認してください。 環境変数の確認方法はWindowsのバージョンによって異なりますので、各自インターネットなどで調べてください。 <br>
+<p>
+<a class="el" href="page_set_path_xp.html">PATHの設定 WindowsXP/2000の場合</a><p>
+<a class="el" href="page_set_path_vista.html">PATHの設定 WindowsVista場合</a><p>
+<br>
+ <br>
+<h2><a class="anchor" name="step2">
+Step 2:VisualStudioC++の設定</a></h2>
+　コンパイル（アプリケーション開発）するために必要です。<br>
+ 　・インクルードディレクトリの設定<br>
+ 　　本ライブラリのincludeディレクトリを追加してください。 <br>
+ 例）<br>
+ 「ツール」<br>
+ -&gt;「オプション」<br>
+ -&gt;「プロジェクトおよびソリューション」<br>
+ -&gt;「VC++ディレクトリ」<br>
+ -&gt;「ディレクトリを表示するプロジェクト」<br>
+ -&gt;「インクルードファイル」<br>
+ -&gt;「C:¥AHS2009¥include」を追加（本ソフトウェアをインストールしたディレクトリがC:¥AHS2009とする）<br>
+ <br>
+ その他、プロジェクトごとに設定することなども可能です。 詳しくはVisualStudioC++を参照してください。<p>
+<br>
+ <br>
+<h2><a class="anchor" name="step3">
+Step 3:外部ライブラリの追加</a></h2>
+　コンパイル（アプリケーション開発）といくつかのサンプルプログラムを実行するために必要になることがあります。<br>
+ 　・glutについて（すでに下記の項目が実行されていれば問題ありません。）<br>
+ 　　　・include/glutディレクト下にglut.hを追加してください。<br>
+ 　　　・libディレクト下にglut32.libを追加してください。<br>
+ 　　　・binディレクト下にglut32.dllを追加してください。 <br>
+ <br>
+<h2><a class="anchor" name="step4">
+Step 4:完了</a></h2>
+　・サンプルプログラムを実行し正常に動作するか確認してください。<br>
+ 　・インストールは以上で終了です。<br>
+ 　・以後はVisual Studio C++ などの開発環境で各自のアプリケーションを作成してください。 <br>
+ <br>
+<p>
+皆様の素晴らしい発想のもと開発されるアプリケーションを期待します。<p>
+<br>
+<p>
+<div align="center">
+<img src="SPIDARG_AHS_R0.bmp" alt="SPIDARG_AHS_R0.bmp">
+<p><strong>SPIDAR-G（X型フレームタイプ） 右手 ワイヤの貼り方</strong></p></div>
+<div align="center">
+<img src="SPIDARG_AHS_L0.bmp" alt="SPIDARG_AHS_L0.bmp">
+<p><strong>SPIDAR-G（X型フレームタイプ） 左手 ワイヤの貼り方</strong></p></div>
+<br>
+ </div>
+<hr>
+
+Generated on 31 Jan 2012 for SpidarAHS API for SLAB 1.0AforSLAB by doxygen 1.5.9<br>
+
+Copyright &copy Katsuhito AKAHANE 2005-2012. All Rights Reserved.
+
+</BODY>
+</HTML>

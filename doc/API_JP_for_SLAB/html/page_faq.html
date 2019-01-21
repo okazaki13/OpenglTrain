@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SpidarAHS API for SLAB: FAQ (Frequently Asked Questions)</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.9 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="pages.html"><span>関連ページ</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1><a class="anchor" name="page_faq">FAQ (Frequently Asked Questions) </a></h1><br>
+ <h2><a class="anchor" name="inst">
+インストール</a></h2>
+<b> Q 環境変数Pathの設定方法がわからない </b><br>
+ 　<b>A.</b> 本ソフトウェアのトップディレクトリに <b> path_install.wsf </b> というPathを設定するスクリプトファイルがあります。<br>
+ このスクリプトファイルを利用すると、本ソフトウェアのbinディレクトリがPathに追加されます。<br>
+ ただし、重複をチェックするわけではありませんので、複数回このスクリプトを実行するとPathに何度も追加されてしまいます。<br>
+ その時は、環境変数を直接編集してください。（編集方法はインターネット上にあります。[検索:環境変数 Path 編集]） （関連情報：<a class="el" href="page_install.html">インストール方法について</a> ）<p>
+<br>
+ <h2><a class="anchor" name="power">
+電源・起動</a></h2>
+<b> Q 電源が入らない。 </b><br>
+ 　<b>A.</b> 本機と付属のACアダプタ、ACアダプタと電源コード、電源コードとコンセントがそれぞれしっかりつながっているか確認してください。<br>
+ 　<b>A.</b> 通常の操作で電源を切らなかった場合、プログラムの異常で、電源を制御するコントローラが停止している場合があります。ACアダプタをはずして1分ほど待ってから取り付け直し、再度起動してください。<br>
+ 　<b>A.</b> 寒い戸外から暖かい屋内に持ち込んだり、湿度の高い場所で使用した場合は、本機内部に結露が生じている可能性があります。その場合は1時間ほど待ってから電源を入れ直してください。湿度の高い場所での使用は本機の故障の原因となりますのでおやめください。<br>
+<p>
+<b> Q PCが起動しなくなった。 </b><br>
+ 　<b>A.</b> 本機の電源がオンの状態でPCを起動しようとすると、PCが起動しなくなるPCがあります。 本機とPCの相性の問題であると考えられます。<br>
+ このような問題が発生する場合はPCを起動する前に本機の電源がオフであることを確認してから、PCの電源をオンにするようにしてください。<br>
+<p>
+<b> Q 電源投入時にワイヤに衝撃がある。 </b><br>
+ 　<b>A.</b> 本機の電源投入時にワイヤに衝撃が加わることがありますが、性能上問題ありません。そのままお使いください。<br>
+<p>
+<br>
+ <h2><a class="anchor" name="api">
+APIライブラリ</a></h2>
+<b> Q 使い方がわからない </b><br>
+ 　<b>A.</b> 本ソフトウェアには基本的なものから応用的なものまで、サンプルプログラムを用意しています。<br>
+ 基本的な実行方法がわかれば、いろいろな応用ができると思いますので、まずはサンプルプログラムを参考にしてみてください。 （参照：<a class="el" href="page_sample.html">サンプルプログラムについて</a>） <br>
+ 　<b>A.</b> APIはヘッダーファイル <a class="el" href="_spidar_a_h_s_8h.html" title="SpidarAHS 関数定義.">SpidarAHS.h</a> に定義されています。このファイルをインクルードしてライブラリ SpidarAHS.lib をリンクすればコンパイルはOKです。<br>
+ また、実行時には SpidarAHS.dll が必要になります。<br>
+ （ <a class="el" href="_spidar_a_h_s_8h.html" title="SpidarAHS 関数定義.">SpidarAHS.h</a> をクリックするとAPIの関数などの詳しいマニュアルにリンクします。）<p>
+<b> Q API内の力覚提示ループと同じループ内で何らかの処理を行いたい </b><br>
+ 　<b>A.</b> 本ソフトウェアでは力覚提示ループと同じループ内でユーザが自由に処理を追加できるように、 関数 <a class="el" href="_spidar_a_h_s_8h.html#34d369aaf622f08fe9461123cdac12da" title="力覚提示制御ループの中で実行するユーザ関数（コールバック関数）の設�...">ahsSetHapticLoopCallBackFunction()</a> によりコールバック関数を設定できます。<br>
+ この関数の引数でループ内で実行したいコールバック関数を設定すると力覚提示制御ループ内で実行できます。<p>
+<b> Q 複数台のコントローラを実行したい時は </b><br>
+ 　<b>A.</b> 複数台の利用は可能です。<br>
+そのとき、コントローラの電源を入れた順序で <a class="el" href="_spidar_a_h_s_8h.html#3ef6b0edb5dbe81fd0fe94d44555fc95" title="Spidarのためのプログラムの起動と初期化処理．  コントローラの電源を投�...">ahsCreate_Spidar()</a> 関数で対応するコントローラのハンドルを取得できます。<br>
+ ただし、USBの通信帯域の限界などにより台数には限界があります。<br>
+ 力覚提示制御ループの更新周波数やシステム構成にもよりますが、全体で2kHz〜3kHz程度が限界のようです。 つまり、1kHzで制御ループを実行するとしたら2台程度、3台以上実行したければ更新周波数を下げなければコマ落ちのような現象が起きる可能性があります。<p>
+<b> Q 通信速度が不安定になる </b><br>
+ 　<b>A.</b> USBの通信帯域の限界のために、USB機器の使用状況により通信速度が不安定になることがあります。<br>
+ 　<b>A.</b> PC側のUSBコントローラ（ホスト側）・およびそのドライバによっては、通信が不安定（時々途切れる）になることがあります。最新のドライバに更新するなどしてください。<br>
+ 　<b>A.</b> コントローラを複数台接続し、力覚提示ループの更新周波数が高いとUSBの通信帯域の限界のために不安定になることがあります。更新周波数を下げるなどしてください。<br>
+<p>
+<b> Q 音声案内を消したい </b><br>
+ 　<b>A.</b> 関数 <a class="el" href="_spidar_a_h_s_8h.html#3ef6b0edb5dbe81fd0fe94d44555fc95" title="Spidarのためのプログラムの起動と初期化処理．  コントローラの電源を投�...">ahsCreate_Spidar()</a> の引数でisVoiceを0にすると音声案内を無効にできます。<br>
+<p>
+<br>
+ <h2><a class="anchor" name="sample">
+サンプルプログラム</a></h2>
+<b> Q インクルードファイルが読み込めないエラーが発生しコンパイルできない。 </b><br>
+ 　<b>A.</b> 「インストール」ページのインクルードファイルのディレクトの項を参照し、ディレクトリの設定をしてください。<br>
+<p>
+<b> Q ライブラリファイルが読み込めないエラーが発生しリンク（コンパイル）できない。 </b><br>
+ 　<b>A.</b> 本ソフトウェアで利用するライブラリファイルはlibディレクトリにあります。必要なライブラリファイル(.lib)をリンカーに指定してください。<br>
+<p>
+<b> Q glutがない旨のエラーが発生しコンパイルできない。 </b><br>
+ 　<b>A.</b> 「インストール」ページのglutの項を参照し、インストールしてください。<br>
+<p>
+<b> Q 実行時にDLLエラーが発生する。 </b><br>
+ 　<b>A.</b> DLLファイルへのパスが通っていない可能性があります。<a class="el" href="page_install.html">インストール方法について</a> に従ってPATHの設定を行ってください。<br>
+<p>
+<b> Q 力覚が提示されません。 </b><br>
+ 　<b>A.</b> <a class="el" href="_spidar_a_h_s_8h.html#59ffaa6b08e8965067c049c18e7ad140" title="力覚提示制御を有効・無効にする">ahsActive()</a> で力覚制御がアクティブになっていますか？<br>
+ impedance制御・admittance制御時には <a class="el" href="_spidar_a_h_s_8h.html#59ffaa6b08e8965067c049c18e7ad140" title="力覚提示制御を有効・無効にする">ahsActive()</a> がアクティブになっていないと力覚提示が有効になりません。<br>
+ なお、open_impedance制御時には <a class="el" href="_spidar_a_h_s_8h.html#59ffaa6b08e8965067c049c18e7ad140" title="力覚提示制御を有効・無効にする">ahsActive()</a> が無効の時にオープン制御になり有効になるとクローズド制御（impedance制御と同等）になります。<br>
+ 力覚提示時にはクローズド制御で利用してください．力覚提示の品質が高まります．<p>
+<br>
+ <h2><a class="anchor" name="error">
+エラーメッセージ</a></h2>
+<b> Q 起動時に「error:Can't found USB connection.」とエラーメッセージが表示される。 </b><br>
+ 　<b>A.</b> 電源が接続されていない可能性があります。電源の接続を確認してください。参照:<a class="el" href="page_faq.html#power">電源・起動</a> <br>
+ 　<b>A.</b> USBケーブルが接続されていない可能性があります。USBケーブルの接続を確認してください。 <br>
+ 　<b>A.</b> USBケーブルの断線などの可能性があります。USBケーブルの状態を確認してください。（場合によっては交換してください。） <br>
+<p>
+<b> Q 起動時に「.xml file's analysis is failed.」とエラーメッセージが表示される。 </b><br>
+ 　<b>A.</b> 設定ファイル（.xml）の解析に失敗しています。設定ファイルの場所、内容など間違っていないか確認してください。設定ファイルの編集はしないようにしてください。<br>
+<p>
+<br>
+ </div>
+<hr>
+
+Generated on 31 Jan 2012 for SpidarAHS API for SLAB 1.0AforSLAB by doxygen 1.5.9<br>
+
+Copyright &copy Katsuhito AKAHANE 2005-2012. All Rights Reserved.
+
+</BODY>
+</HTML>

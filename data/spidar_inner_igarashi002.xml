@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<!DOCTYPE spidar_ahs SYSTEM "spidar_ahs_001.dtd" >
+<!-- SPIDAR/AHS System Information File                              -->
+<!-- Copyright (c) 2007-2009 Katsuhito AKAHANE. All rights reserved. -->
+
+<!-- for New SPIDAR-INN designed by Tatsuro IGARASHI (2010/12)-->
+
+
+<spidar_ahs>
+  <controller_type version="1.0" type="AHS_009_02_001A" author="Katsuhito_AKAHANE"/>
+  <!-- SPIDARのタイプの設定-->
+  <spidar_type name="SPIDAR-G" pos_unit="m" pos_vel_unit="mPers" ori_unit="rad" ori_vel_unit="radPers" force_unit="N" torque_unit="Nm"/>
+  <imp_pset repeat="2" sigma="0.001" posxN="0.9" orixN="60.0"/>
+  <imp_qset repeat="8" sigma="0.05" lambda_f="1.0" lambda_t="0.001"/>
+  <!--<imp_qset repeat="8" sigma="0.05" lambda_f="1.0" lambda_t="0.001"/>-->
+
+  <!--マルチメディアタイマの設定-->
+  <mmt_msec unit="kHz" val="1.0"/>
+  <!--音声案内の設定-->
+  <voice_navi skill="beginner"/>
+
+
+  <!-- SPIDAR系モータ番号とコントローラ系モータ番号の関連づけ -->
+  <!-- SPIDAR-G or そのままの接続でOKなSPIDAR -->
+  <motor_connection spidar_ch_id="-1" controller_ch_id="-1"/>
+  <!-- ↑の記述は↓の8行と同じ事 idがマイナスのときはすべてのidが同じ値に設定される-->
+  <!--
+  <motor_connection spidar_ch_id="0" controller_ch_id="0"/>
+  <motor_connection spidar_ch_id="1" controller_ch_id="1"/>
+  <motor_connection spidar_ch_id="2" controller_ch_id="2"/>
+  <motor_connection spidar_ch_id="3" controller_ch_id="3"/>
+  <motor_connection spidar_ch_id="4" controller_ch_id="4"/>
+  <motor_connection spidar_ch_id="5" controller_ch_id="5"/>
+  <motor_connection spidar_ch_id="6" controller_ch_id="6"/>
+  <motor_connection spidar_ch_id="7" controller_ch_id="7"/>
+  -->
+  
+  <!-- SPIDAR-4 (2組分) -->
+  <!--
+  <motor_connection spidar_ch_id="0" controller_ch_id="6"/>
+  <motor_connection spidar_ch_id="1" controller_ch_id="4"/>
+  <motor_connection spidar_ch_id="2" controller_ch_id="3"/>
+  <motor_connection spidar_ch_id="3" controller_ch_id="1"/>
+  <motor_connection spidar_ch_id="4" controller_ch_id="5"/>
+  <motor_connection spidar_ch_id="5" controller_ch_id="7"/>
+  <motor_connection spidar_ch_id="6" controller_ch_id="0"/>
+  <motor_connection spidar_ch_id="7" controller_ch_id="2"/>
+  -->
+  
+
+  <!-- SPIDARの情報定義（idはSPIDAR系モータ番号） -->
+  <spidar_motor_definition>
+    <!-- 制御タイプの設定-->
+    <control_type id="-1"  name="open_impedance"/>
+
+    <!--xml中のパラメータは32個までOK-->
+    <param name="dx" value="30.0/2.0"/>
+    <param name="dy" value="30.0/2.0"/>
+    <param name="dz" value="42.3/2.0"/>
+    <param name="r"  value="60.0/2.0"/>
+    <!--糸の接続点（モータからの糸の出口）-->
+    <!--motor_posのx,y,zの値の指定には数式の +,-,/,*,cos(),sin(),tan()　に対応予定 -->
+    <!--pi=3.141592...は PI or pi or Pi or 4.0*atan(1.0) で計算可能-->
+    
+    <!--SPIDAR-I用OpenGLの座標系に合わせているspidar_i_001とspidar_i_002でyとzの座標を入れ替えた-->
+    <motor_pos   id="0" unit="mm" x="0.0"  z=" dy"  y=" dz" />
+    <motor_pos   id="1" unit="mm" x=" dx"  z="0.0"  y=" dz" />
+    <motor_pos   id="2" unit="mm" x=" dx"  z="0.0"  y="-dz" />
+    <motor_pos   id="3" unit="mm" x="0.0"  z="-dy"  y="-dz" />
+    <motor_pos   id="4" unit="mm" x="0.0"  z="-dy"  y=" dz" />
+    <motor_pos   id="5" unit="mm" x="-dx"  z="0.0"  y=" dz" />
+    <motor_pos   id="6" unit="mm" x="-dx"  z="0.0"  y="-dz" />
+    <motor_pos   id="7" unit="mm" x="0.0"  z=" dy"  y="-dz" />
+
+    <!--糸の接続点（グリップ上）-->
+    <!--grip_posのx,y,zの値の指定には数式の +,-,/,*,cos(),sin(),tan()　に対応予定 -->
+    <grip_pos    id="0" unit="mm" x=" -r" z="  r" y="0.0"/>
+    <grip_pos    id="1" unit="mm" x="  r" z=" -r" y="0.0"/>
+    <grip_pos    id="2" unit="mm" x="  r" z="  r" y="0.0"/>
+    <grip_pos    id="3" unit="mm" x=" -r" z=" -r" y="0.0"/>
+    <grip_pos    id="4" unit="mm" x="  r" z=" -r" y="0.0"/>
+    <grip_pos    id="5" unit="mm" x=" -r" z="  r" y="0.0"/>
+    <grip_pos    id="6" unit="mm" x=" -r" z=" -r" y="0.0"/>
+    <grip_pos    id="7" unit="mm" x="  r" z="  r" y="0.0"/>
+
+    <!-- 最大張力・最低張力の設定 max を5.0から1.2に変更 -->
+    <motor_force id="0" unit="N"  min="0.025" max="1.2"/>
+    <motor_force id="1" unit="N"  min="0.025" max="1.2"/>
+    <motor_force id="4" unit="N"  min="0.025" max="1.2"/>
+    <motor_force id="5" unit="N"  min="0.025" max="1.2"/>
+    
+    <motor_force id="2" unit="N"  min="0.02" max="1.2"/>
+    <motor_force id="3" unit="N"  min="0.02" max="1.2"/>
+    <motor_force id="6" unit="N"  min="0.02" max="1.2"/>
+    <motor_force id="7" unit="N"  min="0.02" max="1.2"/>
+
+    <!-- キャリブレーション時のPWMのデューティ比の設定 -->
+    <motor_pwm   id="-1" unit="percent" calibDuty="20.0" afterCalibDuty="10.0" maxDuty="100.0"/>
+
+    <!-- motor_pid_imp　リリース時は削除 -->
+    <!-- インピーダンス制御時のPIDの係数設定 -->
+    <motor_pid_imp   id="-1" unit="relative" Kp="1.25" Ki="0.125" Kd="-0.25"/>
+    <!--<motor_pid_imp   id="-1" unit="relative" Kp="0.75" Ki="0.005" Kd="-0.25"/>-->
+
+    <!-- motor_pid_adm　リリース時は削除 -->
+    <!-- アドミッタンス制御時のPIDの係数設定 -->
+    <motor_pid_adm   id="-1" unit="relative" Kp="-32.0" Ki="-0.01" Kd="0.01" add_count="-20"/>
+
+    <!--
+    <motor_pid_adm   id="0" unit="relative" Kp="-128.0" Ki="-0.1" Kd="0.0" add_count="10"/>
+    <motor_pid_adm   id="1" unit="relative" Kp="-128.0" Ki="-0.1" Kd="0.0" add_count="10"/>
+    <motor_pid_adm   id="2" unit="relative" Kp="-128.0" Ki="-0.1" Kd="0.0" add_count="10"/>
+    <motor_pid_adm   id="3" unit="relative" Kp="-128.0" Ki="-0.1" Kd="0.0" add_count="10"/>
+    <motor_pid_adm   id="4" unit="relative" Kp="-128.0" Ki="-0.1" Kd="0.0" add_count="10"/>
+    <motor_pid_adm   id="5" unit="relative" Kp="-128.0" Ki="-0.1" Kd="0.0" add_count="10"/>
+    <motor_pid_adm   id="6" unit="relative" Kp="-128.0" Ki="-0.1" Kd="0.0" add_count="10"/>
+    <motor_pid_adm   id="7" unit="relative" Kp="-128.0" Ki="-0.1" Kd="0.0" add_count="10"/>
+    -->
+
+    <correction_targetForceOpen id="-1" isActive="true" unit="relative" a0="-1.22740366847795e-4" a1="2.93930031745995e-2" a2="-1.27702281776925e-1" a3="0"/>
+    <correction_adc_to_force id="-1" isActive="true" unit="relative" a0="5.69968601828734e-5" a1="3.46453656738059e-3" a2="-2.49144486294754.e-2" a3="0"/>
+
+  </spidar_motor_definition>
+
+  <!-- コントローラに接続されているモータの定義（idはコントローラ系モータ番号） -->
+  <controller_motor_definition>
+    <rotation_dir id="0" unit="direction" direction="a"/>
+    <rotation_dir id="1" unit="direction" direction="b"/>
+    <rotation_dir id="2" unit="direction" direction="a"/>
+    <rotation_dir id="3" unit="direction" direction="b"/>
+    <rotation_dir id="4" unit="direction" direction="a"/>
+    <rotation_dir id="5" unit="direction" direction="b"/>
+    <rotation_dir id="6" unit="direction" direction="a"/>
+    <rotation_dir id="7" unit="direction" direction="b"/>
+
+    <!--プーリの半径 [mm]-->
+    <pully    id="-1" unit="mm" radius="4.5"/>
+
+    <!--Maxon 271107(201940:MRエンコーダTypeM 512Imp) の相順(a or b)と分解能[パルス/回転]-->
+    <encoder  id="-1" unit="pulsePerTurn" resolution="512" interpolation="true"/>
+
+    <!--Maxon 271107(220429:RE-max24) のトルク定数 [mNm/A] と端子間抵抗 [ohm] と実際にモータにかけている端子間電圧[v]-->
+    <!--<dc_motor id="-1" unit="mNmPerA" torque_constant="21.3" unit_r="ohm" terminal_r="6.46*0.5" unit_v="v" terminal_v="12.0"/>-->
+    <!--<dc_motor id="-1" unit="mNmPerA" torque_constant="17.2951" unit_r="ohm" terminal_r="6.46*0.8" unit_v="v" terminal_v="12.0"/>-->
+    <!--<dc_motor id="-1" unit="mNmPerA" torque_constant="21.3*0.8" unit_r="ohm" terminal_r="6.46*0.8" unit_v="v" terminal_v="12.0"/>-->
+    
+    <!--Maxon 216010のトルク定数 [mNm/A] と端子間抵抗 [ohm] と実際にモータにかけている端子間電圧[v]-->
+    <dc_motor id="-1" unit="mNmPerA" torque_constant="10.1" unit_r="ohm" terminal_r="8.30" unit_v="v" terminal_v="12.0"/>
+
+  </controller_motor_definition>
+
+
+
+</spidar_ahs>

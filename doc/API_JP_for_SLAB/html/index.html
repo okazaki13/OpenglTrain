@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SpidarAHS API for SLAB: SpidarAHS APIマニュアル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.9 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li class="current"><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="pages.html"><span>関連ページ</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>SpidarAHS APIマニュアル</h1>
+<p>
+<h3 align="center">1.0AforSLAB </h3><h2><a class="anchor" name="intro_sec">
+Introduction</a></h2>
+本システムは、まだ不完全ですが、新しいコントローラ用のSpidarAHS(<a class="el" href="_spidar_a_h_s_8h.html" title="SpidarAHS 関数定義.">SpidarAHS.h</a>)APIライブラリです．<br>
+ これから徐々に充実していく予定です．APIライブラリはファイル名の後ろに日付でバージョンアップしていきます．<br>
+ <b>現在はWindows対応のみ（Windows XP, Windows Vista, Windows 7）です。</b> <br>
+ ※英語版のマニュアルは未完成です。<p>
+<b>※　注　意　※</b><br>
+ 佐藤研内での利用において制限なしで利用できます．<br>
+ 外部での無断使用は禁止します．使用したい場合は連絡してください． <b>現状非公開です。</b><br>
+<p>
+本ソフトウェアはワイヤ駆動型力覚提示装置を制御するためのライブラリです。<br>
+ 本ライブラリでは<br>
+ ・4本糸で並進3自由度の位置計測および力覚提示可能なデバイス<br>
+ ・8本糸で並進・回転6自由度の位置・姿勢計測および力覚提示可能なデバイス<br>
+ を制御できます。<br>
+<h3><a class="anchor" name="仕様">
+仕様</a></h3>
+<table border="1" cellspacing="3" cellpadding="3">
+<tr>
+<td>ライブラリ形式　　　　　 　  </td><td>Win32 DLL(ダイナミックリンクライブラリ)　　　　　　  </td></tr>
+<tr>
+<td>動作OS </td><td>Windows7(64bit, 32bit), WindowsVista(64bit, 32bit), WindowsXP(32bit), Windows2000(32bit)  </td></tr>
+<tr>
+<td>開発ツール </td><td>Microsoft Visual C++ 2008  </td></tr>
+<tr>
+<td>開発言語 </td><td>C++  </td></tr>
+</table>
+<p>
+※DLLに関する詳しい情報はMicrosoftの情報に従ってください。<br>
+<p>
+Spidarを利用するには、下記のファイルを用いることで可能となります。 （ファイル名(*.h)をクリックするとAPIのリファレンスマニュアルにリンクします。） <br>
+<p>
+<table border="1" cellspacing="3" cellpadding="3">
+<tr>
+<td>ヘッダーファイル 　　　　　 </td><td><a class="el" href="_spidar_a_h_s_8h.html" title="SpidarAHS 関数定義.">SpidarAHS.h</a>　　　　　　　　　　　　　　　　　　　　　　  </td></tr>
+<tr>
+<td>ライブラリファイル </td><td>SpidarAHS.lib  </td></tr>
+<tr>
+<td>DLLファイル </td><td>SpidarAHS.dll  </td></tr>
+</table>
+<p>
+このライブラリにより、C++の関数からSpidarを制御できます。<br>
+ これまでのSpidarライブラリでは力覚提示の制御ループはライブラリに含まれませんでしたが、 本ライブラリでは力覚提示の制御ループをライブラリ内部でマルチメディアタイマーを用いて実現しています。 より簡単にSpidarを実行することが可能になりました。<p>
+<br>
+<h2><a class="anchor" name="link_sec">
+Link</a></h2>
+本ソフトウェアについて関連する情報については下記のリンク先を参照してください。<p>
+<a class="el" href="page_install.html">インストール方法について</a><p>
+<a class="el" href="page_dir_list.html">本ソフトウェアのディレクトリ構造について</a><p>
+<a class="el" href="page_controller.html">コントローラについて</a><p>
+<a class="el" href="page_spidar.html">SPIDARについて</a><p>
+<a class="el" href="page_spidar_gcc.html">SPIDAR-GCCの組立マニュアル</a><p>
+<a class="el" href="page_setting.html">設定ファイル(.xml)について</a><p>
+<a class="el" href="page_test_prog.html">コントローラテストプログラムについて</a><p>
+<a class="el" href="page_sample.html">サンプルプログラムについて</a><p>
+<a class="el" href="page_faq.html">FAQ (Frequently Asked Questions)</a><p>
+<a class="el" href="page_word.html">用語について</a><p>
+<a class="el" href="page_kisai.html">記載について</a><p>
+<a class="el" href="page_copyright.html">著作権について</a><p>
+<a class="el" href="page_history.html">開発履歴</a><p>
+<br>
+ <h2><a class="anchor" name="onegai_sec">
+お願い</a></h2>
+電気製品は安全のための注意事項を守らないと、火災や人身事故になることがあります。 このマニュアルには事故を防ぐための重要な注意事項と本機を使う前の重要な準備について説明します。 このマニュアルをよくお読みのうえ、製品を安全にお使いください。<br>
+ 購入時に決められた条件以外で、製品およびソフトウェアの複製もしくはコピーをすることは禁じられています。 取り扱いには注意してください。 重要な内容は必ず、定期的にバックアップをとって保存してください。 ご使用の際は必ず本書をはじめとする各説明書をお読みください。<p>
+ 
+
+<font size="1">
+
+<b>
+※　重　要　事　項　※
+</b>
+<br>
+本ソフトウェア開発者、私、赤羽克仁は、本ソフトウェアにより生じるいかなる事柄に対して、
+一切の責任を負わないことをここに明記します。
+各自の責任において利用してください。
+本ソフトウェアはモータを駆動するためのソフトウェアを含んでおり、誤った制御指令はユーザに対し
+危害を及ぼす可能性、またデバイスの破損・発熱による火災が発生する可能性があります。
+ソフトウェアの開発には十分注意を払い、十分なテストを行ってください。
+<br>
+音楽、映像、コンピュータ・プログラム、データベースなどは著作権法により、その著作者および著作権者の権利が保護されています。
+こうした著作物を複製することは、個人的にまたは家庭内で使用する目的でのみ行うことができます。
+上記の目的を超えて、権利者の了解なくこれを複製(データ形式の変換を含む)、改変、複製物の譲渡、ネットワーク上での配信などを行うと、「著作権侵害」「著作者人格権侵害」として損害賠償の請求や刑事処罰を受けることがあります。
+本製品を使用して複製などをする場合には、著作権法を厳守の上、適切な使用を心がけてください。
+</font>
+
+ </div>
+<hr>
+
+Generated on 31 Jan 2012 for SpidarAHS API for SLAB 1.0AforSLAB by doxygen 1.5.9<br>
+
+Copyright &copy Katsuhito AKAHANE 2005-2012. All Rights Reserved.
+
+</BODY>
+</HTML>

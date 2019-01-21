@@ -1,0 +1,9 @@
+FX2  API Model:303i [Version     5.1020:110331:    5.1020:110331(Jan 30 2012:15:46:46)](Jan 30 2012 15:46:46)
+Copyright (c) 2005-2012 Katsuhito AKAHANE. All rights reserved.
+Date:2013/05/09 15:13:04
+
+<CFx2API::CFx2API>
+<CFx2USB::CFx2USB>
+    <CFx2CyUSB::Init(-1)>
+<CFx2USB::~CFx2USB>
+<CFx2API::~CFx2API>

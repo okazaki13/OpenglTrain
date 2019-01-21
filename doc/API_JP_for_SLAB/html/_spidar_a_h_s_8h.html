@@ -1,0 +1,1927 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SpidarAHS API for SLAB: SpidarAHS.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.9 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="pages.html"><span>関連ページ</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>SpidarAHS.h</h1>SpidarAHS 関数定義.  
+<a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;windows.h&gt;</code><br>
+
+<p>
+<a href="_spidar_a_h_s_8h_source.html">ソースコードを見る。</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>マクロ定義</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="204019d49e8c00d3e5ee8d6792f0f469"></a><!-- doxytag: member="SpidarAHS.h::SPIDARAHS_API" ref="204019d49e8c00d3e5ee8d6792f0f469" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>SPIDARAHS_API</b>&nbsp;&nbsp;&nbsp;__declspec(dllimport)</td></tr>
+
+<tr><td colspan="2"><br><h2>型定義</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="1bd92668700a9ed5ddcfd9aa54dd509a"></a><!-- doxytag: member="SpidarAHS.h::SPIDAR_HANDLE" ref="1bd92668700a9ed5ddcfd9aa54dd509a" args="" -->
+typedef HANDLE&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Spidarの識別用ハンドル．<br>
+ コントローラ1台に対して1つのハンドルが対応する．<br>
+ <b>SPIDAR-Gのとき（8本糸で並進3自由度・回転3自由度）</b><br>
+ コントローラ1台に対して1組のSPIDARが実行可能 AHS_SPIDAR_G, <a class="el" href="_spidar_a_h_s_8h.html#fd8e779c04b62e0ab05731f1968f45ff" title="【今後廃止（ahsCreate_Spidarを使ってください）】  SpidarG(並進・回転6自由度�...">ahsCreate_SpidarG()</a><br>
+ <b>SPIDAR-4のとき（4本糸で並進3自由度）</b><br>
+ コントローラ1台に対して2組のSPIDARが実行可能 AHS_SPIDAR_4, <a class="el" href="_spidar_a_h_s_8h.html#fb1619453da9310e29f3a48be24879f7" title="【今後廃止（ahsCreate_Spidarを使ってください）】  Spidar4(並進3自由度の4本糸...">ahsCreate_Spidar4()</a><br>
+ <b>SPIDAR-Xのとき（8本糸を独立に操作）</b><br>
+ コントローラ1台に対して8組のSPIDARが実行可能 AHS_SPIDAR_X, <a class="el" href="_spidar_a_h_s_8h.html#398cef7b2379f7910d56a23c1999b8dd" title="【今後廃止（ahsCreate_Spidarを使ってください）】  SpidarX(ユーザが任意で糸�...">ahsCreate_SpidarX()</a><br>
+. <br></td></tr>
+<tr><td colspan="2"><br><h2>列挙型</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#58e495798d9b952f2acb602244c7570f">AhsSpidarTypeEnum</a> { <br>
+&nbsp;&nbsp;<a class="el" href="_spidar_a_h_s_8h.html#58e495798d9b952f2acb602244c7570fd54a3dace02ad527e4d86f181f021309">AHS_SPIDAR_4</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#58e495798d9b952f2acb602244c7570fbd48de9023b2ad43c21c2c04300a8cc5">AHS_SPIDAR_G</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#58e495798d9b952f2acb602244c7570f90dafcd748b6f3bf11fca06cad299267">AHS_SH_SPIDAR_G</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#58e495798d9b952f2acb602244c7570f9a95103398d5ee74ff86d177f6e86463">AHS_SPIDAR_8</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="_spidar_a_h_s_8h.html#58e495798d9b952f2acb602244c7570ff8cee9ffd371246ea8f39fc78140d328">AHS_SPIDAR_X</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#58e495798d9b952f2acb602244c7570f2bbab7246205e3019fdfd685b55db58e">AHS_SPIDAR_TYPE_ENUM_MAX</a>
+<br>
+ }</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">生成するSPIDARタイプ  <a href="_spidar_a_h_s_8h.html#58e495798d9b952f2acb602244c7570f">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7">AhsGetEnum</a> { <br>
+&nbsp;&nbsp;<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7345475b7cbc7103bae3ba1d8cbcd07dc">GET_SPIDAR_NUM_IV1</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7cf6b63ecdf5f2af288bee378ba508aac">GET_ENC_PHS_ALL8CH_CV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7983c502a1d238982ec830ab4fed42e7b">GET_ENC_COUNT_ALL8CH_FV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7f82766f6b497c607b11d0a6125fdc187">GET_ENC_COUNT_ALL8x3CH_FV24</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f77616820a65afa6c0513c1abaedca691d">GET_WIRE_LENGTH_ALL8CH_FV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7dbc5c43132f3468a2338564afcc38a57">GET_MOTOR_POS0_ALL8CH_FV3x8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7ccdc1192d6b681c0339b1f8e77f5a053">GET_MOTOR_POS0_ALL8x3CH_FV3x24</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f72b349cd556ae396db0939c96122d3625">GET_GRIP_POS0_ALL8CH_FV3x8</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f797e162f21c305530b2b74f86bf0a9505">GET_GRIP_POS0_ALL8x3CH_FV3x24</a>, 
+<b>GET_PWM_DUTY_ALL8CH_FV8</b>, 
+<b>GET_ADC_FORCE_ALL8CH_FV8</b>, 
+<b>GET_ADC_RAW_ALL8CH_IV8</b>, 
+<br>
+&nbsp;&nbsp;<b>GET_ADC_FIR_RAW_ALL8CH_IV8</b>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7a495b23ec47502424ad8f86329ca3921">GET_PID_TARGET_ALL8CH_IV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7d32ddeb292602072c24d8c22f4f881e8">GET_PID_AMP_TEST_ALL8CH_FV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7e48fd94c5736463c92106354f61b5d68">GET_ADM_PID_PV_TEST_ALL8CH_IV8</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f74f9e7050705d6f2815c36cb0e1136a39">GET_ADM_PID_SV_TEST_ALL8CH_IV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f75dd2dd45cc22d2247cc004de23a291c7">GET_ADM_PID_KP_TEST_ALL8CH_FV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7ba0ebbdc12f19e84b6a08b553c33db3f">GET_ADM_PID_KI_TEST_ALL8CH_FV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f761ee1265edd5cc9e1174f26f0dd6a2b7">GET_ADM_PID_KD_TEST_ALL8CH_FV8</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7de7de059fd295748f6dce30c6bc7b0c4">GET_IMP_PID_PV_TEST_ALL8CH_IV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f761149eb0c65e3830d9b4ed73af8e4143">GET_IMP_PID_SV_TEST_ALL8CH_IV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f71b1407b67d02d94c8f3ad39addec2138">GET_IMP_PID_KP_TEST_ALL8CH_FV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7469f40bc2a7dd42b8e070932e908506e">GET_IMP_PID_KI_TEST_ALL8CH_FV8</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7374cebf2e70fb050b6c2020cd30c9561">GET_IMP_PID_KD_TEST_ALL8CH_FV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7855e548dab7e447ea88284547493a972">GET_VC_POS_ORI_NORM_FV2</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f73bd160dd567eeb8cb9a2fe4656f73336">GET_HAPTIC_LOOP_MSEC_IV1</a>, 
+<b>GET_SH_SEND_DATA_LEN_UCV1</b>, 
+<br>
+&nbsp;&nbsp;<b>GET_SH_RECEIVE_DATA_LEN_UCV1</b>, 
+<b>GET_API_VER_STR_CV128</b>, 
+<b>GET_API_COPY_RIGHT_STR_CV128</b>, 
+<a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f73d80620b1751eeb4bd11f08e96f9ae94">AHS_GET_ENUM_MAX</a>
+<br>
+ }</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">【拡張機能】値取得拡張機能のための種目定数<br>
+ 今後追加予定  <a href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#ff8d118e10d4d4d9717796ba6ba93b51">AhsSetEnum</a> { <br>
+&nbsp;&nbsp;<b>SET_PWM_DUTY_PERCENT_ALL8CH_FV8</b>, 
+<a class="el" href="_spidar_a_h_s_8h.html#ff8d118e10d4d4d9717796ba6ba93b515d5c1edaf62625a7809342916ab5ee0b">SET_PID_SV_TEST_ALL8CH_IV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#ff8d118e10d4d4d9717796ba6ba93b516d2ee79a0b58604ed1fa6b8d4800c92d">SET_PID_KP_TEST_ALL8CH_FV8</a>, 
+<a class="el" href="_spidar_a_h_s_8h.html#ff8d118e10d4d4d9717796ba6ba93b51665c880f348660ef71efdf8be6eb5e8d">SET_PID_KI_TEST_ALL8CH_FV8</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="_spidar_a_h_s_8h.html#ff8d118e10d4d4d9717796ba6ba93b519b22c31fbf451d9c8bc9c064b27d6ab8">SET_PID_KD_TEST_ALL8CH_FV8</a>, 
+<b>SET_PID_MODE_IV8</b>, 
+<b>SET_SH_HAPTIC_RENDERING_TYPE_CV1</b>, 
+<a class="el" href="_spidar_a_h_s_8h.html#ff8d118e10d4d4d9717796ba6ba93b51e8ddaaa77f73afb84d988ddaad09d639">AHS_SET_ENUM_MAX</a>
+<br>
+ }</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">【拡張機能】値設定拡張機能のための種目定数<br>
+ 今後追加予定  <a href="_spidar_a_h_s_8h.html#ff8d118e10d4d4d9717796ba6ba93b51">[詳細]</a><br></td></tr>
+<tr><td colspan="2"><br><h2>関数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#3ef6b0edb5dbe81fd0fe94d44555fc95">ahsCreate_Spidar</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *handle, char *xmlFileName, int isVoice=1, int usb_id=-1)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Spidarのためのプログラムの起動と初期化処理．<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0のみ設定可能）.  <a href="#3ef6b0edb5dbe81fd0fe94d44555fc95"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#193e613e484a79ccc28e92f5c9774336">ahsCreate_Spidar</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *handle, <a class="el" href="_spidar_a_h_s_8h.html#58e495798d9b952f2acb602244c7570f">AhsSpidarTypeEnum</a> type, char *xmlFileName, int isVoice=1, int usb_id=-1)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">【今後廃止（ahsCreate_Spidar(SPIDAR_HANDLE* handle,char* xmlFileName)を使ってください）】<br>
+ Spidarのためのプログラムの起動と初期化処理．<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0のみ設定可能）  <a href="#193e613e484a79ccc28e92f5c9774336"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#fd8e779c04b62e0ab05731f1968f45ff">ahsCreate_SpidarG</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *handle, char *xmlFileName, int usb_id=-1)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">【今後廃止（ahsCreate_Spidarを使ってください）】<br>
+ SpidarG(並進・回転6自由度の8本糸でグリップタイプ)のためのプログラムの起動と初期化処理．<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0のみ設定可能）  <a href="#fd8e779c04b62e0ab05731f1968f45ff"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#fa7630e334233e8d9844457985300e11">ahsCreate_Spidar8</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *handle, char *xmlFileName, int usb_id=-1)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">【今後廃止（ahsCreate_Spidarを使ってください）】<br>
+ SPIDAR_8:並進3自由度の3本糸でポインタタイプが8セット（左手4指＋右手4指）<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0のみ設定可能）  <a href="#fa7630e334233e8d9844457985300e11"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#fb1619453da9310e29f3a48be24879f7">ahsCreate_Spidar4</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *handle, char *xmlFileName, int usb_id=-1)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">【今後廃止（ahsCreate_Spidarを使ってください）】<br>
+ Spidar4(並進3自由度の4本糸でベーシックなタイプ)のためのプログラムの起動と初期化処理．<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0もしくは1を設定可能）  <a href="#fb1619453da9310e29f3a48be24879f7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#398cef7b2379f7910d56a23c1999b8dd">ahsCreate_SpidarX</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *handle, char *xmlFileName, int usb_id=-1)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">【今後廃止（ahsCreate_Spidarを使ってください）】<br>
+ SpidarX(ユーザが任意で糸のコントロールをするときに使うタイプ)のためのプログラムの起動と初期化処理．<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0から7までを設定可能） （※まだテスト不足）  <a href="#398cef7b2379f7910d56a23c1999b8dd"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#417ec56b61ee41da0c037ac1f9c9f16f">ahsStartHapticLoop</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">力覚提示制御ループの開始<br>
+ マルチメディアタイマによる1kHzの更新周波数（設定ファイルにより更新周波数の変更が可能）<br>
+ ※注意：コントローラ単位（SPIDAR_HANDLE単位）でタイマを起動する必要がある。<br>
+ 複数台コントローラを接続する場合、コントローラの台数分制御ループが回ることになる。  <a href="#417ec56b61ee41da0c037ac1f9c9f16f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#59ffaa6b08e8965067c049c18e7ad140">ahsActive</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, int isActive, int spidar_id=-1)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">力覚提示制御を有効・無効にする  <a href="#59ffaa6b08e8965067c049c18e7ad140"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#9eac7f1bdf329384011c63c22974877d">ahsCalib</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, int spidar_id=-1)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Spidarのキャリブレーションを行う.  <a href="#9eac7f1bdf329384011c63c22974877d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#f1a499f4243505bbc348f7c2b2a66445">ahsStopHapticLoop</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">力覚提示制御ループの停止  <a href="#f1a499f4243505bbc348f7c2b2a66445"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API <a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#fdc47d46250e03cce211fc3bb674d1a6">ahsQuit</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Spiarの終了処理<br>
+ ※注意：プログラムの終了時には必ず実行して正しくSpidarAPIを終了してください.  <a href="#fdc47d46250e03cce211fc3bb674d1a6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#dff5c252925c9b843f542ca8b7a5c21f">ahsGetImpPosVel</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float posVel[3], int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">並進速度の取得（インピーダンス制御用）  <a href="#dff5c252925c9b843f542ca8b7a5c21f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#a754f288463d2129a593b81c2cec5de2">ahsGetImpOriVel</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float posVel[3], int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">回転速度の取得（インピーダンス制御用）  <a href="#a754f288463d2129a593b81c2cec5de2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#df05a52bffb893b7aec70a505af989b6">ahsGetImpPos</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float pos[3], int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">並進位置の取得（インピーダンス制御用）  <a href="#df05a52bffb893b7aec70a505af989b6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#c32dfb5a3318fbca662591a2316a8ae5">ahsGetImpOri_wxyz</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float ori[4], int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">回転姿勢の取得（インピーダンス制御用）  <a href="#c32dfb5a3318fbca662591a2316a8ae5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#f23312d0af7dee923f64933b95634c7e">ahsSetImpForce</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float force[3], int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">並進提示力の設定（インピーダンス制御用）  <a href="#f23312d0af7dee923f64933b95634c7e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#d779096fac167f35b4e7ec51364ec229">ahsSetImpTorque</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float torque[3], int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">回転提示トルクの設定（インピーダンス制御用）  <a href="#d779096fac167f35b4e7ec51364ec229"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#0da7c9acdffabee58848462db5bf98ec">ahsSetImpScale</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float posGripScale, float oriGripScale, int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">力覚ポインタのスケールの設定（インピーダンス制御用）  <a href="#0da7c9acdffabee58848462db5bf98ec"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#e5d1de059bf90fe71e5b3f17197a0fb2">ahsVcSetFTscale</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float forceObjScale, float torqueObjScale, int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">VCのオブジェクト側の並進力と回転力のスケールの設定（インピーダンス制御用）.  <a href="#e5d1de059bf90fe71e5b3f17197a0fb2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#75c1e2d1fc1219e688557a608b7d6ee4">ahsVcSetKB</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float posK, float posB, float oriK, float oriB, int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バーチャルカップリングパラメータ設定（インピーダンス制御時）  <a href="#75c1e2d1fc1219e688557a608b7d6ee4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#6d4e26cc8d03bd9dfb512b8b07f45edd">ahsVcUpdate</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, int isCoupling, float simHz, float posObj[3], float posVelObj[3], float forceObj[3], float oriObj[4], float oriVelObj[3], float torqueObj[3], int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バーチャルカップリングの更新（インピーダンス制御時）  <a href="#6d4e26cc8d03bd9dfb512b8b07f45edd"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#c83f8be5a910ecab7c202b10e1468054">ahsGetAdmForce</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float force[3], int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">並進提示力の取得（アドミッタンス制御用）  <a href="#c83f8be5a910ecab7c202b10e1468054"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#eb649c30d1f3667779499acce4899a3d">ahsGetAdmTorque</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float torque[3], int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">回転提示トルクの取得（アドミッタンス制御用）  <a href="#eb649c30d1f3667779499acce4899a3d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#144ce8405cd47f3e47a5dda66cf36a6f">ahsSetAdmPos</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float pos[3], int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">並進位置の設定（アドミッタンス制御用）  <a href="#144ce8405cd47f3e47a5dda66cf36a6f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#74fd226aea5c9b0200738f099ade78c8">ahsSetAdmOri_wxyz</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, float ori[4], int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">回転姿勢の設定（アドミッタンス制御用）  <a href="#74fd226aea5c9b0200738f099ade78c8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#741793ce1fc7cc0853eb69c6b315e8f0">ahsGetDigitalSw</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, int ch, int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">外部スイッチ入力値の取得（デジタルスイッチ用）  <a href="#741793ce1fc7cc0853eb69c6b315e8f0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#bf2bf714815052c73e41e368d22f4abb">ahsGetAnalogSw</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, int ch, int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">外部スイッチ入力値の取得（アナログスイッチ用，タッチスイッチと内部でマルチプレクス）  <a href="#bf2bf714815052c73e41e368d22f4abb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#18c0d3f70040a237f6a1abae86529573">ahsGetTouchSw</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, int ch, int spidar_id=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">タッチスイッチ入力値の取得（アナログスイッチと内部でマルチプレクス）  <a href="#18c0d3f70040a237f6a1abae86529573"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#34d369aaf622f08fe9461123cdac12da">ahsSetHapticLoopCallBackFunction</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, void(CALLBACK *pf)(DWORD dwUser))</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">力覚提示制御ループの中で実行するユーザ関数（コールバック関数）の設定  <a href="#34d369aaf622f08fe9461123cdac12da"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#21502eb9b3131faf0f8742c908c7670b">ahsGetVal</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, <a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7">AhsGetEnum</a> cap, void *param)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><b>【拡張機能】</b>値の取得関数  <a href="#21502eb9b3131faf0f8742c908c7670b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#7bc88624353159fd73c2c1292e0e49d3">ahsSetVal</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, <a class="el" href="_spidar_a_h_s_8h.html#ff8d118e10d4d4d9717796ba6ba93b51">AhsSetEnum</a> cap, void *param)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><b>【拡張機能】</b>値の設定関数  <a href="#7bc88624353159fd73c2c1292e0e49d3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">SPIDARAHS_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#ff2d4da3561c9dbe656e385e811d41f5">ahsSh1SetGetVal</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, unsigned char w_size, unsigned long w_address, unsigned char w_data[48], unsigned long r_address, unsigned char r_data[52], unsigned char id=0x0c)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><b>【SH 拡張機能】SHが接続されていないシステムでは無効，</b>SH1への値の設定と取得関数  <a href="#ff2d4da3561c9dbe656e385e811d41f5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="bd526cf9b74599f2fa691815fa1f02cb"></a><!-- doxytag: member="SpidarAHS.h::ahsSh1GetAddress" ref="bd526cf9b74599f2fa691815fa1f02cb" args="(SPIDAR_HANDLE pAHS, int id)" -->
+SPIDARAHS_API unsigned long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_spidar_a_h_s_8h.html#bd526cf9b74599f2fa691815fa1f02cb">ahsSh1GetAddress</a> (<a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> pAHS, int id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><b>【SH 拡張機能】SHが接続されていないシステムでは無効 </b><br></td></tr>
+</table>
+<hr><h2>説明</h2>
+SpidarAHS 関数定義. 
+<p>
+<dl class="author" compact><dt><b>作者:</b></dt><dd>赤羽 克仁</dd></dl>
+Spidarを利用するためのC++関数API<p>
+<dl class="date" compact><dt><b>日付:</b></dt><dd>2009/7/28 </dd></dl>
+<hr><h2>列挙型</h2>
+<a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7"></a><!-- doxytag: member="SpidarAHS.h::AhsGetEnum" ref="4ecffc81ed59c80e6bacea238c5068f7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7">AhsGetEnum</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+【拡張機能】値取得拡張機能のための種目定数<br>
+ 今後追加予定 
+<p>
+<dl compact><dt><b>列挙型の値: </b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7345475b7cbc7103bae3ba1d8cbcd07dc"></a><!-- doxytag: member="GET_SPIDAR_NUM_IV1" ref="4ecffc81ed59c80e6bacea238c5068f7345475b7cbc7103bae3ba1d8cbcd07dc" args="" -->GET_SPIDAR_NUM_IV1</em>&nbsp;</td><td>
+本コントローラで制御できるSpidarの数を取得 (int型、ベクトル配列、サイズ：1) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7cf6b63ecdf5f2af288bee378ba508aac"></a><!-- doxytag: member="GET_ENC_PHS_ALL8CH_CV8" ref="4ecffc81ed59c80e6bacea238c5068f7cf6b63ecdf5f2af288bee378ba508aac" args="" -->GET_ENC_PHS_ALL8CH_CV8</em>&nbsp;</td><td>
+8チャンネルすべてのエンコーダの相順の取得 (char型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7983c502a1d238982ec830ab4fed42e7b"></a><!-- doxytag: member="GET_ENC_COUNT_ALL8CH_FV8" ref="4ecffc81ed59c80e6bacea238c5068f7983c502a1d238982ec830ab4fed42e7b" args="" -->GET_ENC_COUNT_ALL8CH_FV8</em>&nbsp;</td><td>
+8チャンネルすべてのエンコーダカウント値の取得 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7f82766f6b497c607b11d0a6125fdc187"></a><!-- doxytag: member="GET_ENC_COUNT_ALL8x3CH_FV24" ref="4ecffc81ed59c80e6bacea238c5068f7f82766f6b497c607b11d0a6125fdc187" args="" -->GET_ENC_COUNT_ALL8x3CH_FV24</em>&nbsp;</td><td>
+24(8x3)チャンネルすべてのエンコーダカウント値の取得 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f77616820a65afa6c0513c1abaedca691d"></a><!-- doxytag: member="GET_WIRE_LENGTH_ALL8CH_FV8" ref="4ecffc81ed59c80e6bacea238c5068f77616820a65afa6c0513c1abaedca691d" args="" -->GET_WIRE_LENGTH_ALL8CH_FV8</em>&nbsp;</td><td>
+8チャンネルすべてのワイヤの長さの取得 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7dbc5c43132f3468a2338564afcc38a57"></a><!-- doxytag: member="GET_MOTOR_POS0_ALL8CH_FV3x8" ref="4ecffc81ed59c80e6bacea238c5068f7dbc5c43132f3468a2338564afcc38a57" args="" -->GET_MOTOR_POS0_ALL8CH_FV3x8</em>&nbsp;</td><td>
+8チャンネルすべてのモータの位置の取得 (float型、ベクトル配列、サイズ：3x8=24) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7ccdc1192d6b681c0339b1f8e77f5a053"></a><!-- doxytag: member="GET_MOTOR_POS0_ALL8x3CH_FV3x24" ref="4ecffc81ed59c80e6bacea238c5068f7ccdc1192d6b681c0339b1f8e77f5a053" args="" -->GET_MOTOR_POS0_ALL8x3CH_FV3x24</em>&nbsp;</td><td>
+24(8x3)チャンネルすべてのモータの位置の取得 (float型、ベクトル配列、サイズ：3x8=24) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f72b349cd556ae396db0939c96122d3625"></a><!-- doxytag: member="GET_GRIP_POS0_ALL8CH_FV3x8" ref="4ecffc81ed59c80e6bacea238c5068f72b349cd556ae396db0939c96122d3625" args="" -->GET_GRIP_POS0_ALL8CH_FV3x8</em>&nbsp;</td><td>
+8チャンネルすべてのグリップ上のワイヤ接続位置（グリップがホームポジションの時）の取得 (float型、ベクトル配列、サイズ：3x8=24) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f797e162f21c305530b2b74f86bf0a9505"></a><!-- doxytag: member="GET_GRIP_POS0_ALL8x3CH_FV3x24" ref="4ecffc81ed59c80e6bacea238c5068f797e162f21c305530b2b74f86bf0a9505" args="" -->GET_GRIP_POS0_ALL8x3CH_FV3x24</em>&nbsp;</td><td>
+24(8x3)チャンネルすべてのグリップ上のワイヤ接続位置（グリップがホームポジションの時）の取得 (float型、ベクトル配列、サイズ：3x8=24) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7a495b23ec47502424ad8f86329ca3921"></a><!-- doxytag: member="GET_PID_TARGET_ALL8CH_IV8" ref="4ecffc81ed59c80e6bacea238c5068f7a495b23ec47502424ad8f86329ca3921" args="" -->GET_PID_TARGET_ALL8CH_IV8</em>&nbsp;</td><td>
+8チャンネルすべてのPID目標値の値を取得 (int型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7d32ddeb292602072c24d8c22f4f881e8"></a><!-- doxytag: member="GET_PID_AMP_TEST_ALL8CH_FV8" ref="4ecffc81ed59c80e6bacea238c5068f7d32ddeb292602072c24d8c22f4f881e8" args="" -->GET_PID_AMP_TEST_ALL8CH_FV8</em>&nbsp;</td><td>
+PIDテスト用 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7e48fd94c5736463c92106354f61b5d68"></a><!-- doxytag: member="GET_ADM_PID_PV_TEST_ALL8CH_IV8" ref="4ecffc81ed59c80e6bacea238c5068f7e48fd94c5736463c92106354f61b5d68" args="" -->GET_ADM_PID_PV_TEST_ALL8CH_IV8</em>&nbsp;</td><td>
+PIDテスト用 PIDの制御量（計測値） (int型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f74f9e7050705d6f2815c36cb0e1136a39"></a><!-- doxytag: member="GET_ADM_PID_SV_TEST_ALL8CH_IV8" ref="4ecffc81ed59c80e6bacea238c5068f74f9e7050705d6f2815c36cb0e1136a39" args="" -->GET_ADM_PID_SV_TEST_ALL8CH_IV8</em>&nbsp;</td><td>
+PIDテスト用 PIDの目標値 (int型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f75dd2dd45cc22d2247cc004de23a291c7"></a><!-- doxytag: member="GET_ADM_PID_KP_TEST_ALL8CH_FV8" ref="4ecffc81ed59c80e6bacea238c5068f75dd2dd45cc22d2247cc004de23a291c7" args="" -->GET_ADM_PID_KP_TEST_ALL8CH_FV8</em>&nbsp;</td><td>
+PIDテスト用 PIDのP比例係数 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7ba0ebbdc12f19e84b6a08b553c33db3f"></a><!-- doxytag: member="GET_ADM_PID_KI_TEST_ALL8CH_FV8" ref="4ecffc81ed59c80e6bacea238c5068f7ba0ebbdc12f19e84b6a08b553c33db3f" args="" -->GET_ADM_PID_KI_TEST_ALL8CH_FV8</em>&nbsp;</td><td>
+PIDテスト用 PIDのI積分係数 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f761ee1265edd5cc9e1174f26f0dd6a2b7"></a><!-- doxytag: member="GET_ADM_PID_KD_TEST_ALL8CH_FV8" ref="4ecffc81ed59c80e6bacea238c5068f761ee1265edd5cc9e1174f26f0dd6a2b7" args="" -->GET_ADM_PID_KD_TEST_ALL8CH_FV8</em>&nbsp;</td><td>
+PIDテスト用 PIDのD微分係数 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7de7de059fd295748f6dce30c6bc7b0c4"></a><!-- doxytag: member="GET_IMP_PID_PV_TEST_ALL8CH_IV8" ref="4ecffc81ed59c80e6bacea238c5068f7de7de059fd295748f6dce30c6bc7b0c4" args="" -->GET_IMP_PID_PV_TEST_ALL8CH_IV8</em>&nbsp;</td><td>
+PIDテスト用 PIDの制御量（計測値） (int型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f761149eb0c65e3830d9b4ed73af8e4143"></a><!-- doxytag: member="GET_IMP_PID_SV_TEST_ALL8CH_IV8" ref="4ecffc81ed59c80e6bacea238c5068f761149eb0c65e3830d9b4ed73af8e4143" args="" -->GET_IMP_PID_SV_TEST_ALL8CH_IV8</em>&nbsp;</td><td>
+PIDテスト用 PIDの目標値 (int型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f71b1407b67d02d94c8f3ad39addec2138"></a><!-- doxytag: member="GET_IMP_PID_KP_TEST_ALL8CH_FV8" ref="4ecffc81ed59c80e6bacea238c5068f71b1407b67d02d94c8f3ad39addec2138" args="" -->GET_IMP_PID_KP_TEST_ALL8CH_FV8</em>&nbsp;</td><td>
+PIDテスト用 PIDのP比例係数 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7469f40bc2a7dd42b8e070932e908506e"></a><!-- doxytag: member="GET_IMP_PID_KI_TEST_ALL8CH_FV8" ref="4ecffc81ed59c80e6bacea238c5068f7469f40bc2a7dd42b8e070932e908506e" args="" -->GET_IMP_PID_KI_TEST_ALL8CH_FV8</em>&nbsp;</td><td>
+PIDテスト用 PIDのI積分係数 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7374cebf2e70fb050b6c2020cd30c9561"></a><!-- doxytag: member="GET_IMP_PID_KD_TEST_ALL8CH_FV8" ref="4ecffc81ed59c80e6bacea238c5068f7374cebf2e70fb050b6c2020cd30c9561" args="" -->GET_IMP_PID_KD_TEST_ALL8CH_FV8</em>&nbsp;</td><td>
+PIDテスト用 PIDのD微分係数 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f7855e548dab7e447ea88284547493a972"></a><!-- doxytag: member="GET_VC_POS_ORI_NORM_FV2" ref="4ecffc81ed59c80e6bacea238c5068f7855e548dab7e447ea88284547493a972" args="" -->GET_VC_POS_ORI_NORM_FV2</em>&nbsp;</td><td>
+VCの位置姿勢のノルム(float型、ベクトル配列、サイズ：2) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f73bd160dd567eeb8cb9a2fe4656f73336"></a><!-- doxytag: member="GET_HAPTIC_LOOP_MSEC_IV1" ref="4ecffc81ed59c80e6bacea238c5068f73bd160dd567eeb8cb9a2fe4656f73336" args="" -->GET_HAPTIC_LOOP_MSEC_IV1</em>&nbsp;</td><td>
+ハプティックループの更新周期の取得[msec] (int型、ベクトル配列、サイズ：1) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="4ecffc81ed59c80e6bacea238c5068f73d80620b1751eeb4bd11f08e96f9ae94"></a><!-- doxytag: member="AHS_GET_ENUM_MAX" ref="4ecffc81ed59c80e6bacea238c5068f73d80620b1751eeb4bd11f08e96f9ae94" args="" -->AHS_GET_ENUM_MAX</em>&nbsp;</td><td>
+列挙型のサイズ取得のためのダミー </td></tr>
+</table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="ff8d118e10d4d4d9717796ba6ba93b51"></a><!-- doxytag: member="SpidarAHS.h::AhsSetEnum" ref="ff8d118e10d4d4d9717796ba6ba93b51" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_spidar_a_h_s_8h.html#ff8d118e10d4d4d9717796ba6ba93b51">AhsSetEnum</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+【拡張機能】値設定拡張機能のための種目定数<br>
+ 今後追加予定 
+<p>
+<dl compact><dt><b>列挙型の値: </b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" name="ff8d118e10d4d4d9717796ba6ba93b515d5c1edaf62625a7809342916ab5ee0b"></a><!-- doxytag: member="SET_PID_SV_TEST_ALL8CH_IV8" ref="ff8d118e10d4d4d9717796ba6ba93b515d5c1edaf62625a7809342916ab5ee0b" args="" -->SET_PID_SV_TEST_ALL8CH_IV8</em>&nbsp;</td><td>
+PIDテスト用 PIDの目標値 (int型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="ff8d118e10d4d4d9717796ba6ba93b516d2ee79a0b58604ed1fa6b8d4800c92d"></a><!-- doxytag: member="SET_PID_KP_TEST_ALL8CH_FV8" ref="ff8d118e10d4d4d9717796ba6ba93b516d2ee79a0b58604ed1fa6b8d4800c92d" args="" -->SET_PID_KP_TEST_ALL8CH_FV8</em>&nbsp;</td><td>
+PIDテスト用 PIDのP比例係数 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="ff8d118e10d4d4d9717796ba6ba93b51665c880f348660ef71efdf8be6eb5e8d"></a><!-- doxytag: member="SET_PID_KI_TEST_ALL8CH_FV8" ref="ff8d118e10d4d4d9717796ba6ba93b51665c880f348660ef71efdf8be6eb5e8d" args="" -->SET_PID_KI_TEST_ALL8CH_FV8</em>&nbsp;</td><td>
+PIDテスト用 PIDのI積分係数 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="ff8d118e10d4d4d9717796ba6ba93b519b22c31fbf451d9c8bc9c064b27d6ab8"></a><!-- doxytag: member="SET_PID_KD_TEST_ALL8CH_FV8" ref="ff8d118e10d4d4d9717796ba6ba93b519b22c31fbf451d9c8bc9c064b27d6ab8" args="" -->SET_PID_KD_TEST_ALL8CH_FV8</em>&nbsp;</td><td>
+PIDテスト用 PIDのD微分係数 (float型、ベクトル配列、サイズ：8) </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="ff8d118e10d4d4d9717796ba6ba93b51e8ddaaa77f73afb84d988ddaad09d639"></a><!-- doxytag: member="AHS_SET_ENUM_MAX" ref="ff8d118e10d4d4d9717796ba6ba93b51e8ddaaa77f73afb84d988ddaad09d639" args="" -->AHS_SET_ENUM_MAX</em>&nbsp;</td><td>
+列挙型のサイズ取得のためのダミー </td></tr>
+</table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="58e495798d9b952f2acb602244c7570f"></a><!-- doxytag: member="SpidarAHS.h::AhsSpidarTypeEnum" ref="58e495798d9b952f2acb602244c7570f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_spidar_a_h_s_8h.html#58e495798d9b952f2acb602244c7570f">AhsSpidarTypeEnum</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+生成するSPIDARタイプ 
+<p>
+<dl compact><dt><b>列挙型の値: </b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" name="58e495798d9b952f2acb602244c7570fd54a3dace02ad527e4d86f181f021309"></a><!-- doxytag: member="AHS_SPIDAR_4" ref="58e495798d9b952f2acb602244c7570fd54a3dace02ad527e4d86f181f021309" args="" -->AHS_SPIDAR_4</em>&nbsp;</td><td>
+SPIDAR_4:並進3自由度の4本糸でベーシックなタイプ </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="58e495798d9b952f2acb602244c7570fbd48de9023b2ad43c21c2c04300a8cc5"></a><!-- doxytag: member="AHS_SPIDAR_G" ref="58e495798d9b952f2acb602244c7570fbd48de9023b2ad43c21c2c04300a8cc5" args="" -->AHS_SPIDAR_G</em>&nbsp;</td><td>
+SPIDAR_G:並進・回転6自由度の8本糸でグリップタイプ </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="58e495798d9b952f2acb602244c7570f90dafcd748b6f3bf11fca06cad299267"></a><!-- doxytag: member="AHS_SH_SPIDAR_G" ref="58e495798d9b952f2acb602244c7570f90dafcd748b6f3bf11fca06cad299267" args="" -->AHS_SH_SPIDAR_G</em>&nbsp;</td><td>
+SPIDAR_G:並進・回転6自由度の8本糸でグリップタイプのSH版 </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="58e495798d9b952f2acb602244c7570f9a95103398d5ee74ff86d177f6e86463"></a><!-- doxytag: member="AHS_SPIDAR_8" ref="58e495798d9b952f2acb602244c7570f9a95103398d5ee74ff86d177f6e86463" args="" -->AHS_SPIDAR_8</em>&nbsp;</td><td>
+SPIDAR_8:並進3自由度の3本糸でポインタタイプが8セット（左手4指＋右手4指） </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="58e495798d9b952f2acb602244c7570ff8cee9ffd371246ea8f39fc78140d328"></a><!-- doxytag: member="AHS_SPIDAR_X" ref="58e495798d9b952f2acb602244c7570ff8cee9ffd371246ea8f39fc78140d328" args="" -->AHS_SPIDAR_X</em>&nbsp;</td><td>
+SPIDAR_X:ユーザが任意で糸のコントロールをするときに使うタイプ </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="58e495798d9b952f2acb602244c7570f2bbab7246205e3019fdfd685b55db58e"></a><!-- doxytag: member="AHS_SPIDAR_TYPE_ENUM_MAX" ref="58e495798d9b952f2acb602244c7570f2bbab7246205e3019fdfd685b55db58e" args="" -->AHS_SPIDAR_TYPE_ENUM_MAX</em>&nbsp;</td><td>
+列挙型のサイズ取得のためのダミー </td></tr>
+</table>
+</dl>
+
+</div>
+</div><p>
+<hr><h2>関数</h2>
+<a class="anchor" name="59ffaa6b08e8965067c049c18e7ad140"></a><!-- doxytag: member="SpidarAHS.h::ahsActive" ref="59ffaa6b08e8965067c049c18e7ad140" args="(SPIDAR_HANDLE pAHS, int isActive, int spidar_id=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsActive           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>isActive</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>-1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+力覚提示制御を有効・無効にする 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>isActive</em>&nbsp;</td><td>力覚制御を有効にするとき1, 無効にするとき0 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID<br>
+ （省略可・省略時はすべてのSpidar_idが対象となる）<br>
+ <b>SpidarGのとき</b>は1台分のみなので0を指定（省略推奨）<br>
+ <b>Spidar4のとき</b>は2台分制御できるので0又は1を指定可能<br>
+ <b>SpidarXのとき</b>は8本分の糸を制御できるので0から7を指定可能<br>
+ </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="9eac7f1bdf329384011c63c22974877d"></a><!-- doxytag: member="SpidarAHS.h::ahsCalib" ref="9eac7f1bdf329384011c63c22974877d" args="(SPIDAR_HANDLE pAHS, int spidar_id=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsCalib           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>-1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Spidarのキャリブレーションを行う. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID<br>
+ （省略可・省略時はすべてのSpidar_idが対象となる）<br>
+ <b>SpidarGのとき</b>は1台分のみなので0を指定（省略推奨）<br>
+ <b>Spidar4のとき</b>は2台分制御できるので0又は1を指定可能<br>
+ <b>SpidarXのとき</b>は8本分の糸を制御できるので0から7を指定可能<br>
+ </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="193e613e484a79ccc28e92f5c9774336"></a><!-- doxytag: member="SpidarAHS.h::ahsCreate_Spidar" ref="193e613e484a79ccc28e92f5c9774336" args="(SPIDAR_HANDLE *handle, AhsSpidarTypeEnum type, char *xmlFileName, int isVoice=1, int usb_id=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API int ahsCreate_Spidar           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#58e495798d9b952f2acb602244c7570f">AhsSpidarTypeEnum</a>&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>xmlFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>isVoice</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>usb_id</em> = <code>-1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+【今後廃止（ahsCreate_Spidar(SPIDAR_HANDLE* handle,char* xmlFileName)を使ってください）】<br>
+ Spidarのためのプログラムの起動と初期化処理．<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0のみ設定可能） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>起動・初期化したSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>type</em>&nbsp;</td><td>SPIDARのタイプ(Spidar,Spidar-G) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>xmlFileName</em>&nbsp;</td><td>SPIDARの設定ファイル名(.xml) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>isVoice</em>&nbsp;</td><td>音声案内（1:有効、0:無効）（省略可） </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>usb_id</em>&nbsp;</td><td>取得USB機器のID（省略可・省略推奨） </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>成功した時は0,失敗した時は0以外を返す </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="3ef6b0edb5dbe81fd0fe94d44555fc95"></a><!-- doxytag: member="SpidarAHS.h::ahsCreate_Spidar" ref="3ef6b0edb5dbe81fd0fe94d44555fc95" args="(SPIDAR_HANDLE *handle, char *xmlFileName, int isVoice=1, int usb_id=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API int ahsCreate_Spidar           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>xmlFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>isVoice</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>usb_id</em> = <code>-1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Spidarのためのプログラムの起動と初期化処理．<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0のみ設定可能）. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>起動・初期化したSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>xmlFileName</em>&nbsp;</td><td>SPIDARの設定ファイル名(.xml) SPIDARのタイプはxml内で定義(Spidar,Spidar-G) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>isVoice</em>&nbsp;</td><td>音声案内（1:有効、0:無効）（省略可） </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>usb_id</em>&nbsp;</td><td>取得USB機器のID（省略可・省略推奨） </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>成功した時は0,失敗した時は0以外を返す </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fb1619453da9310e29f3a48be24879f7"></a><!-- doxytag: member="SpidarAHS.h::ahsCreate_Spidar4" ref="fb1619453da9310e29f3a48be24879f7" args="(SPIDAR_HANDLE *handle, char *xmlFileName, int usb_id=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API int ahsCreate_Spidar4           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>xmlFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>usb_id</em> = <code>-1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+【今後廃止（ahsCreate_Spidarを使ってください）】<br>
+ Spidar4(並進3自由度の4本糸でベーシックなタイプ)のためのプログラムの起動と初期化処理．<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0もしくは1を設定可能） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>起動・初期化したSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>xmlFileName</em>&nbsp;</td><td>SPIDARの設定ファイル名(.xml) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>usb_id</em>&nbsp;</td><td>取得USB機器のID（省略可・省略推奨） </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>成功した時は0,失敗した時は0以外を返す </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fa7630e334233e8d9844457985300e11"></a><!-- doxytag: member="SpidarAHS.h::ahsCreate_Spidar8" ref="fa7630e334233e8d9844457985300e11" args="(SPIDAR_HANDLE *handle, char *xmlFileName, int usb_id=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API int ahsCreate_Spidar8           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>xmlFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>usb_id</em> = <code>-1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+【今後廃止（ahsCreate_Spidarを使ってください）】<br>
+ SPIDAR_8:並進3自由度の3本糸でポインタタイプが8セット（左手4指＋右手4指）<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0のみ設定可能） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>起動・初期化したSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>xmlFileName</em>&nbsp;</td><td>SPIDARの設定ファイル名(.xml) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>usb_id</em>&nbsp;</td><td>取得USB機器のID（省略可・省略推奨） </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>成功した時は0,失敗した時は0以外を返す </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fd8e779c04b62e0ab05731f1968f45ff"></a><!-- doxytag: member="SpidarAHS.h::ahsCreate_SpidarG" ref="fd8e779c04b62e0ab05731f1968f45ff" args="(SPIDAR_HANDLE *handle, char *xmlFileName, int usb_id=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API int ahsCreate_SpidarG           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>xmlFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>usb_id</em> = <code>-1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+【今後廃止（ahsCreate_Spidarを使ってください）】<br>
+ SpidarG(並進・回転6自由度の8本糸でグリップタイプ)のためのプログラムの起動と初期化処理．<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0のみ設定可能） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>起動・初期化したSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>xmlFileName</em>&nbsp;</td><td>SPIDARの設定ファイル名(.xml) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>usb_id</em>&nbsp;</td><td>取得USB機器のID（省略可・省略推奨） </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>成功した時は0,失敗した時は0以外を返す </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="398cef7b2379f7910d56a23c1999b8dd"></a><!-- doxytag: member="SpidarAHS.h::ahsCreate_SpidarX" ref="398cef7b2379f7910d56a23c1999b8dd" args="(SPIDAR_HANDLE *handle, char *xmlFileName, int usb_id=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API int ahsCreate_SpidarX           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> *&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>xmlFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>usb_id</em> = <code>-1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+【今後廃止（ahsCreate_Spidarを使ってください）】<br>
+ SpidarX(ユーザが任意で糸のコントロールをするときに使うタイプ)のためのプログラムの起動と初期化処理．<br>
+ コントローラの電源を投入した順序で当該コントローラのhandleを取得できる．<br>
+ （ほかの関数で指定できるspidar_idは0から7までを設定可能） （※まだテスト不足） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>起動・初期化したSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>xmlFileName</em>&nbsp;</td><td>SPIDARの設定ファイル名(.xml) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>usb_id</em>&nbsp;</td><td>取得USB機器のID（省略可・省略推奨） </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>成功した時は0,失敗した時は0以外を返す </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="c83f8be5a910ecab7c202b10e1468054"></a><!-- doxytag: member="SpidarAHS.h::ahsGetAdmForce" ref="c83f8be5a910ecab7c202b10e1468054" args="(SPIDAR_HANDLE pAHS, float force[3], int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsGetAdmForce           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>force</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+並進提示力の取得（アドミッタンス制御用） 
+<p>
+Spidarの力覚提示部にかかる並進力を取得する <dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>force[3]</em>&nbsp;</td><td>並進提示力の値(x,y,zの順番) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・ SpidarGのときは1台分のみなので0を指定， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="eb649c30d1f3667779499acce4899a3d"></a><!-- doxytag: member="SpidarAHS.h::ahsGetAdmTorque" ref="eb649c30d1f3667779499acce4899a3d" args="(SPIDAR_HANDLE pAHS, float torque[3], int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsGetAdmTorque           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>torque</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+回転提示トルクの取得（アドミッタンス制御用） 
+<p>
+Spidarの力覚提示部にかかる回転トルクを取得する <dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>torque[3]</em>&nbsp;</td><td>回転提示トルクの値(x,y,zの順番) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・ SpidarGのときは1台分のみなので0を指定， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="bf2bf714815052c73e41e368d22f4abb"></a><!-- doxytag: member="SpidarAHS.h::ahsGetAnalogSw" ref="bf2bf714815052c73e41e368d22f4abb" args="(SPIDAR_HANDLE pAHS, int ch, int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API float ahsGetAnalogSw           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>ch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+外部スイッチ入力値の取得（アナログスイッチ用，タッチスイッチと内部でマルチプレクス） 
+<p>
+【未実装】 <dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>ch</em>&nbsp;</td><td>スイッチのチャンネル番号 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID（省略可・省略推奨） </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>対象スイッチの値 </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="741793ce1fc7cc0853eb69c6b315e8f0"></a><!-- doxytag: member="SpidarAHS.h::ahsGetDigitalSw" ref="741793ce1fc7cc0853eb69c6b315e8f0" args="(SPIDAR_HANDLE pAHS, int ch, int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API int ahsGetDigitalSw           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>ch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+外部スイッチ入力値の取得（デジタルスイッチ用） 
+<p>
+【未実装】 <dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>ch</em>&nbsp;</td><td>スイッチのチャンネル番号 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID（省略可・省略推奨） </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>対象スイッチの値 </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="c32dfb5a3318fbca662591a2316a8ae5"></a><!-- doxytag: member="SpidarAHS.h::ahsGetImpOri_wxyz" ref="c32dfb5a3318fbca662591a2316a8ae5" args="(SPIDAR_HANDLE pAHS, float ori[4], int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsGetImpOri_wxyz           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>ori</em>[4], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+回転姿勢の取得（インピーダンス制御用） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>ori[4]</em>&nbsp;</td><td>クオータニオン(quaternion)による回転姿勢の値(w,x,y,zの順番) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・ SpidarGのときは1台分のみなので0を指定， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="a754f288463d2129a593b81c2cec5de2"></a><!-- doxytag: member="SpidarAHS.h::ahsGetImpOriVel" ref="a754f288463d2129a593b81c2cec5de2" args="(SPIDAR_HANDLE pAHS, float posVel[3], int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsGetImpOriVel           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>posVel</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+回転速度の取得（インピーダンス制御用） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>posVel[3]</em>&nbsp;</td><td>回転速度の値(x,y,zの順番) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・ SpidarGのときは1台分のみなので0を指定， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="df05a52bffb893b7aec70a505af989b6"></a><!-- doxytag: member="SpidarAHS.h::ahsGetImpPos" ref="df05a52bffb893b7aec70a505af989b6" args="(SPIDAR_HANDLE pAHS, float pos[3], int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsGetImpPos           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>pos</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+並進位置の取得（インピーダンス制御用） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>pos[3]</em>&nbsp;</td><td>並進位置の値(x,y,zの順番) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・ SpidarGのときは1台分のみなので0を指定， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="dff5c252925c9b843f542ca8b7a5c21f"></a><!-- doxytag: member="SpidarAHS.h::ahsGetImpPosVel" ref="dff5c252925c9b843f542ca8b7a5c21f" args="(SPIDAR_HANDLE pAHS, float posVel[3], int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsGetImpPosVel           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>posVel</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+並進速度の取得（インピーダンス制御用） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>posVel[3]</em>&nbsp;</td><td>並進速度の値(x,y,zの順番) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・ SpidarGのときは1台分のみなので0を指定， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="18c0d3f70040a237f6a1abae86529573"></a><!-- doxytag: member="SpidarAHS.h::ahsGetTouchSw" ref="18c0d3f70040a237f6a1abae86529573" args="(SPIDAR_HANDLE pAHS, int ch, int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API int ahsGetTouchSw           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>ch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+タッチスイッチ入力値の取得（アナログスイッチと内部でマルチプレクス） 
+<p>
+【未実装】 <dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>ch</em>&nbsp;</td><td>スイッチのチャンネル番号（最大:3ch） </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID（省略可・省略推奨） </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>対象スイッチの値 </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="21502eb9b3131faf0f8742c908c7670b"></a><!-- doxytag: member="SpidarAHS.h::ahsGetVal" ref="21502eb9b3131faf0f8742c908c7670b" args="(SPIDAR_HANDLE pAHS, AhsGetEnum cap, void *param)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsGetVal           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#4ecffc81ed59c80e6bacea238c5068f7">AhsGetEnum</a>&nbsp;</td>
+          <td class="paramname"> <em>cap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>param</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<b>【拡張機能】</b>値の取得関数 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>pAHS</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>AhsGetEnum</em>&nbsp;</td><td>取得したい値の種目定数　種目定数の最後の部分によりデータ型、データ幅などが決定されている<br>
+ 例）エンコーダの値を8チャンネル分取得する<br>
+ GET_ENC_COUNT_ALL8CH_IV8<br>
+ I:int型のデータ<br>
+ V:ベクトル配列<br>
+ 8:8データ分<br>
+ を意味する。 </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>param</em>&nbsp;</td><td>取得する値（ポインタ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fdc47d46250e03cce211fc3bb674d1a6"></a><!-- doxytag: member="SpidarAHS.h::ahsQuit" ref="fdc47d46250e03cce211fc3bb674d1a6" args="(SPIDAR_HANDLE pAHS)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API <a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a> ahsQuit           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Spiarの終了処理<br>
+ ※注意：プログラムの終了時には必ず実行して正しくSpidarAPIを終了してください. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="74fd226aea5c9b0200738f099ade78c8"></a><!-- doxytag: member="SpidarAHS.h::ahsSetAdmOri_wxyz" ref="74fd226aea5c9b0200738f099ade78c8" args="(SPIDAR_HANDLE pAHS, float ori[4], int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsSetAdmOri_wxyz           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>ori</em>[4], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+回転姿勢の設定（アドミッタンス制御用） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>ori[4]</em>&nbsp;</td><td>クオータニオン(quaternion)による回転姿勢の値(w,x,y,zの順番) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・省略時はすべてのSpidar_idが対象となる SpidarGのときは1台分のみなので0を指定（省略推奨）， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="144ce8405cd47f3e47a5dda66cf36a6f"></a><!-- doxytag: member="SpidarAHS.h::ahsSetAdmPos" ref="144ce8405cd47f3e47a5dda66cf36a6f" args="(SPIDAR_HANDLE pAHS, float pos[3], int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsSetAdmPos           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>pos</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+並進位置の設定（アドミッタンス制御用） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>pos[3]</em>&nbsp;</td><td>並進位置の値(x,y,zの順番) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・省略時はすべてのSpidar_idが対象となる SpidarGのときは1台分のみなので0を指定（省略推奨）， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="34d369aaf622f08fe9461123cdac12da"></a><!-- doxytag: member="SpidarAHS.h::ahsSetHapticLoopCallBackFunction" ref="34d369aaf622f08fe9461123cdac12da" args="(SPIDAR_HANDLE pAHS, void(CALLBACK *pf)(DWORD dwUser))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsSetHapticLoopCallBackFunction           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(CALLBACK *pf)(DWORD dwUser)&nbsp;</td>
+          <td class="paramname"></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+力覚提示制御ループの中で実行するユーザ関数（コールバック関数）の設定 
+<p>
+　例）インピーダンス制御時におけるバーチャルカップリングの実装など <dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>pf</em>&nbsp;</td><td>制御ループ中で実行するコールバック関数<br>
+ 関数pf中で引数のdwUserを使って<br>
+ SPIDAR_HANDLE hSpidar = (SPIDAR_HANDLE)dwUser;<br>
+ とすることで、関数pf内で対応するSPIDAR_HANDLEが取得できます。<br>
+ これによりハンドルhSpidarを使って対応するSpidarの位置情報・力情報などを取得・設定できます。 </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="f23312d0af7dee923f64933b95634c7e"></a><!-- doxytag: member="SpidarAHS.h::ahsSetImpForce" ref="f23312d0af7dee923f64933b95634c7e" args="(SPIDAR_HANDLE pAHS, float force[3], int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsSetImpForce           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>force</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+並進提示力の設定（インピーダンス制御用） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>force[3]</em>&nbsp;</td><td>並進提示力の値(x,y,zの順番) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・省略時はすべてのSpidar_idが対象となる SpidarGのときは1台分のみなので0を指定（省略推奨）， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="0da7c9acdffabee58848462db5bf98ec"></a><!-- doxytag: member="SpidarAHS.h::ahsSetImpScale" ref="0da7c9acdffabee58848462db5bf98ec" args="(SPIDAR_HANDLE pAHS, float posGripScale, float oriGripScale, int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsSetImpScale           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>posGripScale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>oriGripScale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+力覚ポインタのスケールの設定（インピーダンス制御用） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>posGripScale</em>&nbsp;</td><td>並進方向のスケール </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>oriGripScale</em>&nbsp;</td><td>回転方向のスケール </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・省略時はすべてのSpidar_idが対象となる SpidarGのときは1台分のみなので0を指定（省略推奨）， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d779096fac167f35b4e7ec51364ec229"></a><!-- doxytag: member="SpidarAHS.h::ahsSetImpTorque" ref="d779096fac167f35b4e7ec51364ec229" args="(SPIDAR_HANDLE pAHS, float torque[3], int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsSetImpTorque           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>torque</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+回転提示トルクの設定（インピーダンス制御用） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>torque[3]</em>&nbsp;</td><td>回転提示トルクの値(x,y,zの順番) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・省略時はすべてのSpidar_idが対象となる SpidarGのときは1台分のみなので0を指定（省略推奨）， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="7bc88624353159fd73c2c1292e0e49d3"></a><!-- doxytag: member="SpidarAHS.h::ahsSetVal" ref="7bc88624353159fd73c2c1292e0e49d3" args="(SPIDAR_HANDLE pAHS, AhsSetEnum cap, void *param)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsSetVal           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#ff8d118e10d4d4d9717796ba6ba93b51">AhsSetEnum</a>&nbsp;</td>
+          <td class="paramname"> <em>cap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>param</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<b>【拡張機能】</b>値の設定関数 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>pAHS</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>AhsGetEnum</em>&nbsp;</td><td>設定したい値の種目定数　種目定数の最後の部分によりデータ型、データ幅などが決定されている<br>
+ 例）エンコーダの値を8チャンネル分取得する<br>
+ GET_ENC_COUNT_ALL8CH_IV8<br>
+ I:int型のデータ<br>
+ V:ベクトル配列<br>
+ 8:8データ分<br>
+ を意味する。 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>param</em>&nbsp;</td><td>設定する値（ポインタ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="ff2d4da3561c9dbe656e385e811d41f5"></a><!-- doxytag: member="SpidarAHS.h::ahsSh1SetGetVal" ref="ff2d4da3561c9dbe656e385e811d41f5" args="(SPIDAR_HANDLE pAHS, unsigned char w_size, unsigned long w_address, unsigned char w_data[48], unsigned long r_address, unsigned char r_data[52], unsigned char id=0x0c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API int ahsSh1SetGetVal           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&nbsp;</td>
+          <td class="paramname"> <em>w_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&nbsp;</td>
+          <td class="paramname"> <em>w_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&nbsp;</td>
+          <td class="paramname"> <em>w_data</em>[48], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&nbsp;</td>
+          <td class="paramname"> <em>r_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&nbsp;</td>
+          <td class="paramname"> <em>r_data</em>[52], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&nbsp;</td>
+          <td class="paramname"> <em>id</em> = <code>0x0c</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<b>【SH 拡張機能】SHが接続されていないシステムでは無効，</b>SH1への値の設定と取得関数 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>pAHS</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>w_size</em>&nbsp;</td><td>SH1に設定するデータのサイズ(Byte) </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>w_address</em>&nbsp;</td><td>SH1に設定するデータのアドレス（SH1のアドレス） </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>w_data</em>&nbsp;</td><td>SH1に設定するデータ </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>r_address</em>&nbsp;</td><td>SH1から取得するデータのアドレス </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>r_data</em>&nbsp;</td><td>SH1から取得したデータ </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>SH1から取得したr_address番地のデータr_dataが有効かどうか（0無効：1有効） </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="417ec56b61ee41da0c037ac1f9c9f16f"></a><!-- doxytag: member="SpidarAHS.h::ahsStartHapticLoop" ref="417ec56b61ee41da0c037ac1f9c9f16f" args="(SPIDAR_HANDLE pAHS)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsStartHapticLoop           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+力覚提示制御ループの開始<br>
+ マルチメディアタイマによる1kHzの更新周波数（設定ファイルにより更新周波数の変更が可能）<br>
+ ※注意：コントローラ単位（SPIDAR_HANDLE単位）でタイマを起動する必要がある。<br>
+ 複数台コントローラを接続する場合、コントローラの台数分制御ループが回ることになる。 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="f1a499f4243505bbc348f7c2b2a66445"></a><!-- doxytag: member="SpidarAHS.h::ahsStopHapticLoop" ref="f1a499f4243505bbc348f7c2b2a66445" args="(SPIDAR_HANDLE pAHS)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsStopHapticLoop           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+力覚提示制御ループの停止 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="e5d1de059bf90fe71e5b3f17197a0fb2"></a><!-- doxytag: member="SpidarAHS.h::ahsVcSetFTscale" ref="e5d1de059bf90fe71e5b3f17197a0fb2" args="(SPIDAR_HANDLE pAHS, float forceObjScale, float torqueObjScale, int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsVcSetFTscale           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>forceObjScale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>torqueObjScale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+VCのオブジェクト側の並進力と回転力のスケールの設定（インピーダンス制御用）. 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>forceObjScale</em>&nbsp;</td><td>並進力のスケール </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>torqueObjScale</em>&nbsp;</td><td>回転力のスケール </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・省略時はすべてのSpidar_idが対象となる SpidarGのときは1台分のみなので0を指定（省略推奨）， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="75c1e2d1fc1219e688557a608b7d6ee4"></a><!-- doxytag: member="SpidarAHS.h::ahsVcSetKB" ref="75c1e2d1fc1219e688557a608b7d6ee4" args="(SPIDAR_HANDLE pAHS, float posK, float posB, float oriK, float oriB, int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsVcSetKB           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>posK</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>posB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>oriK</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>oriB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+バーチャルカップリングパラメータ設定（インピーダンス制御時） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル</td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>posK</em>&nbsp;</td><td>並進方向の剛性係数 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>posB</em>&nbsp;</td><td>並進方向の粘性係数</td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>oriK</em>&nbsp;</td><td>回転方向の剛性係数 </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>oriB</em>&nbsp;</td><td>回転方向の粘性係数</td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・省略時はすべてのSpidar_idが対象となる SpidarGのときは1台分のみなので0を指定（省略推奨）， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="6d4e26cc8d03bd9dfb512b8b07f45edd"></a><!-- doxytag: member="SpidarAHS.h::ahsVcUpdate" ref="6d4e26cc8d03bd9dfb512b8b07f45edd" args="(SPIDAR_HANDLE pAHS, int isCoupling, float simHz, float posObj[3], float posVelObj[3], float forceObj[3], float oriObj[4], float oriVelObj[3], float torqueObj[3], int spidar_id=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPIDARAHS_API void ahsVcUpdate           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_spidar_a_h_s_8h.html#1bd92668700a9ed5ddcfd9aa54dd509a">SPIDAR_HANDLE</a>&nbsp;</td>
+          <td class="paramname"> <em>pAHS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>isCoupling</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>simHz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>posObj</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>posVelObj</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>forceObj</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>oriObj</em>[4], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>oriVelObj</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>torqueObj</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>spidar_id</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+バーチャルカップリングの更新（インピーダンス制御時） 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>handle</em>&nbsp;</td><td>対象となるSPIDARのハンドル </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>isCoupling</em>&nbsp;</td><td>カップリングを計算するかどうか 1ならば計算、0ならば計算しない</td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>posObj[3]</em>&nbsp;</td><td>現在のオブジェクトの位置（x,y,zの順） </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>posVelObj[3]</em>&nbsp;</td><td>現在のオブジェクトの速度（x,y,zの順） </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>forceObj[3]</em>&nbsp;</td><td>カップリングにより得られた力（x,y,zの順）</td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>oriObj[4]</em>&nbsp;</td><td>現在のオブジェクトの姿勢（クオーターニオン：w,x,y,zの順） </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>oriVelObj[3]</em>&nbsp;</td><td>現在のオブジェクトの姿勢の角速度（x,y,zの順） </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>torqueObj[3]</em>&nbsp;</td><td>カップリングにより得られたトルク（x,y,zの順）</td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>spidar_id</em>&nbsp;</td><td>設定対象となるSpidarのID （省略可・省略時はすべてのSpidar_idが対象となる SpidarGのときは1台分のみなので0を指定（省略推奨）， Spidar4のときは2台分制御できるので0又は1を指定可能， SpidarXのときは8本分の糸を制御できるので0から7を指定可能 ） </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+</div>
+<hr>
+
+Generated on 31 Jan 2012 for SpidarAHS API for SLAB 1.0AforSLAB by doxygen 1.5.9<br>
+
+Copyright &copy Katsuhito AKAHANE 2005-2012. All Rights Reserved.
+
+</BODY>
+</HTML>

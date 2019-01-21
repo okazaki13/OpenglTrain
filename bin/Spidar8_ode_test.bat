@@ -1,0 +1,1 @@
+Spidar8_Ex03.exe ..\data\spidar_8_001.xml;..\data\spidar_8_002.xml;..\data\spidar_8_003.xml ..\textures\white256.raw;..\textures\ground.raw;..\textures\wood.raw;..\textures\sky_ 192.168.138.166:12345	
