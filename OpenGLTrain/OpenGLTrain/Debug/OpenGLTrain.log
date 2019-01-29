@@ -1,1 +1,16 @@
-﻿  OpenGLTrain.vcxproj -> C:\Users\masaya\Documents\OpenglTrain\OpenGLTrain\Debug\OpenGLTrain.exe
+﻿  Audio.cpp
+  CuttingForce.cpp
+  display.cpp
+  glut_init.cpp
+  HapticCalculation.cpp
+  main.cpp
+  object.cpp
+c:\users\spidar\desktop\opengltrain\opengltrain\opengltrain\tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+  SpidarInitcpp.cpp
+  Tool.cpp
+c:\users\spidar\desktop\opengltrain\opengltrain\opengltrain\tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\users\spidar\desktop\opengltrain\opengltrain\opengltrain\tool.cpp(29): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\users\spidar\desktop\opengltrain\opengltrain\opengltrain\tool.cpp(43): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  Voxel.cpp
+  コードを生成中...
+  OpenGLTrain.vcxproj -> C:\Users\spidar\Desktop\OpenglTrain\OpenGLTrain\Debug\OpenGLTrain.exe

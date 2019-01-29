@@ -4,6 +4,8 @@
 #pragma comment(lib,"../../Release/SpidarAHS.lib")
 #pragma comment(lib,"../../Debug/SpidarAHS.lib")
 
+#include <stdio.h>
+
 
 //----------------------------------------------------
 // メイン関数
@@ -17,6 +19,9 @@ int main(int argc, char *argv[]) {
 
 	OpenSpidarVoice();//茜ちゃんボイスの呼び出し
 
+
+	init_spidar();
+
 	glutInit(&argc, argv);//環境の初期化
 	glutInitWindowPosition(WindowPositionX, WindowPositionY);//ウィンドウの位置の指定
 	glutInitWindowSize(WindowWidth, WindowHeight); //ウィンドウサイズの指定
@@ -25,7 +30,7 @@ int main(int argc, char *argv[]) {
 	glutDisplayFunc(Display); //描画時に呼び出される関数を指定する（関数名：Display）
 	Initialize(); //初期設定の関数を呼び出す
 	glutMainLoop();
-	init_spidar();
+
 	return 0;
 }
 
