@@ -5,9 +5,12 @@
 //----------------------------------------------------
 // 関数プロトタイプ（後に呼び出す関数名と引数の宣言）
 //----------------------------------------------------
+
+//glut_setup
 void Initialize(void);
-void Display(void);
-void Ground(void);  //大地の描画
+void openGL_setup(int argc, char *argv[]);
+
+
 
 void object();
 
@@ -18,3 +21,8 @@ int OpenSpidarVoice(void);
 void init_spidar();
 void CALLBACK hapticLoop_w3p4(DWORD dwUser);
 void endHaptic();
+void check_spidar_being();
+
+//display.cpp
+void Display(void);
+void Ground(void);  //大地の描画

@@ -1,0 +1,25 @@
+==============================================================================
+
+		Release note of SmartCollision Ver.1.22
+
+		     Copyright (c) 2006 3D Inc.
+  			All Rights Reserved.
+
+==============================================================================
+
+History of release
+
+2007/01/12 Release of Ver1.22
+  (1)Degeneration during modification has been reduced.
+
+2006/10/12 Release of Ver1.21
+  (1)The method to determine convexity of flat objects has been modified. 
+
+2006/9/28 Release of Ver1.2
+  Changes from previous version are as follows.
+  (1)Sample programs are modified.
+  (2)Definitions of edge types are changed.
+  (3)Some option parameters are added to modification methods.
+
+2005/12/19 Release of Ver1.0
+

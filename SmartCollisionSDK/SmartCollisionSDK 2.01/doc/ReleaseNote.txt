@@ -1,0 +1,95 @@
+==============================================================================
+
+		Release note of SmartCollision Ver.2.01
+
+		     Copyright (c) 2007 3D Inc.
+  			All Rights Reserved.
+
+==============================================================================
+
+History of release
+
+2007/01/12 Ver2.01
+  (1)Problem about memory leak in a certain situation has been modified.
+  (2)Validation check of triangle data for SCObject::AddTriangle are modified.
+     Topological and geometrical degeneration check of triangle has been added.
+  (3)libEasyDevice has been modified. In new implementation,callback function 
+     for collision is called by using TIME_ONESHOT.
+
+2006/11/30 Release candidate of Ver2.01
+  (1)USB protection library is updated.
+  (2)Problem about updating penetration depth computation without intersection
+     has been fixed.
+  (3)Precision of creation of BVHs has been improved, still more.
+  (4)Problem about initialization between active object and sleeping object has
+     been fixed.
+  (4)The algorithm of penetration depth computation has been improved. New algorithm
+     is more efficient and robust.
+
+2006/10/17 Release of Ver2.01 beta
+  (1)sco.dll has been merged into sc.dll.
+  (2)The method to determine convexity of flat objects has been modified. 
+  (3)Precision of creation of BVHs has been improved.
+  (4)Problem about getting the endpoint of target has been fixed.
+
+2006/09/28 Release of Ver2.00
+  (1)Optimization for penetration depth computation between convex polyhedra
+     has been added.
+  (2)HelloSmartCollisin has been modified.
+  (3)libEasyDevice has been modified.
+  (4)Inappropriate initialization of penetration depth computation has been 
+     fixed.
+
+2006/08/23 Release of Ver2.00 beta 0.2
+  (1)SCSceneManager::SetActivitiyGroupPair was modified. 
+     Behavior of SC_ACTIVITY_ACTIVE was changed. 
+     SC_ACTIVITY_ONE_WAY_ACTIVE and SC_ACTIVITY_ONE_WAY_INACTIVE were added.
+  (2)Sample programs are modified.
+
+2006/08/21 Release of Ver2.00 beta 0.1
+  (1)SCSceneManager::SetActivitiyGroupPair was modified. 
+     Behavior of SC_ACTIVITY_ACTIVE was changed. 
+     SC_ACTIVITY_ONE_WAY_ACTIVE and SC_ACTIVITY_ONE_WAY_INACTIVE were added.
+
+2006/08/07 Release of Ver2.00 beta
+  Changes from previous version are as follows.
+  (1)Support of multiple groups. Previous version supports only two groups(The
+     group of controllded objcts and the group of static objects).
+  (2)Support of bi-directional penetration depth computation.
+  (3)Support of flexible control of group pairs, between which collision 
+     detections perform,by using activity state of groups and pairs of groups.
+  (4)The following types of SCSceneManager::SetAttributeEnum were added.
+     SC_SCENE_MANAGER_PENETRATION_DEPTH_COMPUTATION
+  (5)The following types of SCSceneManager::GetStatus were added.
+     SC_CONTACT_NORMAL
+  (6)The following types of SCSceneManager::GetStatus were added as the aliases.
+     SC_POINT_ON_TARGET(for SC_POINT_ON_CONTROLLED_OBJECT)
+     SC_POINT_ON_OPPONENT(for SC_POINT_ON_STATIC_OBJECT)
+     SC_TARGET_OBJECT_ID(for SC_CONTROLLED_OBJECT_ID)
+     SC_OPPONENT_OBJECT_ID(for SC_STATIC_OBJECT_ID)
+  (7)SmartCollisionMultipleGroupTest are added as a sample program.
+
+2006/04/04 Release of Ver1.03
+  Changes from previous version are as follows.
+  (1)The following types of SCSceneManager::GetStatus were added.
+     SC_CONTACT_POSITION,SC_CONTACT_ORIENTATION
+     SC_CONTACT_TRANSFORMATION_MATRIX
+
+2006/03/16 Release of Ver1.02
+  Changes from previous version are as follows.
+  (1)The result of GetTransformation(SC_POSITION_LOCAL_CENTER,...)of SCObject
+     was changed.
+
+2005/02/16 Release of Ver1.01
+  Changes from previous version are as follows.
+  (1)There is no changes in the definition of API specification.
+  (2)The return values of SC_STATIC_OBJECT_ID and SC_CONTROLLED_OBJECT_ID 
+     were changed.
+     In Ver. 1.0, the return value is the index value of the object. 
+     In Ver. 1.01, the return value is the ID of the object.
+  (3)The example program SmartCollisionTest.cpp was changed for (2).
+  (4)The example program HelloSmartCollision.cpp was changed to detect 
+     invalid license.
+
+2005/11/16 Release of Ver1.0
+

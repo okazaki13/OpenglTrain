@@ -126,10 +126,11 @@
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="CuttingForce.cpp" />
     <ClCompile Include="display.cpp" />
-    <ClCompile Include="glut_init.cpp" />
+    <ClCompile Include="glut_setup.cpp" />
     <ClCompile Include="HapticCalculation.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="object.cpp" />
+    <ClCompile Include="smartcollision_setup.cpp" />
     <ClCompile Include="SpidarInitcpp.cpp" />
     <ClCompile Include="Tool.cpp" />
     <ClCompile Include="Voxel.cpp" />
@@ -138,7 +139,8 @@
     <ClInclude Include="CuttingForce.h" />
     <ClInclude Include="Declaration.h" />
     <ClInclude Include="SettingValue.h" />
-    <ClInclude Include="Toggle switch.h" />
+    <ClInclude Include="smartcollision_includer.h" />
+    <ClInclude Include="toggle_switch.h" />
     <ClInclude Include="Tool.h" />
     <ClInclude Include="Voxel.h" />
   </ItemGroup>

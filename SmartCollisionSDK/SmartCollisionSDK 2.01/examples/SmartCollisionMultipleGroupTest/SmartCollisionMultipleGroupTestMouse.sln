@@ -1,0 +1,40 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmartCollisionMultipleGroupTestMouse", "..\SmartCollisionMultipleGroupTest\SmartCollisionMultipleGroupTestMouse.vcproj", "{3CD6B97C-6955-461F-88B9-0E260B7348B7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{367935B8-6CED-4A9F-B225-1EA80ADF2E7A} = {367935B8-6CED-4A9F-B225-1EA80ADF2E7A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libEasyDeviceMouse", "..\libEasyDevice\libEasyDeviceMouse.vcproj", "{367935B8-6CED-4A9F-B225-1EA80ADF2E7A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug-with-spo = Debug-with-spo
+		Release = Release
+		Release-with-spo = Release-with-spo
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{3CD6B97C-6955-461F-88B9-0E260B7348B7}.Debug.ActiveCfg = Debug|Win32
+		{3CD6B97C-6955-461F-88B9-0E260B7348B7}.Debug.Build.0 = Debug|Win32
+		{3CD6B97C-6955-461F-88B9-0E260B7348B7}.Debug-with-spo.ActiveCfg = Debug-with-spo|Win32
+		{3CD6B97C-6955-461F-88B9-0E260B7348B7}.Debug-with-spo.Build.0 = Debug-with-spo|Win32
+		{3CD6B97C-6955-461F-88B9-0E260B7348B7}.Release.ActiveCfg = Release|Win32
+		{3CD6B97C-6955-461F-88B9-0E260B7348B7}.Release.Build.0 = Release|Win32
+		{3CD6B97C-6955-461F-88B9-0E260B7348B7}.Release-with-spo.ActiveCfg = Release-with-spo|Win32
+		{3CD6B97C-6955-461F-88B9-0E260B7348B7}.Release-with-spo.Build.0 = Release-with-spo|Win32
+		{367935B8-6CED-4A9F-B225-1EA80ADF2E7A}.Debug.ActiveCfg = Debug|Win32
+		{367935B8-6CED-4A9F-B225-1EA80ADF2E7A}.Debug.Build.0 = Debug|Win32
+		{367935B8-6CED-4A9F-B225-1EA80ADF2E7A}.Debug-with-spo.ActiveCfg = Debug|Win32
+		{367935B8-6CED-4A9F-B225-1EA80ADF2E7A}.Debug-with-spo.Build.0 = Debug|Win32
+		{367935B8-6CED-4A9F-B225-1EA80ADF2E7A}.Release.ActiveCfg = Release|Win32
+		{367935B8-6CED-4A9F-B225-1EA80ADF2E7A}.Release.Build.0 = Release|Win32
+		{367935B8-6CED-4A9F-B225-1EA80ADF2E7A}.Release-with-spo.ActiveCfg = Release|Win32
+		{367935B8-6CED-4A9F-B225-1EA80ADF2E7A}.Release-with-spo.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

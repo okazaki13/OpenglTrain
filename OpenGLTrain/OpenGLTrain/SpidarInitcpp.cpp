@@ -2,6 +2,7 @@
 #pragma comment(lib,"../../Release/SpidarAHS.lib")
 #pragma comment(lib,"../../Debug/SpidarAHS.lib")
 #include"Declaration.h"
+#include"toggle_switch.h"
 
 #include<iostream>
 
@@ -49,4 +50,17 @@ void CALLBACK hapticLoop_w3p4(DWORD dwUser)
 void endHaptic() {
 	ahsStopHapticLoop(spidar_handle);
 	spidar_handle = ahsQuit(spidar_handle);
+}
+
+
+//スパイダーを使用するかどうかの確認
+//使用するならsetupも行う
+void check_spidar_being() {
+	if (RUN_HAPTIC) {
+		OpenSpidarVoice();//茜ちゃんボイス
+		init_spidar();
+	}
+	else {
+		//ハプティックを使わないキーボード操作（建設予定）
+	}
 }

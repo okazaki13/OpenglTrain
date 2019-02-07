@@ -1,0 +1,40 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libEasyDevicePhantom", "..\libEasyDevice\libEasyDevicePhantom.vcproj", "{2350F655-2344-46D3-8E6E-C40688595EB5}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmartCollisionMultipleGroupTestPhantom", "SmartCollisionMultipleGroupTestPhantom.vcproj", "{58195338-6F62-4BCF-AA01-80CA91CF6704}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2350F655-2344-46D3-8E6E-C40688595EB5} = {2350F655-2344-46D3-8E6E-C40688595EB5}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug-with-spo = Debug-with-spo
+		Release = Release
+		Release-with-spo = Release-with-spo
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{2350F655-2344-46D3-8E6E-C40688595EB5}.Debug.ActiveCfg = Debug|Win32
+		{2350F655-2344-46D3-8E6E-C40688595EB5}.Debug.Build.0 = Debug|Win32
+		{2350F655-2344-46D3-8E6E-C40688595EB5}.Debug-with-spo.ActiveCfg = Debug|Win32
+		{2350F655-2344-46D3-8E6E-C40688595EB5}.Debug-with-spo.Build.0 = Debug|Win32
+		{2350F655-2344-46D3-8E6E-C40688595EB5}.Release.ActiveCfg = Release|Win32
+		{2350F655-2344-46D3-8E6E-C40688595EB5}.Release.Build.0 = Release|Win32
+		{2350F655-2344-46D3-8E6E-C40688595EB5}.Release-with-spo.ActiveCfg = Release|Win32
+		{2350F655-2344-46D3-8E6E-C40688595EB5}.Release-with-spo.Build.0 = Release|Win32
+		{58195338-6F62-4BCF-AA01-80CA91CF6704}.Debug.ActiveCfg = Debug|Win32
+		{58195338-6F62-4BCF-AA01-80CA91CF6704}.Debug.Build.0 = Debug|Win32
+		{58195338-6F62-4BCF-AA01-80CA91CF6704}.Debug-with-spo.ActiveCfg = Debug-with-spo|Win32
+		{58195338-6F62-4BCF-AA01-80CA91CF6704}.Debug-with-spo.Build.0 = Debug-with-spo|Win32
+		{58195338-6F62-4BCF-AA01-80CA91CF6704}.Release.ActiveCfg = Release|Win32
+		{58195338-6F62-4BCF-AA01-80CA91CF6704}.Release.Build.0 = Release|Win32
+		{58195338-6F62-4BCF-AA01-80CA91CF6704}.Release-with-spo.ActiveCfg = Release-with-spo|Win32
+		{58195338-6F62-4BCF-AA01-80CA91CF6704}.Release-with-spo.Build.0 = Release-with-spo|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
