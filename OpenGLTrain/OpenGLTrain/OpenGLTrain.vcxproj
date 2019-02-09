@@ -130,6 +130,7 @@
     <ClCompile Include="HapticCalculation.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="object.cpp" />
+    <ClCompile Include="SC_STL.cpp" />
     <ClCompile Include="smartcollision_setup.cpp" />
     <ClCompile Include="SpidarInitcpp.cpp" />
     <ClCompile Include="Tool.cpp" />
@@ -138,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="CuttingForce.h" />
     <ClInclude Include="Declaration.h" />
+    <ClInclude Include="SC_STL.h" />
     <ClInclude Include="SettingValue.h" />
     <ClInclude Include="smartcollision_includer.h" />
     <ClInclude Include="toggle_switch.h" />
