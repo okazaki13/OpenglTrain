@@ -7,8 +7,8 @@ void object() {
 	Voxel voxel;
 	Tool tool;
 
-	voxel.set_voxelcolor(1.0, 0, 0);
-	voxel.set_voxelsize(10);
+	voxel.set_voxelcolor(0.0, 0.8, 1.0,0.3);
+	voxel.set_voxelsize(1);
 	voxel.create_voxel(20, 10, 20);
 
 	tool.create_ballendmill(0,0,0);

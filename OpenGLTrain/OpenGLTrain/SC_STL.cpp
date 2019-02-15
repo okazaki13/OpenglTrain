@@ -15,7 +15,7 @@ SC_STL::~SC_STL()
 }
 
 
-void SC_STL::CreateSCobject(std::string objectname) {
+void SC_STL::CreateSCobject(std::string objname) {
 	SCObject objectname(SC_OBJECT_TYPE_CLOSED_POLYHEDRA);
 }
 

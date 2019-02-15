@@ -12,7 +12,7 @@ public:
 	~Voxel();
 	void create_voxel(int offset[2]);
 	void create_voxel(int offset_x,int offset_y,int offset_z);
-	void set_voxelcolor(double R,double G,double B);
+	void set_voxelcolor(double R, double G, double B, double A);
 	void set_voxelsize(double size);
 	void CreateVoxelObject(int a, int b, int c);
 

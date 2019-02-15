@@ -25,4 +25,4 @@ void check_spidar_being();
 
 //display.cpp
 void Display(void);
-void Ground(void);  //‘å’n‚Ì•`‰æ
+void Ground();  //‘å’n‚Ì•`‰æ

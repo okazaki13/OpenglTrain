@@ -17,7 +17,7 @@ void Display(void) {
 //----------------------------------------------------
 // ‘å’n‚Ì•`‰æ
 //----------------------------------------------------
-void Ground(void) {
+void Ground() {
 	double ground_max_x = 300.0;
 	double ground_max_y = 300.0;
 	glColor3d(0.8, 0.8, 0.8);  // ‘å’n‚ÌF

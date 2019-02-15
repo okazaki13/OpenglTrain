@@ -8,7 +8,7 @@ public:
 	SC_STL(std::string objectname, std::string strage_location);
 	~SC_STL();
 
-	void CreateSCobject(std::string objectname);
+	void CreateSCobject(std::string objname);
 	void ImportSTL(std::string strage_location);
 
 private:

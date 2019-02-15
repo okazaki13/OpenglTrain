@@ -1,6 +1,7 @@
-﻿  main.cpp
+﻿  glut_setup.cpp
+c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\glut_setup.cpp(15): warning C4305: '引数': 'double' から 'GLclampf' へ切り詰めます。
   コード生成しています。
-  1 of 107 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
+  3 of 107 functions ( 2.8%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
