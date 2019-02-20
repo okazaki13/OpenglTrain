@@ -11,19 +11,21 @@ using namespace std;
 
 
 #define DISP_LIST_INDEX1 1//切れ刃モデルのディスプレイリスト
+#define DISP_LIST_INDEX2 2//シャンクモデルのディスプレイリスト
+#define DISP_LIST_INDEX3 3//ホルダーモデルのディスプレイリスト
 
 
-void create_cutting_edge() {
+void create_tool() {
 	
 	
 
 
-	////工具刃先の描画	
+	////工具刃先の描画とコリジョン設定
 	LOAD_STLMODEL cutting_edge;
 	cutting_edge.get_stl("../../STLmodel/cutting_edge.STL");
 	glNewList(DISP_LIST_INDEX1, GL_COMPILE); //コンパイルのみ
 
-	glColor4f(0.7, 0.2, 0.2, 0.5);	// 多角形の色(RGBA)
+	glColor4f(0.0, 1.0, 0.0, 1.0);	// 多角形の色(RGBA)
 	glBegin(GL_TRIANGLES);				// 多角形の描画
 	
 	for (int i=0; i < cutting_edge.get_polygon_number();i++){
@@ -32,30 +34,75 @@ void create_cutting_edge() {
 		glVertex3f(cutting_edge.polygon_coordinate2_x[i] ,cutting_edge.polygon_coordinate2_y[i] ,cutting_edge.polygon_coordinate2_z[i]);
 		glVertex3f(cutting_edge.polygon_coordinate3_x[i] ,cutting_edge.polygon_coordinate3_y[i] ,cutting_edge.polygon_coordinate3_z[i]);	
 	}
-	//glVertex3f(0.0f, 0.0f, 0.0f);
-	//glVertex3f(5.0f, 5.0f, 5.5f);
-	//glVertex3f(0.0f, 0.0f, 10.0f);
 	glEnd();
 	glEndList();
 	
-
 	SCObject SC_cutting_edge;
 	SC_cutting_edge.AddTriangles(cutting_edge.SC_vertices, cutting_edge.SC_vertices_num,cutting_edge.SC_triangles,cutting_edge.SC_triangles_num);
 	/////工具刃先ここまで
 
 
 
+	/////工具シャンク部の描画とコリジョン設定
+	LOAD_STLMODEL shank;
+	shank.get_stl("../../STLmodel/shank.STL");
+	glNewList(DISP_LIST_INDEX2, GL_COMPILE); //コンパイルのみ
 
+	glColor4f(0.3, 0.7, 0.3, 0.3);	// 多角形の色(RGBA)
+	glBegin(GL_TRIANGLES);				// 多角形の描画
+
+	for (int i = 0; i < shank.get_polygon_number(); i++) {
+		glNormal3f(shank.normal_coordinate_x[i], shank.normal_coordinate_y[i], shank.normal_coordinate_z[i]);
+		glVertex3f(shank.polygon_coordinate1_x[i], shank.polygon_coordinate1_y[i], shank.polygon_coordinate1_z[i]);
+		glVertex3f(shank.polygon_coordinate2_x[i], shank.polygon_coordinate2_y[i], shank.polygon_coordinate2_z[i]);
+		glVertex3f(shank.polygon_coordinate3_x[i], shank.polygon_coordinate3_y[i], shank.polygon_coordinate3_z[i]);
+	}
+	glEnd();
+	glEndList();
+
+	SCObject SC_shank;
+	SC_shank.AddTriangles(shank.SC_vertices, shank.SC_vertices_num, shank.SC_triangles, shank.SC_triangles_num);
+	/////工具シャンクここまで
+
+
+
+
+
+	////工具ホルダー部の描画とコリジョン設定
+	LOAD_STLMODEL holder;
+	holder.get_stl("../../STLmodel/holder.STL");
+	glNewList(DISP_LIST_INDEX3, GL_COMPILE); //コンパイルのみ
+
+	glColor4f(0.3, 0.7, 0.3, 0.7);	// 多角形の色(RGBA)
+	glBegin(GL_TRIANGLES);				// 多角形の描画
+
+	for (int i = 0; i < holder.get_polygon_number(); i++) {
+		glNormal3f(holder.normal_coordinate_x[i], holder.normal_coordinate_y[i], holder.normal_coordinate_z[i]);
+		glVertex3f(holder.polygon_coordinate1_x[i], holder.polygon_coordinate1_y[i], holder.polygon_coordinate1_z[i]);
+		glVertex3f(holder.polygon_coordinate2_x[i], holder.polygon_coordinate2_y[i], holder.polygon_coordinate2_z[i]);
+		glVertex3f(holder.polygon_coordinate3_x[i], holder.polygon_coordinate3_y[i], holder.polygon_coordinate3_z[i]);
+	}
+	glEnd();
+	glEndList();
+
+	SCObject SC_holder;
+	SC_shank.AddTriangles(holder.SC_vertices, holder.SC_vertices_num, holder.SC_triangles, holder.SC_triangles_num);
+
+	////工具ホルダー部ここまで
 }
 
-void matrix_cutting_edge() {
+
+
+void matrix_tool() {
 
 	glPushMatrix();
 	glColor4f(0.7, 0.2, 0.2, 0.5);	// 多角形の色(RGBA)
 	glTranslated(0,0,0);//平行移動値の設定
 	glCallList(DISP_LIST_INDEX1);
-
+	glCallList(DISP_LIST_INDEX2);
+	glCallList(DISP_LIST_INDEX3);
 	glPopMatrix();
-	cout << "ここまで" << endl;
+	//cout << "ここまで" << endl;
 
 }
+

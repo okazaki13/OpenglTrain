@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
 	///////////////////////////////////////
 	//OpenGLのディスプレイリスト
 	//////////////////////////////////////
-	create_cutting_edge();
+	create_tool();
 
 	glutMainLoop();
 

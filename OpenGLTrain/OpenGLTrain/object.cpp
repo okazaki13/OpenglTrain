@@ -14,6 +14,6 @@ void object() {
 	//tool.create_ballendmill(0,0,0);
 	//tool.drawCylinder(tool.get_endmill_D() / (2.2f * 10), tool.get_endmill_D(), 20);
 
-	matrix_cutting_edge();
+	matrix_tool();
 
 }

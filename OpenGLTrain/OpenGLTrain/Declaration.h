@@ -28,5 +28,5 @@ void Display(void);
 void Ground();  //‘å’n‚Ì•`‰æ
 
 //using_stl
-void create_cutting_edge();
-void matrix_cutting_edge();
+void create_tool();
+void matrix_tool();
