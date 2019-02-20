@@ -25,13 +25,3 @@ void Initialize(void) {
 
 
 
-//openGLのセットアップをまとめた関数
-void openGL_setup(int argc, char *argv[]) {
-	glutInit(&argc, argv);//環境の初期化
-	glutInitWindowPosition(WindowPositionX, WindowPositionY);//ウィンドウの位置の指定
-	glutInitWindowSize(WindowWidth, WindowHeight); //ウィンドウサイズの指定
-	glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);//ディスプレイモードの指定
-	glutCreateWindow(WindowTitle);  //ウィンドウの作成
-	glutDisplayFunc(Display); //描画時に呼び出される関数を指定する（関数名：Display）
-	Initialize(); //初期設定の関数を呼び出す
-}

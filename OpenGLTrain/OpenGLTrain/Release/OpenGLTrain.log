@@ -1,34 +1,10 @@
-﻿  Audio.cpp
-  CuttingForce.cpp
-  display.cpp
-  LOAD_STLMODEL.cpp
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.cpp(5): error C2039: 'GET_STLMODEL': 'LOAD_STLMODEL' のメンバーではありません。
-  c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.h(4): note: 'LOAD_STLMODEL' の宣言を確認してください
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.cpp(6): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.cpp(7): warning C4508: 'GET_STLMODEL': 関数に戻り値の型が指定されていません。戻り値を void 型と見なします。
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.cpp(10): error C2523: 'LOAD_STLMODEL::~GET_STLMODEL': デストラクター が、別の名前で宣言されています。
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.cpp(10): error C2039: 'GET_STLMODEL': 'LOAD_STLMODEL' のメンバーではありません。
-  c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.h(4): note: 'LOAD_STLMODEL' の宣言を確認してください
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.cpp(11): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.cpp(11): error C2084: 関数 'int GET_STLMODEL(void)' は既に本体を持っています。
-  c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.cpp(5): note: 'GET_STLMODEL' の以前の定義を確認してください
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.cpp(15): fatal error C1004: 予期せぬ EOF が検出されました。
-  glut_setup.cpp
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\glut_setup.cpp(15): warning C4305: '引数': 'double' から 'GLclampf' へ切り詰めます。
-  HapticCalculation.cpp
-  main.cpp
-  object.cpp
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
-  SC_STL.cpp
-  smartcollision_setup.cpp
-  SpidarInitcpp.cpp
-  Tool.cpp
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\tool.cpp(29): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\tool.cpp(43): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-  Voxel.cpp
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\voxel.cpp(9): warning C4305: '=': 'double' から 'float' へ切り詰めます。
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\voxel.cpp(42): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\voxel.cpp(43): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\voxel.cpp(44): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\voxel.cpp(45): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+﻿  LOAD_STLMODEL.cpp
+  using_stl.cpp
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\using_stl.cpp(26): warning C4305: '引数': 'double' から 'GLfloat' へ切り詰めます。
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\using_stl.cpp(54): warning C4305: '引数': 'double' から 'GLfloat' へ切り詰めます。
+  コード生成しています。
+  6 of 336 functions ( 1.8%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  コード生成が終了しました。
+  OpenGLTrain.vcxproj -> C:\Users\sofy\Documents\OpenglTrain\OpenGLTrain\OpenGLTrain\../../bin\OpenGLTrain.exe

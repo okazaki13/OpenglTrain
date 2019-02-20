@@ -15,8 +15,8 @@ private:
 	int polygon_number; //合計ポリゴン数
 
 
-
-
+	//getter作るの面倒すぎるのでパブリックに・・・
+public:
 	//[ポリゴン枚数][座標値]
 	std::vector<float> normal_coordinate_x;
 	std::vector<float> normal_coordinate_y;
@@ -38,6 +38,7 @@ public:
 	~LOAD_STLMODEL();
 
 	void get_stl(std::string filepass);
+	int get_polygon_number();
 
 	//スマートコリジョン用
 	void make_SC_vertices();

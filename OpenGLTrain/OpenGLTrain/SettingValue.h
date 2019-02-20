@@ -109,3 +109,4 @@ const double cutting_coef_Kf = 0.010319079;
 //// “x‚ğƒ‰ƒWƒAƒ“‚É•ÏŠ·
 //inline double DegreeToRadian( double degree ){ return ( M_PI * 180 ) * degree; }
 
+

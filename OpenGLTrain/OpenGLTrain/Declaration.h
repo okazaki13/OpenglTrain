@@ -26,3 +26,7 @@ void check_spidar_being();
 //display.cpp
 void Display(void);
 void Ground();  //‘å’n‚Ì•`‰æ
+
+//using_stl
+void create_cutting_edge();
+void matrix_cutting_edge();

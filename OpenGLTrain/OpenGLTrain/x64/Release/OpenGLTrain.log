@@ -1,8 +1,42 @@
-﻿  display.cpp
-  glut_init.cpp
+﻿  Audio.cpp
+  CuttingForce.cpp
+  cutting_edge_object.cpp
+  display.cpp
+  LOAD_STLMODEL.cpp
+  glut_setup.cpp
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\glut_setup.cpp(15): warning C4305: '引数': 'double' から 'GLclampf' へ切り詰めます。
+  HapticCalculation.cpp
   main.cpp
   object.cpp
-c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\Tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+  SC_STL.cpp
+  smartcollision_setup.cpp
   SpidarInitcpp.cpp
-SpidarInitcpp.cpp(14): error C2065: 'hapticLoop_w3p4': 定義されていない識別子です。
-SpidarInitcpp.cpp(24): warning C4312: '型キャスト': 'DWORD' からより大きいサイズの 'SPIDAR_HANDLE' へ変換します。
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\spidarinitcpp.cpp(34): warning C4312: '型キャスト': 'DWORD' からより大きいサイズの 'SPIDAR_HANDLE' へ変換します。
+  using_stl.cpp
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\using_stl.cpp(31): warning C4305: '引数': 'double' から 'GLfloat' へ切り詰めます。
+  Tool.cpp
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\tool.cpp(29): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\tool.cpp(43): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  Voxel.cpp
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\voxel.cpp(9): warning C4305: '=': 'double' から 'float' へ切り詰めます。
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\voxel.cpp(42): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\voxel.cpp(43): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\voxel.cpp(44): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\voxel.cpp(45): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+SpidarInitcpp.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) void __cdecl ahsGetImpPosVel(void *,float * const,int)" (__imp_?ahsGetImpPosVel@@YAXPEAXQEAMH@Z)" は未解決です。
+SpidarInitcpp.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) int __cdecl ahsCreate_Spidar(void * *,char *,int,int)" (__imp_?ahsCreate_Spidar@@YAHPEAPEAXPEADHH@Z)" は未解決です。
+SpidarInitcpp.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) void __cdecl ahsSetImpTorque(void *,float * const,int)" (__imp_?ahsSetImpTorque@@YAXPEAXQEAMH@Z)" は未解決です。
+SpidarInitcpp.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) void __cdecl ahsSetImpForce(void *,float * const,int)" (__imp_?ahsSetImpForce@@YAXPEAXQEAMH@Z)" は未解決です。
+SpidarInitcpp.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) void __cdecl ahsGetImpPos(void *,float * const,int)" (__imp_?ahsGetImpPos@@YAXPEAXQEAMH@Z)" は未解決です。
+SpidarInitcpp.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) void __cdecl ahsGetImpOri_wxyz(void *,float * const,int)" (__imp_?ahsGetImpOri_wxyz@@YAXPEAXQEAMH@Z)" は未解決です。
+SpidarInitcpp.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) void __cdecl ahsSetHapticLoopCallBackFunction(void *,void (__cdecl*)(unsigned long))" (__imp_?ahsSetHapticLoopCallBackFunction@@YAXPEAXP6AXK@Z@Z)" は未解決です。
+SpidarInitcpp.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) void __cdecl ahsStartHapticLoop(void *)" (__imp_?ahsStartHapticLoop@@YAXPEAX@Z)" は未解決です。
+SpidarInitcpp.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) void * __cdecl ahsQuit(void *)" (__imp_?ahsQuit@@YAPEAXPEAX@Z)" は未解決です。
+SpidarInitcpp.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) void __cdecl ahsSetImpScale(void *,float,float,int)" (__imp_?ahsSetImpScale@@YAXPEAXMMH@Z)" は未解決です。
+SpidarInitcpp.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) void __cdecl ahsStopHapticLoop(void *)" (__imp_?ahsStopHapticLoop@@YAXPEAX@Z)" は未解決です。
+using_stl.obj : error LNK2001: 外部シンボル ""public: int __cdecl SCObject::AddTriangles(float const *,int,int const *,int,char const *)" (?AddTriangles@SCObject@@QEAAHPEBMHPEBHHPEBD@Z)" は未解決です。
+using_stl.obj : error LNK2001: 外部シンボル ""public: __cdecl SCObject::~SCObject(void)" (??1SCObject@@QEAA@XZ)" は未解決です。
+using_stl.obj : error LNK2001: 外部シンボル ""public: __cdecl SCObject::SCObject(void)" (??0SCObject@@QEAA@XZ)" は未解決です。
+C:\Users\sofy\Documents\OpenglTrain\OpenGLTrain\x64\Release\OpenGLTrain.exe : fatal error LNK1120: 14 件の未解決の外部参照

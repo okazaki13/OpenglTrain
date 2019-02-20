@@ -32,12 +32,12 @@ void LOAD_STLMODEL::get_stl(string filepass) {
 		cout << filepass << "‚ª“Ç‚Ýž‚ß‚Ü‚¹‚ñ‚Å‚µ‚½‚æ[" << endl;
 	}
 
-	getline(stlfile, filename);
+	
 	stlfile >> modeltype >> filename;
 
 
 
-	while (!stlfile.eof()) {
+	while (true) {
 		stlfile >> dust >> dust >> normal_coordinate[0] >> normal_coordinate[1] >> normal_coordinate[2];
 		stlfile >> dust >> dust;
 		stlfile >> dust >> polygon1_coordinate[0] >> polygon1_coordinate[1] >> polygon1_coordinate[2];
@@ -59,12 +59,19 @@ void LOAD_STLMODEL::get_stl(string filepass) {
 		polygon_coordinate3_x.emplace_back(polygon3_coordinate[0]);
 		polygon_coordinate3_y.emplace_back(polygon3_coordinate[1]);
 		polygon_coordinate3_z.emplace_back(polygon3_coordinate[2]);
+
+
+
+
 		
 		polygon_number++;
+		if (stlfile.eof()) {
+			break;
+		}
 
 	}
 
-	stlfile.close;
+	stlfile.close();
 	make_SC_vertices();
 	make_SC_triangles();
 
@@ -100,4 +107,8 @@ void LOAD_STLMODEL::make_SC_triangles() {
 
 
 	SC_triangles_num = allloop_triangles_number;
+}
+
+int LOAD_STLMODEL::get_polygon_number() {
+	return polygon_number;
 }

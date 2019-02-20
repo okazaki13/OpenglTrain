@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="CuttingForce.cpp" />
+    <ClCompile Include="cutting_edge_object.cpp" />
     <ClCompile Include="display.cpp" />
     <ClCompile Include="LOAD_STLMODEL.cpp" />
     <ClCompile Include="glut_setup.cpp" />
@@ -134,7 +135,7 @@
     <ClCompile Include="SC_STL.cpp" />
     <ClCompile Include="smartcollision_setup.cpp" />
     <ClCompile Include="SpidarInitcpp.cpp" />
-    <ClCompile Include="stl.cpp" />
+    <ClCompile Include="using_stl.cpp" />
     <ClCompile Include="Tool.cpp" />
     <ClCompile Include="Voxel.cpp" />
   </ItemGroup>
