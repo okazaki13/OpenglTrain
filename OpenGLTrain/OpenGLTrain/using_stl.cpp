@@ -3,6 +3,7 @@
 
 #include"Declaration.h"
 #include "LOAD_STLMODEL.h"
+#include"GlobalVariable.h"
 #include <GL/glut.h>
 #include <iostream>
 
@@ -94,10 +95,25 @@ void create_tool() {
 
 
 void matrix_tool() {
+	//位置
+	float spidar_origin_position[3];//位置
+	GLfloat position[3];
+	position[0] = spidar_origin_position[0];
+	position[1] = spidar_origin_position[1];
+	position[2] = spidar_origin_position[2];
+
+	//姿勢
+	float spidar_origin_quaternion[4];
+	GLfloat rotation[4];
+	rotation[0] = spidar_origin_quaternion[0];
+	rotation[1] = spidar_origin_quaternion[1];
+	rotation[2] = spidar_origin_quaternion[2];
+	rotation[3] = spidar_origin_quaternion[3];
 
 	glPushMatrix();
 	glColor4f(0.7, 0.2, 0.2, 0.5);	// 多角形の色(RGBA)
-	glTranslated(0,0,0);//平行移動値の設定
+	glTranslatef(position[0],position[1],position[2]);//平行移動値の設定
+	glRotatef(rotation[3], rotation[0], rotation[1], rotation[2]);
 	glCallList(DISP_LIST_INDEX1);
 	glCallList(DISP_LIST_INDEX2);
 	glCallList(DISP_LIST_INDEX3);

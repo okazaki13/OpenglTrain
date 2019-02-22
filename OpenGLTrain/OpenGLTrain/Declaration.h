@@ -17,7 +17,7 @@ void object();
 int OpenSpidarVoice(void);
 
 
-//SpidarInit.cpp
+//Spidar.cpp
 void init_spidar();
 void CALLBACK hapticLoop_w3p4(DWORD dwUser);
 void endHaptic();
@@ -30,3 +30,8 @@ void Ground();  //‘å’n‚Ì•`‰æ
 //using_stl
 void create_tool();
 void matrix_tool();
+
+//keybord
+void keyboard(unsigned char key, int x, int y);
+void sKeybord(int Key, int x, int y);
+

@@ -1,4 +1,5 @@
 #include"Declaration.h"
+#include"GlobalVariable.h"
 #include <GL/glut.h>
 #include "../../include/SpidarAHS/SpidarAHS.h"
 #pragma comment(lib,"../../Release/SpidarAHS.lib")
@@ -34,6 +35,8 @@ int main(int argc, char *argv[]) {
 	glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);//ディスプレイモードの指定
 	glutCreateWindow(WindowTitle);  //ウィンドウの作成
 	glutDisplayFunc(Display); //描画時に呼び出される関数を指定する（関数名：Display）
+	glutKeyboardFunc(keyboard);
+	glutSpecialFunc(sKeybord);
 	Initialize(); //初期設定の関数を呼び出す
 
 
@@ -43,6 +46,7 @@ int main(int argc, char *argv[]) {
 	//////////////////////////////////////
 	create_tool();
 
+	atexit(endHaptic);
 	glutMainLoop();
 
 	return 0;

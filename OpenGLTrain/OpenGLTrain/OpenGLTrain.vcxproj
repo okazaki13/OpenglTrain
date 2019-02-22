@@ -127,6 +127,7 @@
     <ClCompile Include="CuttingForce.cpp" />
     <ClCompile Include="cutting_edge_object.cpp" />
     <ClCompile Include="display.cpp" />
+    <ClCompile Include="keybord.cpp" />
     <ClCompile Include="LOAD_STLMODEL.cpp" />
     <ClCompile Include="glut_setup.cpp" />
     <ClCompile Include="HapticCalculation.cpp" />
@@ -134,7 +135,7 @@
     <ClCompile Include="object.cpp" />
     <ClCompile Include="SC_STL.cpp" />
     <ClCompile Include="smartcollision_setup.cpp" />
-    <ClCompile Include="SpidarInitcpp.cpp" />
+    <ClCompile Include="Spidar.cpp" />
     <ClCompile Include="using_stl.cpp" />
     <ClCompile Include="Tool.cpp" />
     <ClCompile Include="Voxel.cpp" />
@@ -142,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="CuttingForce.h" />
     <ClInclude Include="Declaration.h" />
+    <ClInclude Include="GlobalVariable.h" />
     <ClInclude Include="LOAD_STLMODEL.h" />
     <ClInclude Include="SC_STLMODEL.h" />
     <ClInclude Include="SettingValue.h" />
