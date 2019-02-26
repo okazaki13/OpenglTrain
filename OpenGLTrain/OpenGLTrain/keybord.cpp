@@ -83,6 +83,9 @@ void keyboard(unsigned char key, int x, int y) {
 	case '8':
 		//g_cf_ex_num = key - '0'; //サンプル呈示スイッチ
 		break;
+	case '9':
+		ahsStopHapticLoop(spidar);
+		spidar = ahsQuit(spidar);
 	default:
 		break;
 	}

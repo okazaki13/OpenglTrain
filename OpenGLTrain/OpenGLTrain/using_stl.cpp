@@ -92,28 +92,25 @@ void create_tool() {
 	////工具ホルダー部ここまで
 }
 
-
-
+//float spidar_origin_position[3];
+//float spidar_origin_quaternion[4];
 void matrix_tool() {
 	//位置
-	float spidar_origin_position[3];//位置
-	GLfloat position[3];
+	
+	float position[3];
 	position[0] = spidar_origin_position[0];
 	position[1] = spidar_origin_position[1];
 	position[2] = spidar_origin_position[2];
 
 	//姿勢
-	float spidar_origin_quaternion[4];
-	GLfloat rotation[4];
-	rotation[0] = spidar_origin_quaternion[0];
-	rotation[1] = spidar_origin_quaternion[1];
-	rotation[2] = spidar_origin_quaternion[2];
-	rotation[3] = spidar_origin_quaternion[3];
+	float axis_vector[4];//クォータニオンを回転軸ベクトルと回転方向に変換したものを入れる
+
+	QuaternionToAxisVector(spidar_origin_quaternion, axis_vector);
 
 	glPushMatrix();
 	glColor4f(0.7, 0.2, 0.2, 0.5);	// 多角形の色(RGBA)
 	glTranslatef(position[0],position[1],position[2]);//平行移動値の設定
-	glRotatef(rotation[3], rotation[0], rotation[1], rotation[2]);
+	glRotatef( axis_vector[0], axis_vector[1], axis_vector[2], axis_vector[3]);
 	glCallList(DISP_LIST_INDEX1);
 	glCallList(DISP_LIST_INDEX2);
 	glCallList(DISP_LIST_INDEX3);

@@ -46,6 +46,8 @@ int main(int argc, char *argv[]) {
 	//////////////////////////////////////
 	create_tool();
 
+
+
 	atexit(endHaptic);
 	glutMainLoop();
 

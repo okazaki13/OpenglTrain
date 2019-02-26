@@ -35,3 +35,6 @@ void matrix_tool();
 void keyboard(unsigned char key, int x, int y);
 void sKeybord(int Key, int x, int y);
 
+
+//rotation
+void QuaternionToAxisVector(float quaternion[4], float axisvector[4]);

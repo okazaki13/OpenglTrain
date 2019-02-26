@@ -133,6 +133,7 @@
     <ClCompile Include="HapticCalculation.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="object.cpp" />
+    <ClCompile Include="rotation.cpp" />
     <ClCompile Include="SC_STL.cpp" />
     <ClCompile Include="smartcollision_setup.cpp" />
     <ClCompile Include="Spidar.cpp" />
