@@ -1,5 +1,8 @@
 #include"Declaration.h"
 #include <GL/glut.h>
+#include<iostream>
+
+using namespace std;
 
 //----------------------------------------------------
 // 描画の関数
@@ -10,7 +13,7 @@ void Display(void) {
 	Ground();
 
 	object();//工具や切削物などを表示する関数
-
+	cout << "描画" << endl;
 	glutSwapBuffers(); //glutInitDisplayMode(GLUT_DOUBLE)でダブルバッファリングを利用可
 }
 
@@ -31,4 +34,11 @@ void Ground() {
 		glVertex3d(lx, -ground_max_y, 0);
 	}
 	glEnd();
+}
+
+
+void RedisplayTimer(int value) {
+
+	glutPostRedisplay();
+	glutTimerFunc(50, RedisplayTimer, 0); //第１引数でFPS指定（ms）
 }

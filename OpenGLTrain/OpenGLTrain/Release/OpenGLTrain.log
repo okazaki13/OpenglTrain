@@ -1,10 +1,17 @@
-﻿  using_stl.cpp
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\using_stl.cpp(52): warning C4305: '引数': 'double' から 'GLfloat' へ切り詰めます。
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\using_stl.cpp(77): warning C4305: '引数': 'double' から 'GLfloat' へ切り詰めます。
-c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\using_stl.cpp(112): warning C4305: '引数': 'double' から 'GLfloat' へ切り詰めます。
+﻿  Spidar.cpp
+  display.cpp
+  glut_setup.cpp
+c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\glut_setup.cpp(15): warning C4305: '引数': 'double' から 'GLclampf' へ切り詰めます。
+  main.cpp
+  object.cpp
+c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\tool.h(6): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+  using_stl.cpp
+c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\using_stl.cpp(52): warning C4305: '引数': 'double' から 'GLfloat' へ切り詰めます。
+c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\using_stl.cpp(77): warning C4305: '引数': 'double' から 'GLfloat' へ切り詰めます。
+c:\users\masaya\documents\opengltrain\opengltrain\opengltrain\using_stl.cpp(111): warning C4305: '引数': 'double' から 'GLfloat' へ切り詰めます。
   コード生成しています。
-  333 of 340 functions (97.9%) were compiled, the rest were copied from previous compilation.
-    3 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  97 of 341 functions (28.4%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    29 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
-  OpenGLTrain.vcxproj -> C:\Users\sofy\Documents\OpenglTrain\OpenGLTrain\OpenGLTrain\../../bin\OpenGLTrain.exe
+  OpenGLTrain.vcxproj -> C:\Users\masaya\Documents\OpenglTrain\OpenGLTrain\OpenGLTrain\../../bin\OpenGLTrain.exe

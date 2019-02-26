@@ -110,7 +110,10 @@ void matrix_tool() {
 	glPushMatrix();
 	glColor4f(0.7, 0.2, 0.2, 0.5);	// 多角形の色(RGBA)
 	glTranslatef(position[0],position[1],position[2]);//平行移動値の設定
+
+
 	glRotatef( axis_vector[0], axis_vector[1], axis_vector[2], axis_vector[3]);
+	
 	glCallList(DISP_LIST_INDEX1);
 	glCallList(DISP_LIST_INDEX2);
 	glCallList(DISP_LIST_INDEX3);

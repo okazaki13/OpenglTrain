@@ -26,6 +26,7 @@ void check_spidar_being();
 //display.cpp
 void Display(void);
 void Ground();  //‘å’n‚Ì•`‰æ
+void RedisplayTimer(int value);
 
 //using_stl
 void create_tool();
