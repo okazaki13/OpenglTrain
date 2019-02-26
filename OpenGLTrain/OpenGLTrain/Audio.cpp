@@ -11,3 +11,8 @@ int OpenSpidarVoice(void) {
 	PlaySound("OpenSpidar.wav", NULL, SND_FILENAME | SND_ASYNC);
 	return 0;
 }
+
+
+
+
+
