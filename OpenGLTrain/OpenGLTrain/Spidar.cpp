@@ -40,6 +40,10 @@ void CALLBACK hapticLoop_w3p4(DWORD dwUser)
 	ahsGetImpPosVel(hSpidar, spidar_origin_velocity);
 	ahsGetImpOri_wxyz(hSpidar, spidar_origin_quaternion);
 
+	spidar_origin_position[0] *= 2000;
+	spidar_origin_position[1] *= 2000;
+	spidar_origin_position[2] *= 2000;
+
 	float force[3] = { 0 };
 	float torque[3] = { 0 };
 

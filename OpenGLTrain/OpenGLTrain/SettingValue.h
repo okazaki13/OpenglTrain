@@ -1,4 +1,7 @@
 #pragma once
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 #define WIDTH_NUM	20	//XŽ²•ûŒü
 #define LENGTH_NUM	20	//YŽ²•ûŒü
 #define HEIGHT_NUM	20	//ZŽ²•ûŒü
@@ -95,7 +98,7 @@ const double cutting_coef_Kf = 0.010319079;
 //#define Kac 198.1
 //#define Kae 10.72
 
-
+const double divide_M_PI = 1 / M_PI;
 
 // ƒ‰ƒWƒAƒ“‚ð“x‚É•ÏŠ·
 #define RadianToDegree(radian)	((180.0 * divide_M_PI) * (radian))

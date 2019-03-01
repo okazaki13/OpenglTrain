@@ -4,6 +4,7 @@
 #include"Declaration.h"
 #include "LOAD_STLMODEL.h"
 #include"GlobalVariable.h"
+#include"SettingValue.h"
 #include <GL/glut.h>
 #include <iostream>
 
@@ -109,10 +110,12 @@ void matrix_tool() {
 
 	glPushMatrix();
 	glColor4f(0.7, 0.2, 0.2, 0.5);	// 多角形の色(RGBA)
-	glTranslatef(position[0],position[1],position[2]);//平行移動値の設定
+	
 
+	glTranslatef(position[0], -position[2], position[1]);//平行移動値の設定。スパイダーのxyzと座標系を摺合せ
 
-	glRotatef( axis_vector[0], axis_vector[1], axis_vector[2], axis_vector[3]);
+	glRotatef( (RadianToDegree(axis_vector[0]))*3, axis_vector[1], axis_vector[2], axis_vector[3]);
+	
 	
 	glCallList(DISP_LIST_INDEX1);
 	glCallList(DISP_LIST_INDEX2);

@@ -86,6 +86,9 @@ void keyboard(unsigned char key, int x, int y) {
 	case '9':
 		ahsStopHapticLoop(spidar);
 		spidar = ahsQuit(spidar);
+	case GLUT_KEY_END:
+		ahsStopHapticLoop(spidar);
+		spidar = ahsQuit(spidar);
 	default:
 		break;
 	}
