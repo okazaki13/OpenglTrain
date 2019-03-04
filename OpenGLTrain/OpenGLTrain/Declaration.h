@@ -22,6 +22,7 @@ void init_spidar();
 void CALLBACK hapticLoop_w3p4(DWORD dwUser);
 void endHaptic();
 void check_spidar_being();
+void value_conversion(float position[], float quaternion[]);
 
 //display.cpp
 void Display(void);

@@ -96,23 +96,22 @@ void create_tool() {
 //float spidar_origin_position[3];
 //float spidar_origin_quaternion[4];
 void matrix_tool() {
-	//位置
+	////位置	
+	//float position[3];
+	//position[0] = spidar_position[0];
+	//position[1] = spidar_position[1];
+	//position[2] = spidar_position[2];
 	
-	float position[3];
-	position[0] = spidar_origin_position[0];
-	position[1] = spidar_origin_position[1];
-	position[2] = spidar_origin_position[2];
-
 	//姿勢
 	float axis_vector[4];//クォータニオンを回転軸ベクトルと回転方向に変換したものを入れる
 
-	QuaternionToAxisVector(spidar_origin_quaternion, axis_vector);
+	QuaternionToAxisVector(spidar_quaternion, axis_vector);
 
 	glPushMatrix();
 	glColor4f(0.7, 0.2, 0.2, 0.5);	// 多角形の色(RGBA)
 	
 
-	glTranslatef(position[0], -position[2], position[1]);//平行移動値の設定。スパイダーのxyzと座標系を摺合せ
+	glTranslatef(spidar_position[0], spidar_position[1], spidar_position[2]);//平行移動値の設定。スパイダーのxyzと座標系を摺合せ
 
 	glRotatef( (RadianToDegree(axis_vector[0]))*3, axis_vector[1], axis_vector[2], axis_vector[3]);
 	
