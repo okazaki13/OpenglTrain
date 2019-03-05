@@ -139,6 +139,7 @@
     <ClCompile Include="Spidar.cpp" />
     <ClCompile Include="using_stl.cpp" />
     <ClCompile Include="Tool.cpp" />
+    <ClCompile Include="using_voxel.cpp" />
     <ClCompile Include="Voxel.cpp" />
   </ItemGroup>
   <ItemGroup>

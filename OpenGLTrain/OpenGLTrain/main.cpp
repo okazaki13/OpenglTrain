@@ -43,9 +43,10 @@ int main(int argc, char *argv[]) {
 
 
 	///////////////////////////////////////
-	//OpenGLのディスプレイリスト
+	//OpenGLのディスプレイリストとSC準備
 	//////////////////////////////////////
-	create_tool();
+	ready_tool();
+	ready_voxel();
 
 
 

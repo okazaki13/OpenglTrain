@@ -17,7 +17,7 @@ using namespace std;
 #define DISP_LIST_INDEX3 3//ホルダーモデルのディスプレイリスト
 
 
-void create_tool() {
+void ready_tool() {
 	
 	
 
@@ -95,7 +95,7 @@ void create_tool() {
 
 //float spidar_origin_position[3];
 //float spidar_origin_quaternion[4];
-void matrix_tool() {
+void make_tool() {
 	////位置	
 	//float position[3];
 	//position[0] = spidar_position[0];

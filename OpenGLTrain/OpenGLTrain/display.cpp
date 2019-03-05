@@ -13,7 +13,7 @@ void Display(void) {
 	Ground();
 
 	object();//工具や切削物などを表示する関数
-	cout << "描画" << endl;
+	
 	glutSwapBuffers(); //glutInitDisplayMode(GLUT_DOUBLE)でダブルバッファリングを利用可
 }
 

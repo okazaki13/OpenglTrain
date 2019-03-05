@@ -30,8 +30,12 @@ void Ground();  //‘å’n‚Ì•`‰æ
 void RedisplayTimer(int value);
 
 //using_stl
-void create_tool();
-void matrix_tool();
+void ready_tool();
+void make_tool();
+
+//using_voxel
+void ready_voxel();
+void make_voxel();
 
 //keybord
 void keyboard(unsigned char key, int x, int y);
