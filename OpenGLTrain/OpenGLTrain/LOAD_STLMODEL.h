@@ -40,15 +40,21 @@ public:
 	void get_stl(std::string filepass);
 	int get_polygon_number();
 
-	//スマートコリジョン用
-	void make_SC_vertices();
-	void make_SC_triangles();
+	//スマートコリジョンオプティマイザー用
+	void use_spo(SPOObject obj);
+	void make_spo_vertices();
+	void make_spo_triangles();
 
 	//スマートコリジョン用
-	SCfloat* SC_vertices;
-	SCint* SC_triangles;
-	SCint SC_vertices_num;
-	SCint SC_triangles_num;
+
+
+
+
+	//スマートコリジョン用
+	SPOfloat* spo_vertices;
+	SPOint* spo_triangles;
+	SPOint spo_vertices_num;
+	SPOint spo_triangles_num;
 
 
 };

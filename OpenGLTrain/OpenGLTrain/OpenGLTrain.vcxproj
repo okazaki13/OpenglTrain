@@ -131,6 +131,7 @@
     <ClCompile Include="LOAD_STLMODEL.cpp" />
     <ClCompile Include="glut_setup.cpp" />
     <ClCompile Include="HapticCalculation.cpp" />
+    <ClCompile Include="loop.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="object.cpp" />
     <ClCompile Include="rotation.cpp" />

@@ -14,7 +14,7 @@ using namespace std;
 
 #define DISP_LIST_INDEX4 4//ボクセルモデルのディスプレイリスト
 
-
+SCObject SC_cube[VOXEL_NUMBER_X][VOXEL_NUMBER_Y][VOXEL_NUMBER_Z];
 
 void ready_voxel() {
 
@@ -38,8 +38,13 @@ void ready_voxel() {
 	glEnd();
 	glEndList();
 
-	SCObject SC_cube;
-	SC_cube.AddTriangles(cube.SC_vertices, cube.SC_vertices_num, cube.SC_triangles, cube.SC_triangles_num);
+	for (int i = 0; i < VOXEL_NUMBER_X; i++) {
+		for (int j = 0; j < VOXEL_NUMBER_Y; j++) {
+			for (int k = 0; k < VOXEL_NUMBER_Z; k++) {
+	//SC_cube[i][j][k].AddTriangles(cube.SC_vertices, cube.SC_vertices_num, cube.SC_triangles, cube.SC_triangles_num);
+			}
+		}
+	}
 	/////設定ここまで
 
 

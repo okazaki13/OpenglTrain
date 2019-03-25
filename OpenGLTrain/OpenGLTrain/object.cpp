@@ -15,7 +15,7 @@ void object() {
 	//tool.drawCylinder(tool.get_endmill_D() / (2.2f * 10), tool.get_endmill_D(), 20);
 
 	make_tool();
-	make_voxel();
+	//make_voxel();
 	
 
 }

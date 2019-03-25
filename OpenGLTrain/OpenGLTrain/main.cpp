@@ -9,6 +9,7 @@
 #pragma comment(lib,"../../SmartCollisionSDK/SmartCollisionSDK 2.01/spo/lib/spo.lib")
 
 #include <stdio.h>
+#include "../../SmartCollisionSDK/SmartCollisionSDK 2.01/include/sc.h"
 
 
 
@@ -36,6 +37,7 @@ int main(int argc, char *argv[]) {
 	glutCreateWindow(WindowTitle);  //ウィンドウの作成
 	glutDisplayFunc(Display); //描画時に呼び出される関数を指定する（関数名：Display）
 	glutTimerFunc(1000, RedisplayTimer, 0);
+	
 	glutKeyboardFunc(keyboard);
 	glutSpecialFunc(sKeybord);
 	Initialize(); //初期設定の関数を呼び出す
@@ -45,10 +47,19 @@ int main(int argc, char *argv[]) {
 	///////////////////////////////////////
 	//OpenGLのディスプレイリストとSC準備
 	//////////////////////////////////////
-	ready_tool();
+	
+
+	
+	ready_tool_edge();
+	ready_tool_shank();
 	ready_voxel();
 
 
+
+
+	
+
+	//glutTimerFunc(0, calcloop, 0);
 
 	atexit(endHaptic);
 	glutMainLoop();

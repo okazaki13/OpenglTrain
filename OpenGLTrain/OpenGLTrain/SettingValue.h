@@ -27,9 +27,9 @@
 #define AXIS_Z 2
 
 #define VOXEL_SIZE 0.2	//Voxelのサイズ[mm]
-#define VOXEL_NUMBER_X 100 //voxelの数
-#define VOXEL_NUMBER_Y 100 //voxelの数
-#define VOXEL_NUMBER_Z 100   //voxelの数
+#define VOXEL_NUMBER_X 1 //voxelの数
+#define VOXEL_NUMBER_Y 1 //voxelの数
+#define VOXEL_NUMBER_Z 10   //voxelの数
 
 #define EPSILON 1e-10	//十分に小さい値
 #define INTEGRAL_W 1000	//積分取得幅
