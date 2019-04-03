@@ -125,10 +125,14 @@ int LOAD_STLMODEL::get_polygon_number() {
 }
 
 void LOAD_STLMODEL::use_spo(SPOObject obj) {
+	
 	printf("『修正前』close judge = %d (0:nonClosed  1:Closed)\n",obj.IsClosed());
 
 	if (obj.AddTriangles(spo_vertices, spo_vertices_num, spo_triangles, spo_triangles_num) != SC_NO_ERROR) {
+		cout << "error" << endl;
 		
+	}
+	else {
 		printf("piece count = %d\n", obj.GetPieceCount());
 		obj.ConnectVertices(0.001);
 		obj.SplitEdges(0.01, 5, true);
@@ -155,5 +159,4 @@ void LOAD_STLMODEL::use_spo(SPOObject obj) {
 			printf("修正後 ==> 頂点数:%d, ポリゴン数:%d\n\n", j, k);
 		}
 	}
-	else {cout<< "error"<<endl; }
 }

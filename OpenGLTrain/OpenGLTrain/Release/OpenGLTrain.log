@@ -15,8 +15,8 @@ c:\users\sofy\documents\opengltrain\opengltrain\opengltrain\load_stlmodel.cpp(11
               _Ty=float
           ]
   コード生成しています。
-  5 of 284 functions ( 1.8%) were compiled, the rest were copied from previous compilation.
+  3 of 284 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   OpenGLTrain.vcxproj -> C:\Users\sofy\Documents\OpenglTrain\OpenGLTrain\OpenGLTrain\../../bin\OpenGLTrain.exe
