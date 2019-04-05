@@ -33,6 +33,8 @@ public:
 
 
 
+
+
 public:
 	LOAD_STLMODEL();
 	~LOAD_STLMODEL();
@@ -41,10 +43,18 @@ public:
 	int get_polygon_number();
 
 	//スマートコリジョンオプティマイザー用
+	//ここらへんは先代のシステム流用
+	std::vector<float>stlvertex;
+	std::vector<float> spo_polygon_coordinate;
+	int trianglesvertexnum2[10000]; //頂点用インデックス番号
+
+	int spo_polygon_number;
+
 	void use_spo(SPOObject obj);
 	void make_spo_vertices();
 	void make_spo_triangles();
-
+	void delede_same_coordinate();
+	void labeling();
 	//スマートコリジョン用
 
 

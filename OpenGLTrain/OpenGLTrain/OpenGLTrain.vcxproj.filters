@@ -30,12 +30,6 @@
     <ClCompile Include="Tool.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="HapticCalculation.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="smartcollision_setup.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="glut_setup.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>

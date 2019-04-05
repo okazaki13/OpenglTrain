@@ -47,7 +47,8 @@ void ready_tool_edge() {
 	}
 	glEnd();
 	glEndList();
-
+	//cutting_edge.delede_same_coordinate();
+	//cutting_edge.labeling();
 	cutting_edge.use_spo(spo_cutting_edge);
 
 	//printf("wC³‘Oxclose judge = %d (0:nonClosed  1:Closed)\n", spo_cutting_edge.IsClosed());
