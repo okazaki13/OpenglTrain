@@ -104,7 +104,10 @@ void ready_tool_shank() {
 	glEndList();
 
 
-	//sc_shank.AddTriangles(shank.SC_vertices, shank.SC_vertices_num, shank.SC_triangles, shank.SC_triangles_num);
+
+	shank.use_spo(spo_shank);
+
+
 	/////H‹ïƒVƒƒƒ“ƒN‚±‚±‚Ü‚Å
 }
 

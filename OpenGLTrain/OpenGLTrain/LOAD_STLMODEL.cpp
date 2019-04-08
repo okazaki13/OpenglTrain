@@ -7,7 +7,7 @@ using namespace std;
 
 LOAD_STLMODEL::LOAD_STLMODEL()
 {
-	spo_vertices = new float[10000];
+	
 }
 
 
@@ -86,8 +86,8 @@ void LOAD_STLMODEL::get_stl(string filepass) {
 //ポリゴンの頂点情報をspo用に纏める。名前が紛らわしい
 void LOAD_STLMODEL::make_spo_vertices() {
 	int allloop_vertices_number = polygon_number * 9;
-	spo_vertices = new float[allloop_vertices_number];
-
+	//spo_vertices = new SPOfloat[allloop_vertices_number];
+	spo_vertices = (SPOfloat *)malloc(sizeof(float) * allloop_vertices_number);
 	for (int i=0; i < polygon_number; i++) {
 		spo_vertices[(i * 9) + 0] = polygon_coordinate1_x[i];
 		spo_vertices[(i * 9) + 1] = polygon_coordinate1_y[i];
@@ -109,7 +109,7 @@ void LOAD_STLMODEL::make_spo_vertices() {
 //ポリゴンの頂点の関連性をSC用にまとめる。STLデータはポリゴンスープなので考慮しない
 void LOAD_STLMODEL::make_spo_triangles() {
 	int allloop_triangles_number = polygon_number *3;
-	spo_triangles = new SCint[allloop_triangles_number];
+	spo_triangles = new SPOint[allloop_triangles_number];
 
 	for (int i = 0; i < polygon_number; i++) {
 		spo_triangles[i] =i;
@@ -163,178 +163,178 @@ void LOAD_STLMODEL::use_spo(SPOObject obj) {
 }
 
 //以下梅津氏の流用。よく理解できておらず
-void LOAD_STLMODEL::delede_same_coordinate() {
-	//bool same=0;
-	//spo_polygon_number = 0;
-	//for (int i=0; i < polygon_number; i++) {
-	//	for (int d=i+1; d < polygon_number - i-1; d++) {
-	//		if (polygon_coordinate1_x[i] == polygon_coordinate1_x[d] ||
-	//			polygon_coordinate1_y[i] == polygon_coordinate1_y[d] ||
-	//			polygon_coordinate1_z[i] == polygon_coordinate1_z[d]) {
-	//			same = 1;
-	//			break;
-	//		}
-	//		if (polygon_coordinate1_x[i] == polygon_coordinate2_x[d] ||
-	//			polygon_coordinate1_y[i] == polygon_coordinate2_y[d] ||
-	//			polygon_coordinate1_z[i] == polygon_coordinate2_z[d]) {
-	//			same = 1;
-	//			break;
-	//		}
-	//		if (polygon_coordinate1_x[i] == polygon_coordinate3_x[d] ||
-	//			polygon_coordinate1_y[i] == polygon_coordinate3_y[d] ||
-	//			polygon_coordinate1_z[i] == polygon_coordinate3_z[d]) {
-	//			same = 1;
-	//			break;
-	//		}
-	//		if (polygon_coordinate2_x[i] == polygon_coordinate1_x[d] ||
-	//			polygon_coordinate2_y[i] == polygon_coordinate1_y[d] ||
-	//			polygon_coordinate2_z[i] == polygon_coordinate1_z[d]) {
-	//			same = 1;
-	//			break;
-	//		}
-	//		if (polygon_coordinate2_x[i] == polygon_coordinate2_x[d] ||
-	//			polygon_coordinate2_y[i] == polygon_coordinate2_y[d] ||
-	//			polygon_coordinate2_z[i] == polygon_coordinate2_z[d]) {
-	//			same = 1;
-	//			break;
-	//		}
-	//		if (polygon_coordinate2_x[i] == polygon_coordinate3_x[d] ||
-	//			polygon_coordinate2_y[i] == polygon_coordinate3_y[d] ||
-	//			polygon_coordinate2_z[i] == polygon_coordinate3_z[d]) {
-	//			same = 1;
-	//			break;
-	//		}
-	//		if (polygon_coordinate3_x[i] == polygon_coordinate1_x[d] ||
-	//			polygon_coordinate3_y[i] == polygon_coordinate1_y[d] ||
-	//			polygon_coordinate3_z[i] == polygon_coordinate1_z[d]) {
-	//			same = 1;
-	//			break;
-	//		}
-	//		if (polygon_coordinate3_x[i] == polygon_coordinate2_x[d] ||
-	//			polygon_coordinate3_y[i] == polygon_coordinate2_y[d] ||
-	//			polygon_coordinate3_z[i] == polygon_coordinate2_z[d]) {
-	//			same = 1;
-	//			break;
-	//		}
-	//		if (polygon_coordinate3_x[i] == polygon_coordinate3_x[d] ||
-	//			polygon_coordinate3_y[i] == polygon_coordinate3_y[d] ||
-	//			polygon_coordinate3_z[i] == polygon_coordinate3_z[d]) {
-	//			same = 1;
-	//			break;
-	//		}
-	//	}
-
-	//
-	//	if (same == 0) {
-	//		spo_polygon_coordinate1_x.emplace_back(polygon_coordinate1_x[i]);
-	//		spo_polygon_coordinate1_y.emplace_back(polygon_coordinate1_y[i]);
-	//		spo_polygon_coordinate1_z.emplace_back(polygon_coordinate1_z[i]);
-	//		spo_polygon_coordinate2_x.emplace_back(polygon_coordinate2_x[i]);
-	//		spo_polygon_coordinate2_y.emplace_back(polygon_coordinate2_y[i]);
-	//		spo_polygon_coordinate2_z.emplace_back(polygon_coordinate2_z[i]);
-	//		spo_polygon_coordinate3_x.emplace_back(polygon_coordinate3_x[i]);
-	//		spo_polygon_coordinate3_y.emplace_back(polygon_coordinate3_y[i]);
-	//		spo_polygon_coordinate3_z.emplace_back(polygon_coordinate3_z[i]);
-	//		spo_polygon_number++;
-	//	}
-	//	else {
-	//		same = 0;
-	//	}
-	//}
-	
-	
-	for (int i = 0; i < polygon_number; i++) {
-		spo_polygon_coordinate[3 * i]=polygon_coordinate1_x[i];
-		spo_polygon_coordinate[3 * i + 1] = polygon_coordinate1_y[i];
-		spo_polygon_coordinate[3 * i + 2] = polygon_coordinate1_z[i];
-		spo_polygon_coordinate[3 * i + 3] = polygon_coordinate2_x[i];
-		spo_polygon_coordinate[3 * i + 4] = polygon_coordinate2_y[i];
-		spo_polygon_coordinate[3 * i + 5] = polygon_coordinate2_z[i];
-		spo_polygon_coordinate[3 * i + 6] = polygon_coordinate3_x[i];
-		spo_polygon_coordinate[3 * i + 7] = polygon_coordinate3_y[i];
-		spo_polygon_coordinate[3 * i + 8] = polygon_coordinate3_z[i];
-	}
-
-	spo_vertices[0] = spo_polygon_coordinate[0];
-	spo_vertices[1] = spo_polygon_coordinate[1];
-	spo_vertices[2] = spo_polygon_coordinate[2];
-	spo_vertices[3] = spo_polygon_coordinate[3];
-	spo_vertices[4] = spo_polygon_coordinate[4];
-	spo_vertices[5] = spo_polygon_coordinate[5];
-	spo_vertices[6] = spo_polygon_coordinate[6];
-	spo_vertices[7] = spo_polygon_coordinate[7];
-	spo_vertices[8] = spo_polygon_coordinate[8];
-
-	trianglesvertexnum2[0] = 0;
-	trianglesvertexnum2[1] = 1;
-	trianglesvertexnum2[2] = 2;
-
-	spo_vertices_num = 3;
-
-	bool hantei=0;
-	float temporary[3];
-	for (int d = 3; d <= polygon_number * 3; d++) {//stlfacevertex[d]の座標で重複がないかカウント
-		for (int c = 0; c < d; c++) {
-			if (spo_polygon_coordinate[3 * d] == spo_vertices[3 * c]
-				&& spo_polygon_coordinate[3 * d + 1] == spo_vertices[3 * c + 1]
-				&& spo_polygon_coordinate[3 * d + 2] == spo_vertices[3 * c + 2]) {
-
-				hantei++;
-				//printf("かぶってます \n");
-				break;
-
-			}
-			else {
-				temporary[0] = spo_polygon_coordinate[3 * d];
-				temporary[1] = spo_polygon_coordinate[3 * d + 1];
-				temporary[2] = spo_polygon_coordinate[3 * d + 2];
-				//printf("vvtest \n");
-			}
-			//printf("%e %e %e \n",temporary[0],temporary[1],temporary[2]);
-			//printf("\n[%d]  %d\n",d, hantei);
-
-		}
-		if (hantei == 0) {
-			spo_vertices[3 * spo_vertices_num] = temporary[0];
-			spo_vertices[3 * spo_vertices_num + 1] = temporary[1];
-			spo_vertices[3 * spo_vertices_num + 2] = temporary[2];
-			trianglesvertexnum2[spo_vertices_num] = spo_vertices_num;
-			spo_vertices_num++;
-			hantei = 0;
-			//printf("格納しました");
-		}
-
-	}
-
-
-}
+//void LOAD_STLMODEL::delede_same_coordinate() {
+//	//bool same=0;
+//	//spo_polygon_number = 0;
+//	//for (int i=0; i < polygon_number; i++) {
+//	//	for (int d=i+1; d < polygon_number - i-1; d++) {
+//	//		if (polygon_coordinate1_x[i] == polygon_coordinate1_x[d] ||
+//	//			polygon_coordinate1_y[i] == polygon_coordinate1_y[d] ||
+//	//			polygon_coordinate1_z[i] == polygon_coordinate1_z[d]) {
+//	//			same = 1;
+//	//			break;
+//	//		}
+//	//		if (polygon_coordinate1_x[i] == polygon_coordinate2_x[d] ||
+//	//			polygon_coordinate1_y[i] == polygon_coordinate2_y[d] ||
+//	//			polygon_coordinate1_z[i] == polygon_coordinate2_z[d]) {
+//	//			same = 1;
+//	//			break;
+//	//		}
+//	//		if (polygon_coordinate1_x[i] == polygon_coordinate3_x[d] ||
+//	//			polygon_coordinate1_y[i] == polygon_coordinate3_y[d] ||
+//	//			polygon_coordinate1_z[i] == polygon_coordinate3_z[d]) {
+//	//			same = 1;
+//	//			break;
+//	//		}
+//	//		if (polygon_coordinate2_x[i] == polygon_coordinate1_x[d] ||
+//	//			polygon_coordinate2_y[i] == polygon_coordinate1_y[d] ||
+//	//			polygon_coordinate2_z[i] == polygon_coordinate1_z[d]) {
+//	//			same = 1;
+//	//			break;
+//	//		}
+//	//		if (polygon_coordinate2_x[i] == polygon_coordinate2_x[d] ||
+//	//			polygon_coordinate2_y[i] == polygon_coordinate2_y[d] ||
+//	//			polygon_coordinate2_z[i] == polygon_coordinate2_z[d]) {
+//	//			same = 1;
+//	//			break;
+//	//		}
+//	//		if (polygon_coordinate2_x[i] == polygon_coordinate3_x[d] ||
+//	//			polygon_coordinate2_y[i] == polygon_coordinate3_y[d] ||
+//	//			polygon_coordinate2_z[i] == polygon_coordinate3_z[d]) {
+//	//			same = 1;
+//	//			break;
+//	//		}
+//	//		if (polygon_coordinate3_x[i] == polygon_coordinate1_x[d] ||
+//	//			polygon_coordinate3_y[i] == polygon_coordinate1_y[d] ||
+//	//			polygon_coordinate3_z[i] == polygon_coordinate1_z[d]) {
+//	//			same = 1;
+//	//			break;
+//	//		}
+//	//		if (polygon_coordinate3_x[i] == polygon_coordinate2_x[d] ||
+//	//			polygon_coordinate3_y[i] == polygon_coordinate2_y[d] ||
+//	//			polygon_coordinate3_z[i] == polygon_coordinate2_z[d]) {
+//	//			same = 1;
+//	//			break;
+//	//		}
+//	//		if (polygon_coordinate3_x[i] == polygon_coordinate3_x[d] ||
+//	//			polygon_coordinate3_y[i] == polygon_coordinate3_y[d] ||
+//	//			polygon_coordinate3_z[i] == polygon_coordinate3_z[d]) {
+//	//			same = 1;
+//	//			break;
+//	//		}
+//	//	}
+//
+//	//
+//	//	if (same == 0) {
+//	//		spo_polygon_coordinate1_x.emplace_back(polygon_coordinate1_x[i]);
+//	//		spo_polygon_coordinate1_y.emplace_back(polygon_coordinate1_y[i]);
+//	//		spo_polygon_coordinate1_z.emplace_back(polygon_coordinate1_z[i]);
+//	//		spo_polygon_coordinate2_x.emplace_back(polygon_coordinate2_x[i]);
+//	//		spo_polygon_coordinate2_y.emplace_back(polygon_coordinate2_y[i]);
+//	//		spo_polygon_coordinate2_z.emplace_back(polygon_coordinate2_z[i]);
+//	//		spo_polygon_coordinate3_x.emplace_back(polygon_coordinate3_x[i]);
+//	//		spo_polygon_coordinate3_y.emplace_back(polygon_coordinate3_y[i]);
+//	//		spo_polygon_coordinate3_z.emplace_back(polygon_coordinate3_z[i]);
+//	//		spo_polygon_number++;
+//	//	}
+//	//	else {
+//	//		same = 0;
+//	//	}
+//	//}
+//	
+//	
+//	for (int i = 0; i < polygon_number; i++) {
+//		spo_polygon_coordinate[3 * i]=polygon_coordinate1_x[i];
+//		spo_polygon_coordinate[3 * i + 1] = polygon_coordinate1_y[i];
+//		spo_polygon_coordinate[3 * i + 2] = polygon_coordinate1_z[i];
+//		spo_polygon_coordinate[3 * i + 3] = polygon_coordinate2_x[i];
+//		spo_polygon_coordinate[3 * i + 4] = polygon_coordinate2_y[i];
+//		spo_polygon_coordinate[3 * i + 5] = polygon_coordinate2_z[i];
+//		spo_polygon_coordinate[3 * i + 6] = polygon_coordinate3_x[i];
+//		spo_polygon_coordinate[3 * i + 7] = polygon_coordinate3_y[i];
+//		spo_polygon_coordinate[3 * i + 8] = polygon_coordinate3_z[i];
+//	}
+//
+//	spo_vertices[0] = spo_polygon_coordinate[0];
+//	spo_vertices[1] = spo_polygon_coordinate[1];
+//	spo_vertices[2] = spo_polygon_coordinate[2];
+//	spo_vertices[3] = spo_polygon_coordinate[3];
+//	spo_vertices[4] = spo_polygon_coordinate[4];
+//	spo_vertices[5] = spo_polygon_coordinate[5];
+//	spo_vertices[6] = spo_polygon_coordinate[6];
+//	spo_vertices[7] = spo_polygon_coordinate[7];
+//	spo_vertices[8] = spo_polygon_coordinate[8];
+//
+//	trianglesvertexnum2[0] = 0;
+//	trianglesvertexnum2[1] = 1;
+//	trianglesvertexnum2[2] = 2;
+//
+//	spo_vertices_num = 3;
+//
+//	bool hantei=0;
+//	float temporary[3];
+//	for (int d = 3; d <= polygon_number * 3; d++) {//stlfacevertex[d]の座標で重複がないかカウント
+//		for (int c = 0; c < d; c++) {
+//			if (spo_polygon_coordinate[3 * d] == spo_vertices[3 * c]
+//				&& spo_polygon_coordinate[3 * d + 1] == spo_vertices[3 * c + 1]
+//				&& spo_polygon_coordinate[3 * d + 2] == spo_vertices[3 * c + 2]) {
+//
+//				hantei++;
+//				//printf("かぶってます \n");
+//				break;
+//
+//			}
+//			else {
+//				temporary[0] = spo_polygon_coordinate[3 * d];
+//				temporary[1] = spo_polygon_coordinate[3 * d + 1];
+//				temporary[2] = spo_polygon_coordinate[3 * d + 2];
+//				//printf("vvtest \n");
+//			}
+//			//printf("%e %e %e \n",temporary[0],temporary[1],temporary[2]);
+//			//printf("\n[%d]  %d\n",d, hantei);
+//
+//		}
+//		if (hantei == 0) {
+//			spo_vertices[3 * spo_vertices_num] = temporary[0];
+//			spo_vertices[3 * spo_vertices_num + 1] = temporary[1];
+//			spo_vertices[3 * spo_vertices_num + 2] = temporary[2];
+//			trianglesvertexnum2[spo_vertices_num] = spo_vertices_num;
+//			spo_vertices_num++;
+//			hantei = 0;
+//			//printf("格納しました");
+//		}
+//
+//	}
+//
+//
+//}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //ポリゴンの各頂点にラベリング処理
-void LOAD_STLMODEL::labeling() {
-
-	int c;
-	int d;
-
-	spo_triangles = new int[3 * polygon_number];  // メモリ領域の確保 
-
-
-
-
-	for (c = 0; c < 3 * polygon_number; c++) {
-
-		for (d = 0; d < spo_vertices_num; d++) {
-			if (   spo_polygon_coordinate[3 * c + 0] == stlvertex[3 * d]
-				&& spo_polygon_coordinate[3 * c + 1] == stlvertex[3 * d + 1]
-				&& spo_polygon_coordinate[3 * c + 2] == stlvertex[3 * d + 2])
-			{
-				spo_triangles[c] = trianglesvertexnum2[d];
-				//trianglesindex[c]=trianglesvertexnum1[d];
-
-				break;
-			}
-		}
-	}
-	
-	spo_triangles_num = polygon_number;
-}
+//void LOAD_STLMODEL::labeling() {
+//
+//	int c;
+//	int d;
+//
+//	spo_triangles = new int[3 * polygon_number];  // メモリ領域の確保 
+//
+//
+//
+//
+//	for (c = 0; c < 3 * polygon_number; c++) {
+//
+//		for (d = 0; d < spo_vertices_num; d++) {
+//			if (   spo_polygon_coordinate[3 * c + 0] == stlvertex[3 * d]
+//				&& spo_polygon_coordinate[3 * c + 1] == stlvertex[3 * d + 1]
+//				&& spo_polygon_coordinate[3 * c + 2] == stlvertex[3 * d + 2])
+//			{
+//				spo_triangles[c] = trianglesvertexnum2[d];
+//				//trianglesindex[c]=trianglesvertexnum1[d];
+//
+//				break;
+//			}
+//		}
+//	}
+//	
+//	spo_triangles_num = polygon_number;
+//}

@@ -61,8 +61,8 @@ public:
 
 
 	//スマートコリジョン用
-	SPOfloat* spo_vertices;
-	SPOint* spo_triangles;
+	SPOfloat *spo_vertices;
+	SPOint *spo_triangles;
 	SPOint spo_vertices_num;
 	SPOint spo_triangles_num;
 
