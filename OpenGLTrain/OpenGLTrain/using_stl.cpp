@@ -49,6 +49,9 @@ void ready_tool_edge() {
 	glEndList();
 	//cutting_edge.delede_same_coordinate();
 	//cutting_edge.labeling();
+
+	cutting_edge.make_spo_vertices();
+	cutting_edge.make_spo_triangles();
 	cutting_edge.use_spo(spo_cutting_edge);
 
 	//printf("wC³‘Oxclose judge = %d (0:nonClosed  1:Closed)\n", spo_cutting_edge.IsClosed());
@@ -104,7 +107,8 @@ void ready_tool_shank() {
 	glEndList();
 
 
-
+	shank.make_spo_vertices();
+	shank.make_spo_triangles();
 	shank.use_spo(spo_shank);
 
 

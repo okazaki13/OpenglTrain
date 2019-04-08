@@ -76,8 +76,8 @@ void LOAD_STLMODEL::get_stl(string filepass) {
 	}
 
 	stlfile.close();
-	make_spo_vertices();
-	make_spo_triangles();
+	//make_spo_vertices();
+	//make_spo_triangles();
 
 }
 
@@ -85,9 +85,9 @@ void LOAD_STLMODEL::get_stl(string filepass) {
 
 //ポリゴンの頂点情報をspo用に纏める。名前が紛らわしい
 void LOAD_STLMODEL::make_spo_vertices() {
-	int allloop_vertices_number = polygon_number * 9;
+	int all_vertices_number = polygon_number * 9;
 	//spo_vertices = new SPOfloat[allloop_vertices_number];
-	spo_vertices = (SPOfloat *)malloc(sizeof(float) * allloop_vertices_number);
+	spo_vertices = (SPOfloat *)malloc(sizeof(float) * all_vertices_number);
 	for (int i=0; i < polygon_number; i++) {
 		spo_vertices[(i * 9) + 0] = polygon_coordinate1_x[i];
 		spo_vertices[(i * 9) + 1] = polygon_coordinate1_y[i];
@@ -103,21 +103,24 @@ void LOAD_STLMODEL::make_spo_vertices() {
 
 	}
 
-	spo_vertices_num = allloop_vertices_number/3;
+	spo_vertices_num = all_vertices_number/3;
 }
 
-//ポリゴンの頂点の関連性をSC用にまとめる。STLデータはポリゴンスープなので考慮しない
+//ポリゴンの頂点の関連性をSC用にまとめる。STLデータはポリゴンスープなので適当に1から順にポリゴン数分格納
 void LOAD_STLMODEL::make_spo_triangles() {
-	int allloop_triangles_number = polygon_number *3;
-	spo_triangles = new SPOint[allloop_triangles_number];
+	int all_triangles_number = polygon_number *3;
+	/*spo_triangles = new SPOint[all_triangles_number];*/
+	spo_triangles = (SPOint *)malloc(sizeof(int) * all_triangles_number);
 
 	for (int i = 0; i < polygon_number; i++) {
-		spo_triangles[i] =i;
+		spo_triangles[3 * i + 0] = i;
+		spo_triangles[3 * i + 1] = i+1;
+		spo_triangles[3 * i + 2] = i+2;
 
 	}
 
 
-	spo_triangles_num = allloop_triangles_number/3;
+	spo_triangles_num = polygon_number;
 }
 
 int LOAD_STLMODEL::get_polygon_number() {
@@ -134,12 +137,12 @@ void LOAD_STLMODEL::use_spo(SPOObject obj) {
 	}
 	else {
 		printf("piece count = %d\n", obj.GetPieceCount());
-		obj.ConnectVertices(1e-4);
-		obj.SplitEdges(0.01, 5, true);
-		obj.CloseHoles();
-		obj.RemoveRedundantVertices(0.01, 5, true);
-		obj.ChangeTriangulationPattern(SPO_TRIANGULATION_TYPE_REDUCE_AREA_DIFFERENCE, 1.0, 5);
-		obj.DecomposeIntoSingleBoundaryPieces();
+		obj.ConnectVertices(0.0001);
+		//obj.SplitEdges(0.01, 5, true);
+		//obj.RemoveRedundantVertices(0.001, 5, true);
+		//obj.CloseHoles();
+		//obj.ChangeTriangulationPattern(SPO_TRIANGULATION_TYPE_REDUCE_AREA_DIFFERENCE, 1.0, 5);
+		//obj.DecomposeIntoSingleBoundaryPieces();
 		printf("piece count = %d\n", obj.GetPieceCount());
 		for (int i = 0; i < obj.GetPieceCount(); i++) {
 			if (obj.IsClosed(i) != true) {
