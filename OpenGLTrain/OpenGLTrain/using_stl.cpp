@@ -20,6 +20,7 @@ SCSceneManager scene(SC_SCENE_MANAGER_TRIANGLE_SOUP);
 SPOObject spo_cutting_edge;
 SPOObject spo_shank;
 SPOObject spo_holder;
+SPOObject spo_cube;
 
 SCObject sc_cutting_edge;
 SCObject sc_shank;
@@ -140,6 +141,42 @@ void ready_tool_holder(){
 
 	//////工具ホルダー部ここまで
 }
+
+
+
+void ready_cube() {
+	/////工具シャンク部の描画とコリジョン設定
+	LOAD_STLMODEL cube;
+	cube.get_stl("../../STLmodel/cube.STL");
+
+
+
+
+	cube.make_spo_vertices();
+	cube.make_spo_triangles();
+	cube.use_spo(spo_cube);
+
+
+	/////工具シャンクここまで
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //float spidar_origin_position[3];
 //float spidar_origin_quaternion[4];

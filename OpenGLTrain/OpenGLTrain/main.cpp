@@ -50,9 +50,10 @@ int main(int argc, char *argv[]) {
 	
 
 	
-	ready_tool_edge();
-	ready_tool_shank();
-	ready_voxel();
+	//ready_tool_edge();
+	//ready_tool_shank();
+	//ready_voxel();
+	ready_cube();
 
 
 

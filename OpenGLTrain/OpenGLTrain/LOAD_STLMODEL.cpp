@@ -137,12 +137,11 @@ void LOAD_STLMODEL::use_spo(SPOObject obj) {
 	}
 	else {
 		printf("piece count = %d\n", obj.GetPieceCount());
-		obj.ConnectVertices(0);
-		
-		//obj.SplitEdges(0.01, 5, true);
-		//obj.RemoveRedundantVertices(0.01, 5, true);
-		//obj.ChangeTriangulationPattern(SPO_TRIANGULATION_TYPE_REDUCE_AREA_DIFFERENCE, 1.0, 5);
-		obj.CloseHoles();
+		obj.ConnectVertices(0.001);
+		//	obj.CloseHoles();
+		obj.SplitEdges(0.01, 5, true);
+		obj.RemoveRedundantVertices(0.01, 5, true);
+		obj.ChangeTriangulationPattern(SPO_TRIANGULATION_TYPE_REDUCE_AREA_DIFFERENCE, 1.0, 5);
 		//obj.DecomposeIntoSingleBoundaryPieces();//ÉsÅ[ÉXÇÃï™äÑ
 		printf("piece count = %d\n", obj.GetPieceCount());
 		for (int i = 0; i < obj.GetPieceCount(); i++) {

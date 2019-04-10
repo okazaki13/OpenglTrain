@@ -35,6 +35,7 @@ void ready_tool_holder();
 void ready_tool_shank();
 void make_tool();
 void make_SC_tool(SCSceneManager &scene);
+void ready_cube();
 
 //using_voxel
 void ready_voxel();
